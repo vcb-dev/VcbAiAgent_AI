@@ -7,6 +7,9 @@ Output: mvp/data/media-index.json. Idempotent: existing proxies/sheets are reuse
 
 Run:  python3.11 mvp/indexer/build_media_index.py
 """
+from __future__ import annotations  # cho phép cú pháp 'X | None' trên Python 3.9
+
+import argparse
 import hashlib
 import json
 import subprocess
@@ -28,29 +31,93 @@ MEDIA = MVP / "media"
 FONT = "/System/Library/Fonts/Supplemental/Arial Unicode.ttf"
 VIDEO_EXT = {".mp4", ".mov"}
 
-# folder prefix -> (folder_code, role_hint, rights)
-FOLDER_RULES = [
-    ("V1.", "V1", "hook_visual", "owned"), ("V2.", "V2", "craft", "owned"),
-    ("V3.", "V3", "huyk", "owned"), ("V4.", "V4", "craft_pov", "owned"),
-    ("V6.", "V6", "product_final", "owned"), ("V7.", "V7", "outro", "owned"),
-    ("V8.", "V8", "craft", "owned"),
+# Vai trò suy ra từ đường dẫn: ổ NAS đã tự chia theo loại nội dung, nên chỉ cần khớp
+# một đoạn đường dẫn là biết clip là chế tác, HuyK hay cảnh sản phẩm.
+# Khớp theo thứ tự, cái nào trúng trước thì lấy. (đoạn đường dẫn, mã, role_hint, bản quyền)
+PATH_RULES = [
+    ("HUYK0/VIDEO-CHE-TAC", "CHETAC", "craft", "owned"),
+    ("SOURCE 4K/Chế tác", "CHETAC", "craft", "owned"),
+    ("SOURCE 4K/Stock anh HuyK", "HUYK", "huyk", "owned"),
+    ("SOURCE 4K/Beauty Shot", "BEAUTY", "product_hero", "owned"),
+    ("SOURCE 4K/Stock Video SP", "STOCKSP", "product_hero", "owned"),
+    ("SOURCE 4K/Stock video sản phẩm", "STOCKSP", "product_hero", "owned"),
+    ("SOURCE 4K/Kịch bản", "KICHBAN", "content_illustration", "owned"),
+    ("SOURCE 4K/Đi triển lãm", "TRIENLAM", "stock_action", "owned"),
+    ("SOURCE 4K/Youtube Global", "YTGLOBAL", "content_illustration", "collected"),
+    ("Source AI Minh Data", "MINHDATA", "content_illustration", "collected"),
+    # Bộ sample cũ: thư mục đánh số V1..V8.
+    ("/V1.", "V1", "hook_visual", "owned"), ("/V2.", "V2", "craft", "owned"),
+    ("/V3.", "V3", "huyk", "owned"), ("/V4.", "V4", "craft_pov", "owned"),
+    ("/V6.", "V6", "product_final", "owned"), ("/V7.", "V7", "outro", "owned"),
+    ("/V8.", "V8", "craft", "owned"),
 ]
 
 
+FORCED_ROLE = None      # đặt bởi --role khi footage nằm ngoài cây thư mục chuẩn của NAS
+
+
 def folder_info(path: Path):
-    rel = unicodedata.normalize("NFC", path.relative_to(SAMPLE).as_posix())  # macOS may return NFD names
+    if FORCED_ROLE:
+        return FORCED_ROLE
+    rel = unicodedata.normalize("NFC", path.as_posix())  # macOS trả tên dạng NFD
     if path.is_relative_to(CAPCUT_DIR):
         return "CAPCUT", "craft", "owned"
-    if "V5." in rel:
+    if "/V5." in rel:
         return ("V5-SUUTAM", "stock_action", "collected") if "Sưu tầm" in rel else ("V5-TUQUAY", "craft", "owned")
-    for prefix, code, role, rights in FOLDER_RULES:
-        if f"/{prefix}" in f"/{rel.split('/', 1)[1]}":
+    for needle, code, role, rights in PATH_RULES:
+        if unicodedata.normalize("NFC", needle) in rel:
             return code, role, rights
     return "OTHER", "unknown", "unknown"
 
 
+INHERITED = ("sku", "product", "date", "action", "craft_step", "craft_order", "type", "koc")
+
+
+def parse_with_path(path: Path, scan_root: Path) -> dict:
+    """Trên NAS, thông tin hay nằm ở tên thư mục cha chứ không phải tên file:
+    'Stock Video SP/D000856_Dây chuyền liên hoa S990/v1.mp4' hay
+    'Chế tác/260616_CHETAC_Lắc tay tennis/clip1.mp4'. Nên khi tên file thiếu gì thì
+    lấy bù từ thư mục cha gần nhất, dò ngược lên tới thư mục quét."""
+    parsed = parse_filename(path.name)
+    if parsed["sku"] and parsed["date"]:
+        return parsed
+
+    # Tên file do máy quay đặt ('C0001', 'clip1') thì không mang thông tin gì đáng giữ.
+    weak_name = parsed["camera_name"] or not (parsed["date"] or parsed["sku"])
+
+    # Chủ đề = tên thư mục chứa file, dùng làm từ khoá khi khớp cảnh ('Gold', 'Thach anh toc vang').
+    parsed["topic"] = unicodedata.normalize("NFC", path.parent.name)
+
+    for folder in path.parents:
+        if not folder.is_relative_to(scan_root) or folder == scan_root:
+            break
+        from_folder = parse_filename(unicodedata.normalize("NFC", folder.name))
+        # Chỉ thư mục buổi quay (có ngày hoặc SKU ở tên) mới đáng kế thừa. Thư mục phân loại
+        # chung như 'SOURCE 4K' hay 'Chế tác' không mang thông tin sản phẩm.
+        if not (from_folder["sku"] or from_folder["date"]):
+            continue
+        for key in INHERITED:
+            if from_folder.get(key) and (parsed.get(key) is None or (weak_name and key in ("product", "action"))):
+                parsed[key] = from_folder[key]
+        parsed["from_folder"] = folder.name
+        break
+
+    expected = ("date", "sku", "action", "staff")
+    parsed["parse_confidence"] = round(sum(1 for k in expected if parsed[k]) / len(expected), 2)
+    return parsed
+
+
 def run(cmd):
     return subprocess.run(cmd, capture_output=True, text=True, check=False)
+
+
+def _has_drawtext() -> bool:
+    """ffmpeg build thiếu libfreetype sẽ không có drawtext; lúc đó contact sheet vẫn dựng
+    được nhưng không có mốc thời gian trên từng khung."""
+    return " drawtext " in run(["ffmpeg", "-hide_banner", "-filters"]).stdout
+
+
+HAS_DRAWTEXT = _has_drawtext()
 
 
 def probe(path: Path) -> dict:
@@ -88,9 +155,12 @@ def build_stills(proxy: Path, thumb: Path, sheet: Path, duration: float):
     if not sheet.exists():
         rate = 12.0 / max(duration, 0.5)
         draw = (f"drawtext=fontfile='{FONT}':text='%{{pts\\:hms}}':x=6:y=6:fontsize=20:"
-                "fontcolor=white:box=1:boxcolor=black@0.6")
-        vf = f"fps={rate:.4f},scale=240:426,{draw},tile=4x3"
-        run(["ffmpeg", "-y", "-v", "error", "-i", str(proxy), "-vf", vf, "-frames:v", "1", "-q:v", "3", str(sheet)])
+                "fontcolor=white:box=1:boxcolor=black@0.6,") if HAS_DRAWTEXT else ""
+        vf = f"fps={rate:.4f},scale=240:426,{draw}tile=4x3"
+        res = run(["ffmpeg", "-y", "-v", "error", "-i", str(proxy), "-vf", vf,
+                   "-frames:v", "1", "-q:v", "3", str(sheet)])
+        if res.returncode != 0:
+            raise RuntimeError(f"contact sheet failed {proxy.name}: {res.stderr[-300:]}")
 
 
 def _rel(path) -> str:
@@ -108,12 +178,14 @@ def long_clip_entries(path: Path, base: dict) -> list[dict]:
              "proxy": _rel(s["proxy"]), "thumb": _rel(s["thumb"]), "sheet": _rel(s["sheet"])} for s in res["segments"]]
 
 
-def index_clip(path: Path) -> list[dict]:
-    rel = path.relative_to(ROOT).as_posix()
+def index_clip(args) -> list[dict]:
+    path, scan_root = args
+    # Footage có thể nằm ngoài repo (ổ NAS), lúc đó giữ nguyên đường dẫn tuyệt đối.
+    rel = path.relative_to(ROOT).as_posix() if path.is_relative_to(ROOT) else path.as_posix()
     cid = "c_" + hashlib.sha1(rel.encode()).hexdigest()[:8]
     code, role_hint, rights = folder_info(path)
     tech = probe(path)
-    parsed = parse_filename(path.name)
+    parsed = parse_with_path(path, scan_root)
     base = {"id": cid, "file": rel, "name": path.name, "folder": code, "role_hint": role_hint,
             "rights": rights, "product_set": parsed["sku"], "parsed": parsed, "tech": tech}
     split, why = should_segment(tech["duration"], parsed)
@@ -129,16 +201,47 @@ def index_clip(path: Path) -> list[dict]:
 
 
 def main():
+    ap = argparse.ArgumentParser(description="Đánh chỉ mục footage: ffprobe + proxy + thumbnail + contact sheet.")
+    ap.add_argument("roots", nargs="*", help="thư mục footage (mặc định: bộ sample trong repo)")
+    ap.add_argument("--out", default="media-index.json", help="tên file kết quả trong VCB_AI/data/")
+    ap.add_argument("--limit", type=int, help="chỉ xử lý N clip đầu, để chạy thử")
+    # Khi footage được copy ra khỏi NAS, đường dẫn không còn khớp PATH_RULES nữa.
+    ap.add_argument("--role", help="ép role_hint (craft, huyk, product_hero, content_illustration...)")
+    ap.add_argument("--code", help="ép mã thư mục đi kèm --role (CHETAC, HUYK, STOCKSP...)")
+    opts = ap.parse_args()
+
+    if opts.role:
+        global FORCED_ROLE
+        FORCED_ROLE = (opts.code or opts.role.upper(), opts.role, "owned")
+
+    out = MVP / "data" / opts.out
+    limit = opts.limit
+    roots = [Path(a).expanduser().resolve() for a in opts.roots] or [SOURCE_DIR, CAPCUT_DIR]
+
+    missing = [r for r in roots if not r.is_dir()]
+    if missing:
+        sys.exit("Không thấy thư mục: " + ", ".join(str(m) for m in missing))
+
     for sub in ("proxy", "thumbs", "sheets"):
         (MEDIA / sub).mkdir(parents=True, exist_ok=True)
-    files = sorted(p for d in (SOURCE_DIR, CAPCUT_DIR) for p in d.rglob("*") if p.suffix.lower() in VIDEO_EXT)
-    print(f"indexing {len(files)} clips ...")
+
+    # Giữ kèm scan_root của từng file để parse_with_path biết dừng ở đâu khi dò SKU ngược lên.
+    jobs = sorted(((p, root) for root in roots for p in root.rglob("*") if p.suffix.lower() in VIDEO_EXT),
+                  key=lambda j: j[0].as_posix())
+    if limit:
+        jobs = jobs[:limit]
+    print(f"indexing {len(jobs)} clips from {len(roots)} root(s) ...")
+
     with ThreadPoolExecutor(max_workers=4) as pool:
-        entries = [e for group in pool.map(index_clip, files) for e in group]
-    out = MVP / "data" / "media-index.json"
+        entries = [e for group in pool.map(index_clip, jobs) for e in group]
+
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(entries, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"wrote {out} ({len(entries)} entries)")
+    by_role = {}
+    for e in entries:
+        by_role[e["role_hint"]] = by_role.get(e["role_hint"], 0) + 1
+    print("  theo vai trò:", ", ".join(f"{k}={v}" for k, v in sorted(by_role.items())))
 
 
 if __name__ == "__main__":

@@ -10,6 +10,8 @@ Talking-head takes are not split by motion: they need sentence boundaries from A
 
 Run on any file:  uv run --project mvp python mvp/indexer/long_clip_segmenter.py <video> [--out DIR]
 """
+from __future__ import annotations  # cho phép cú pháp 'X | None' trên Python 3.9
+
 import argparse
 import hashlib
 import json
@@ -33,6 +35,9 @@ TALKING_TYPES = {"KB"}                  # NAS type code for HuyK talking to came
 HAIKU_USD_PER_M = (0.10, 0.50)          # in/out per 1M tokens (mvp/data/ai-models-pricing.json, 10/10/2026)
 SHEET_TOKENS = (3000, 1200)             # one batch call: 12 small images + prompt in, 6 label objects out
 FONT = "/System/Library/Fonts/Supplemental/Arial Unicode.ttf"
+# ffmpeg thiếu libfreetype thì không có drawtext: vẫn dựng sheet, chỉ mất nhãn thời gian.
+HAS_DRAWTEXT = " drawtext " in subprocess.run(
+    ["ffmpeg", "-hide_banner", "-filters"], capture_output=True, text=True, check=False).stdout
 
 
 def should_segment(duration: float, parsed: dict | None) -> tuple[bool, str]:
@@ -192,9 +197,10 @@ def _write_outputs(kept, master: Path, asset_id: str, out: Path, frames_per_cand
                 for t in sorted(times):
                     label = Path(tmp) / f"l{tile}.txt"
                     label.write_text(f"{s['id'].rsplit('_', 1)[1].upper()} · {int((s['in'] + t) // 60):02d}:{(s['in'] + t) % 60:04.1f}")
+                    draw = (f",drawtext=fontfile='{FONT}':textfile='{label}':expansion=none:x=6:y=6:fontsize=20:"
+                            "fontcolor=white:box=1:boxcolor=black@0.65") if HAS_DRAWTEXT else ""
                     _ff(["-ss", f"{t:.2f}", "-i", str(s["proxy"]), "-frames:v", "1", "-vf",
-                         f"scale=240:426,drawtext=fontfile='{FONT}':textfile='{label}':expansion=none:x=6:y=6:fontsize=20:"
-                         "fontcolor=white:box=1:boxcolor=black@0.65", str(Path(tmp) / f"f_{tile:02d}.jpg")])
+                         f"scale=240:426{draw}", str(Path(tmp) / f"f_{tile:02d}.jpg")])
                     tile += 1
             _ff(["-framerate", "1", "-i", str(Path(tmp) / "f_%02d.jpg"), "-vf", "tile=4x3", "-frames:v", "1", "-q:v", "3", str(sheet)])
         for s in group:

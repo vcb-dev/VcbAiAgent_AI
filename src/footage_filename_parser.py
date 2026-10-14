@@ -8,9 +8,12 @@ import re
 import unicodedata
 from pathlib import Path
 
-TYPE_CODES = {"KB", "CT", "CTX", "ST", "LIVE", "OT", "IT"}
+TYPE_CODES = {"KB", "CT", "CTX", "ST", "LIVE", "OT", "IT", "CHETAC", "BEAUTYSHOT"}
 KOC_CODES = {"HK", "NN", "NB", "CB", "HC"}
 SKU_RE = re.compile(r"^([A-Z]{1,2}\d{3,6}[A-Z]?(?:-(?:[A-Z]{1,3}|\d{1,3}))*)(?:-(.+))?$")
+# Tên file do máy quay tự đặt (Sony C0001, iPhone IMG_6277, Canon MVI_1234...). Trông giống
+# SKU nhưng không phải, nên phải loại ra trước khi dò SKU.
+CAMERA_FILE_RE = re.compile(r"^(?:C\d{4}|A\d{3,4}|IMG|MVI|DSC|DJI|GX|GOPR|VIDEO|CLIP)[\s_-]?\d*$", re.IGNORECASE)
 STAFF_RE = re.compile(r"^[A-Z]{2,4}\d{2}$")
 DATE_RE = re.compile(r"^\d{6}$")
 
@@ -60,6 +63,7 @@ def parse_filename(filename: str) -> dict:
     tokens = [t.strip() for t in stem.split("_") if t.strip()]
     out = {"raw": stem, "date": None, "type": None, "koc": None, "sku": None,
            "product": None, "action": None, "staff": None, "stt": None}
+    out["camera_name"] = bool(CAMERA_FILE_RE.match(stem))
     rest = []
     for tok in tokens:
         up = tok.upper()
@@ -69,7 +73,7 @@ def parse_filename(filename: str) -> dict:
             out["type"] = up
         elif out["koc"] is None and up in KOC_CODES:
             out["koc"] = up
-        elif out["sku"] is None and SKU_RE.match(tok):
+        elif out["sku"] is None and not out["camera_name"] and SKU_RE.match(tok):
             m = SKU_RE.match(tok)
             out["sku"] = m.group(1)
             if m.group(2):

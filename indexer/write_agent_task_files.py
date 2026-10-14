@@ -6,6 +6,8 @@ Outputs (in the session scratchpad passed as argv[1]):
   bench/tagging_gold.md      - 12-clip gold set WITHOUT filename hints (vision-only test)
   bench/gold_truth.json      - ground truth for the gold set (never shown to models)
 """
+from __future__ import annotations  # cho phép cú pháp 'X | None' trên Python 3.9
+
 import json
 import sys
 from pathlib import Path

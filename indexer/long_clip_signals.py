@@ -5,6 +5,8 @@ The original (often 4K HEVC) is decoded exactly once (hardware decode when avail
   - 4 fps 256x256 gray frames on stdout for analysis (aspect is squashed on purpose: signals are relative)
 Everything after that runs on the small frames with numpy only, so it costs CPU seconds, never AI money.
 """
+from __future__ import annotations  # cho phép cú pháp 'X | None' trên Python 3.9
+
 import subprocess
 from pathlib import Path
 
