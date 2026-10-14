@@ -15,7 +15,7 @@ import json
 import subprocess
 import sys
 import unicodedata
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 MVP = Path(__file__).resolve().parents[1]      # VCB_AI
@@ -208,6 +208,9 @@ def main():
     # Khi footage được copy ra khỏi NAS, đường dẫn không còn khớp PATH_RULES nữa.
     ap.add_argument("--role", help="ép role_hint (craft, huyk, product_hero, content_illustration...)")
     ap.add_argument("--code", help="ép mã thư mục đi kèm --role (CHETAC, HUYK, STOCKSP...)")
+    # Clip 4K dài ngốn nhiều RAM lẫn băng thông; chạy 4 luồng song song dễ bị hệ điều hành giết.
+    ap.add_argument("--workers", type=int, default=2, help="số clip xử lý song song (mặc định 2)")
+    ap.add_argument("--restart", action="store_true", help="bỏ kết quả cũ, đánh chỉ mục lại từ đầu")
     opts = ap.parse_args()
 
     if opts.role:
@@ -230,14 +233,39 @@ def main():
                   key=lambda j: j[0].as_posix())
     if limit:
         jobs = jobs[:limit]
-    print(f"indexing {len(jobs)} clips from {len(roots)} root(s) ...")
 
-    with ThreadPoolExecutor(max_workers=4) as pool:
-        entries = [e for group in pool.map(index_clip, jobs) for e in group]
+    # Quét qua ổ mạng mất nhiều giờ và có thể đứt giữa chừng, nên giữ lại kết quả cũ
+    # và bỏ qua những clip đã xong để chạy tiếp được.
+    entries = [] if opts.restart or not out.exists() else json.loads(out.read_text(encoding="utf-8"))
+    done = {e["file"] for e in entries}
+    todo = [j for j in jobs if (j[0].as_posix() not in done
+                                and (j[0].relative_to(ROOT).as_posix() if j[0].is_relative_to(ROOT) else j[0].as_posix()) not in done)]
+    print(f"indexing {len(todo)} clips from {len(roots)} root(s)"
+          f"{f' (bỏ qua {len(jobs) - len(todo)} clip đã xong)' if len(todo) < len(jobs) else ''} ...", flush=True)
 
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(json.dumps(entries, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"wrote {out} ({len(entries)} entries)")
+
+    def save():
+        tmp = out.with_suffix(".json.tmp")      # ghi ra file tạm rồi đổi tên, tránh hỏng file khi bị ngắt
+        tmp.write_text(json.dumps(entries, ensure_ascii=False, indent=1), encoding="utf-8")
+        tmp.replace(out)
+
+    failed = 0
+    with ThreadPoolExecutor(max_workers=max(1, opts.workers)) as pool:
+        futures = {pool.submit(index_clip, j): j[0] for j in todo}
+        for i, fut in enumerate(as_completed(futures), 1):
+            src = futures[fut]
+            try:
+                entries.extend(fut.result())
+            except Exception as exc:            # một clip hỏng không được làm dừng cả mẻ
+                failed += 1
+                print(f"  [{i}/{len(todo)}] LỖI {src.name}: {exc}", flush=True)
+                continue
+            save()                              # chốt sau từng clip: đứt giữa chừng vẫn giữ được phần đã làm
+            print(f"  [{i}/{len(todo)}] {src.name} -> {len(entries)} entries", flush=True)
+
+    save()
+    print(f"wrote {out} ({len(entries)} entries, {failed} lỗi)")
     by_role = {}
     for e in entries:
         by_role[e["role_hint"]] = by_role.get(e["role_hint"], 0) + 1
