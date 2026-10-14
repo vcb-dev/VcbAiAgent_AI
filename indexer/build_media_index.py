@@ -12,9 +12,11 @@ from __future__ import annotations  # cho phép cú pháp 'X | None' trên Pytho
 import argparse
 import hashlib
 import json
+import os
 import subprocess
 import sys
 import unicodedata
+import uuid
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
@@ -136,31 +138,42 @@ def probe(path: Path) -> dict:
             "has_audio": has_audio, "codec": v.get("codec_name")}
 
 
+def encode_atomic(cmd_without_output, dst: Path, label: str):
+    """Dựng ra file tạm rồi mới đổi tên: ffmpeg bị giết giữa chừng sẽ không để lại file
+    dở dang mà lần chạy sau tưởng là đã xong."""
+    tmp = dst.with_name(f"{dst.stem}.{uuid.uuid4().hex[:6]}.tmp{dst.suffix}")
+    try:
+        res = run([*cmd_without_output, str(tmp)])
+        if res.returncode != 0:
+            raise RuntimeError(f"{label}: {res.stderr[-400:]}")
+        os.replace(tmp, dst)
+    finally:
+        tmp.unlink(missing_ok=True)
+
+
 def build_proxy(src: Path, dst: Path, hdr: bool):
     if dst.exists():
         return
     tonemap = ("zscale=t=linear:npl=100,format=gbrpf32le,zscale=p=bt709,tonemap=hable:desat=0,"
                "zscale=t=bt709:m=bt709:r=tv,format=yuv420p,") if hdr else ""
     vf = f"{tonemap}scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280,fps=30,format=yuv420p"
-    res = run(["ffmpeg", "-y", "-v", "error", "-i", str(src), "-vf", vf, "-c:v", "libx264", "-preset", "veryfast",
-               "-crf", "23", "-c:a", "aac", "-b:a", "128k", "-ar", "48000", "-movflags", "+faststart", str(dst)])
-    if res.returncode != 0:
-        raise RuntimeError(f"proxy failed {src.name}: {res.stderr[-400:]}")
+    encode_atomic(["ffmpeg", "-y", "-v", "error", "-i", str(src), "-vf", vf, "-c:v", "libx264", "-preset", "veryfast",
+                   "-crf", "23", "-c:a", "aac", "-b:a", "128k", "-ar", "48000", "-movflags", "+faststart"],
+                  dst, f"proxy failed {src.name}")
 
 
 def build_stills(proxy: Path, thumb: Path, sheet: Path, duration: float):
     if not thumb.exists():
-        run(["ffmpeg", "-y", "-v", "error", "-ss", f"{duration * 0.4:.2f}", "-i", str(proxy), "-frames:v", "1",
-             "-vf", "scale=360:640", "-q:v", "3", str(thumb)])
+        encode_atomic(["ffmpeg", "-y", "-v", "error", "-ss", f"{duration * 0.4:.2f}", "-i", str(proxy),
+                       "-frames:v", "1", "-vf", "scale=360:640", "-q:v", "3"],
+                      thumb, f"thumbnail failed {proxy.name}")
     if not sheet.exists():
         rate = 12.0 / max(duration, 0.5)
         draw = (f"drawtext=fontfile='{FONT}':text='%{{pts\\:hms}}':x=6:y=6:fontsize=20:"
                 "fontcolor=white:box=1:boxcolor=black@0.6,") if HAS_DRAWTEXT else ""
         vf = f"fps={rate:.4f},scale=240:426,{draw}tile=4x3"
-        res = run(["ffmpeg", "-y", "-v", "error", "-i", str(proxy), "-vf", vf,
-                   "-frames:v", "1", "-q:v", "3", str(sheet)])
-        if res.returncode != 0:
-            raise RuntimeError(f"contact sheet failed {proxy.name}: {res.stderr[-300:]}")
+        encode_atomic(["ffmpeg", "-y", "-v", "error", "-i", str(proxy), "-vf", vf, "-frames:v", "1", "-q:v", "3"],
+                      sheet, f"contact sheet failed {proxy.name}")
 
 
 def _rel(path) -> str:
