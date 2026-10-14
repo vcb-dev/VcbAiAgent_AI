@@ -4,6 +4,10 @@ Tạo logo HuyK - Viễn Chí Bảo chuẩn nhận diện (PNG có kênh Alpha t
 """
 from PIL import Image, ImageDraw, ImageFont
 import os
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent   # VCB_AI/assets
+
 
 def create_huyk_logo(output_path):
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
@@ -56,4 +60,4 @@ def create_huyk_logo(output_path):
     print(f"✅ Đã tạo logo thành công: {output_path}")
 
 if __name__ == "__main__":
-    create_huyk_logo("mock_data/logo_huyk_vienchibao.png")
+    create_huyk_logo(str(HERE / "logo_huyk_vienchibao.png"))

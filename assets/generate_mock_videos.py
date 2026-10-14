@@ -8,8 +8,12 @@ Tạo bộ dữ liệu Testing Mock-up gồm 3 video nguồn dài từ 2 đến 
 Mỗi video chứa nhiều phân cảnh thực tế với nhãn thời gian, thông số kỹ thuật và đồ họa nhận diện.
 """
 import os
+from pathlib import Path
 import subprocess
 from PIL import Image, ImageDraw, ImageFont
+
+HERE = Path(__file__).resolve().parent   # VCB_AI/assets
+
 
 def ensure_dir(d):
     os.makedirs(d, exist_ok=True)
@@ -73,8 +77,8 @@ def create_graphic_card(filepath, title, subtitle, tag_badge, color_theme, icon_
 
 def generate_video_1():
     """Sinh Video 1: 150 giây (2m30s) quy trình chế tác kim hoàn"""
-    output_file = "mock_data/video_1_che_tac_source.mp4"
-    temp_dir = "mock_data/temp_cards_v1"
+    output_file = str(HERE / "video_1_che_tac_source.mp4")
+    temp_dir = str(HERE / "temp_cards_v1")
     ensure_dir(temp_dir)
     print("🎬 Đang tạo Video 1 (150s - Chế tác kim hoàn)...")
 
@@ -115,8 +119,8 @@ def generate_video_1():
 
 def generate_video_2():
     """Sinh Video 2: 120 giây (2m00s) HuyK Talking Head & Giảng giải"""
-    output_file = "mock_data/video_2_huyk_source.mp4"
-    temp_dir = "mock_data/temp_cards_v2"
+    output_file = str(HERE / "video_2_huyk_source.mp4")
+    temp_dir = str(HERE / "temp_cards_v2")
     ensure_dir(temp_dir)
     print("🎬 Đang tạo Video 2 (120s - HuyK A-Roll Talking)...")
 
@@ -155,8 +159,8 @@ def generate_video_2():
 
 def generate_video_3():
     """Sinh Video 3: 120 giây (2m00s) Sản phẩm thô & Hoàn thiện"""
-    output_file = "mock_data/video_3_san_pham_source.mp4"
-    temp_dir = "mock_data/temp_cards_v3"
+    output_file = str(HERE / "video_3_san_pham_source.mp4")
+    temp_dir = str(HERE / "temp_cards_v3")
     ensure_dir(temp_dir)
     print("🎬 Đang tạo Video 3 (120s - Sản phẩm & Showcase)...")
 
