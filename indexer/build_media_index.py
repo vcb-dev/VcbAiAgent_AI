@@ -13,6 +13,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import subprocess
 import sys
 import unicodedata
@@ -23,7 +24,7 @@ from pathlib import Path
 MVP = Path(__file__).resolve().parents[1]      # VCB_AI
 ROOT = MVP.parent                              # repo root: chứa thư mục footage gốc từ NAS
 sys.path.insert(0, str(MVP / "src"))
-from footage_filename_parser import parse_filename  # noqa: E402
+from footage_filename_parser import craft_step_from_action, parse_filename  # noqa: E402
 from long_clip_segmenter import segment_long_clip, should_segment  # noqa: E402
 
 SAMPLE = ROOT / "Tài Nguyên VCB Real Sample"
@@ -37,6 +38,8 @@ VIDEO_EXT = {".mp4", ".mov"}
 # một đoạn đường dẫn là biết clip là chế tác, HuyK hay cảnh sản phẩm.
 # Khớp theo thứ tự, cái nào trúng trước thì lấy. (đoạn đường dẫn, mã, role_hint, bản quyền)
 PATH_RULES = [
+    # Chế tác tại xưởng, chia theo thợ rồi tới từng công đoạn đánh số (1. Do nguyen lieu ... 42. Hoan thanh).
+    ("CHẾ TÁC XƯỞNG SẢN XUẤT", "CTX", "craft", "owned"),
     ("HUYK0/VIDEO-CHE-TAC", "CHETAC", "craft", "owned"),
     ("SOURCE 4K/Chế tác", "CHETAC", "craft", "owned"),
     ("SOURCE 4K/Stock anh HuyK", "HUYK", "huyk", "owned"),
@@ -81,14 +84,24 @@ def parse_with_path(path: Path, scan_root: Path) -> dict:
     'Chế tác/260616_CHETAC_Lắc tay tennis/clip1.mp4'. Nên khi tên file thiếu gì thì
     lấy bù từ thư mục cha gần nhất, dò ngược lên tới thư mục quét."""
     parsed = parse_filename(path.name)
-    if parsed["sku"] and parsed["date"]:
-        return parsed
 
     # Tên file do máy quay đặt ('C0001', 'clip1') thì không mang thông tin gì đáng giữ.
     weak_name = parsed["camera_name"] or not (parsed["date"] or parsed["sku"])
 
     # Chủ đề = tên thư mục chứa file, dùng làm từ khoá khi khớp cảnh ('Gold', 'Thach anh toc vang').
     parsed["topic"] = unicodedata.normalize("NFC", path.parent.name)
+
+    # Thư mục công đoạn do thợ đánh số theo đúng trình tự làm ('11. Han', '40. Danh bong').
+    # Đây là nguồn đáng tin nhất về công đoạn, hơn cả tên file, nên xét trước và cho ghi đè.
+    numbered = re.match(r"^\s*(\d+)\s*[.\-_)]\s*(.+)$", parsed["topic"])
+    if numbered:
+        parsed["step_index"] = int(numbered.group(1))   # thứ tự thật trong quy trình của sản phẩm này
+        step, order = craft_step_from_action(numbered.group(2))
+        if step:
+            parsed["craft_step"], parsed["craft_order"] = step, order
+
+    if parsed["sku"] and parsed["date"]:
+        return _scored(parsed)
 
     for folder in path.parents:
         if not folder.is_relative_to(scan_root) or folder == scan_root:
@@ -104,6 +117,10 @@ def parse_with_path(path: Path, scan_root: Path) -> dict:
         parsed["from_folder"] = folder.name
         break
 
+    return _scored(parsed)
+
+
+def _scored(parsed: dict) -> dict:
     expected = ("date", "sku", "action", "staff")
     parsed["parse_confidence"] = round(sum(1 for k in expected if parsed[k]) / len(expected), 2)
     return parsed

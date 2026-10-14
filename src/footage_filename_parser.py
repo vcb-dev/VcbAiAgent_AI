@@ -24,16 +24,40 @@ CRAFT_STEPS = {
     "nung_nau": (30, ["danh-lua", "nung-bac", "tha-bac-vao-bat"]),
     "do_khuon": (40, ["do-khuon"]),
     "dap_can": (50, ["dap-thanh-bac", "dap-tron-thanh-bac", "bua-sao-su"]),
+    "tao_dang": (55, ["uon-tao-chau", "quay-kim"]),
     "cua_cat": (60, ["cua-bac-thua"]),
     "han": (70, ["han-noi"]),
     "dua_mai": (80, ["dua", "dua-hoc-da", "dua-mat-chau-da"]),
     "khoan": (90, ["khoan-hoc-da", "khoan-chi-tiet"]),
     "gan_da_chu": (100, ["gan-da-chu"]),
     "dinh_da": (110, ["dinh-da", "dinh-da-vien", "gan-da-to", "nhin-da"]),
+    "lam_sach": (115, ["rung-lam-sach", "may-rua-sieu-am"]),
     "danh_bong": (120, ["danh-bong", "lam-sang-bac"]),
+    "khac_laser": (125, ["ban-laser", "khac-laser"]),
     "hoan_thien": (130, ["hoan-thien", "hoan-thanh"]),
 }
 ALIAS_TO_STEP = {alias: step for step, (_, aliases) in CRAFT_STEPS.items() for alias in aliases}
+
+# Thợ đặt tên công đoạn rất tự do: ~1700 thư mục trên ổ cho ra 791 tên khác nhau, nên liệt kê
+# đủ bí danh là không khả thi (chỉ khớp được 15%). Khớp theo từ khoá đạt 96%.
+# Xét từ cụ thể tới tổng quát: 'mai-bong' là đánh bóng chứ không phải mài.
+STEP_KEYWORDS = [
+    ("hoan_thien", ["hoan-thien", "hoan-thanh", "kiem-tra", "dong-goi", "thanh-pham", "lay-bo-hop"]),
+    ("khac_laser", ["laser", "lazer", "khac-"]),
+    ("lam_sach", ["xit", "rua", "sieu-am", "nhung", "rung", "say", "sach", "lam-nguoi"]),
+    ("danh_bong", ["danh-bong", "mai-bong", "lam-sang", "danh-sang", "cao-bong", "xi-"]),
+    ("khoan", ["khoan"]),                      # 'khoan-lo-da' là khoan, dù có chứa 'o-da'
+    ("gan_da_chu", ["gan-da-chu", "da-chu"]),
+    ("dinh_da", ["gan-da", "dinh-da", "dong-da", "do-da", "lua-da", "nhin-da", "chau-da", "hoc-da", "o-da", "vien-da"]),
+    ("han", ["han"]),
+    ("cua_cat", ["cua", "cat-"]),
+    ("dap_can", ["dap", "bua", "can-"]),
+    ("tao_dang", ["uon", "quay-kim", "kim-", "tao-dang", "vuot", "keo-"]),
+    ("dua_mai", ["dua", "giua", "mai", "nham", "phay"]),
+    ("nung_nau", ["kho", "dun", "nau", "nung", "lua", "phen", "thoi"]),
+    ("do_khuon", ["khuon", "duc", "phoi", "uom"]),
+    ("chuan_bi_nguyen_lieu", ["nguyen-lieu", "do-bac", "can-bac", "chuan-bi", "lay-"]),
+]
 
 
 def slugify_vi(text: str) -> str:
@@ -44,16 +68,29 @@ def slugify_vi(text: str) -> str:
     return text
 
 
-def craft_step_from_action(action: str):
-    """Map an action slug/phrase to (step_id, order) or (None, None)."""
-    if not action:
-        return None, None
+def step_slug(action: str) -> str:
     slug = slugify_vi(action)
     slug = re.sub(r"^\d+-", "", slug)          # "12-dua-15" -> "dua-15"
-    slug = re.sub(r"-\d+$", "", slug)          # "dua-15" -> "dua"
+    return re.sub(r"-\d+$", "", slug)          # "dua-15" -> "dua"
+
+
+def craft_step_from_action(action: str, strict: bool = False):
+    """Map an action slug/phrase to (step_id, order) or (None, None).
+
+    strict=True chỉ khớp bí danh chính xác. Dùng khi phải phân biệt token tên sản phẩm với
+    token công đoạn: khớp từ khoá sẽ nhận nhầm 'Nhan-kim-sa' thành công đoạn vì chứa 'kim-'."""
+    if not action:
+        return None, None
+    slug = step_slug(action)
     step = ALIAS_TO_STEP.get(slug)
     if step:
         return step, CRAFT_STEPS[step][0]
+    if strict:
+        return None, None
+    padded = f"-{slug}-"                       # để từ khoá dạng 'cat-' hay 'xi-' khớp đúng ranh giới
+    for step, keywords in STEP_KEYWORDS:
+        if any(k in padded for k in keywords):
+            return step, CRAFT_STEPS[step][0]
     return None, None
 
 
@@ -89,7 +126,7 @@ def parse_filename(filename: str) -> dict:
         rest = [t for t in rest if t not in stt_tokens]
     # remaining text tokens: product name first (if not set), then action
     for tok in rest:
-        step, _ = craft_step_from_action(tok)
+        step, _ = craft_step_from_action(tok, strict=True)
         if step and out["action"] is None:
             out["action"] = tok
         elif out["product"] is None and out["sku"]:
