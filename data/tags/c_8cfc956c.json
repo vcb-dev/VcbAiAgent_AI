@@ -1,0 +1,48 @@
+{
+ "id": "c_8cfc956c",
+ "roles": [
+  {
+   "role": "product_hero",
+   "conf": 0.9
+  },
+  {
+   "role": "product_final",
+   "conf": 0.5
+  }
+ ],
+ "craft_step": "hoan_thien",
+ "craft_step_conf": 0.7,
+ "shot_size": "close",
+ "camera": "static",
+ "subject": [
+  "hands",
+  "product",
+  "stone"
+ ],
+ "huyk_present": false,
+ "person_speaking_to_camera": false,
+ "product_visible": true,
+ "product_type": "nhan",
+ "metal": "vang_trang",
+ "stone_color": [
+  "trắng"
+ ],
+ "lighting": "good",
+ "text_or_watermark": "none",
+ "motion_level": 1,
+ "aesthetic": 4,
+ "best_moment_s": 14.7,
+ "usable_from_s": 0.0,
+ "usable_to_s": 24.5,
+ "description_vi": "Hai ngón tay nữ móng hồng cầm bộ nhẫn công chúa đá hình thoi, xoay nhẹ khoe đá, nền hũ vàng thỏi.",
+ "keywords_vi": [
+  "nhẫn công chúa",
+  "bộ nhẫn",
+  "đá thoi",
+  "cầm tay",
+  "xoay nhẫn",
+  "hũ vàng",
+  "lấp lánh",
+  "sản phẩm"
+ ]
+}

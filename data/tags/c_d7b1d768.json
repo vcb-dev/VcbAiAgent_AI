@@ -1,0 +1,49 @@
+{
+ "id": "c_d7b1d768",
+ "roles": [
+  {
+   "role": "craft",
+   "conf": 0.9
+  },
+  {
+   "role": "craft_pov",
+   "conf": 0.6
+  },
+  {
+   "role": "craft_macro",
+   "conf": 0.4
+  }
+ ],
+ "craft_step": "do_khuon",
+ "craft_step_conf": 0.9,
+ "shot_size": "close",
+ "camera": "static",
+ "subject": [
+  "fire",
+  "metal",
+  "tool"
+ ],
+ "huyk_present": false,
+ "person_speaking_to_camera": false,
+ "product_visible": false,
+ "product_type": "none",
+ "metal": "vang",
+ "stone_color": [],
+ "lighting": "good",
+ "text_or_watermark": "none",
+ "motion_level": 2,
+ "aesthetic": 4,
+ "best_moment_s": 4.6,
+ "usable_from_s": 0.0,
+ "usable_to_s": 12.0,
+ "description_vi": "Cận cảnh rót kim loại nóng chảy màu cam từ chén sứ vào khuôn thỏi, ngọn khò xanh phun lửa trên khuôn.",
+ "keywords_vi": [
+  "đổ khuôn",
+  "kim loại nóng chảy",
+  "chén nung",
+  "khò lửa",
+  "khuôn thỏi",
+  "chế tác",
+  "xưởng kim hoàn"
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "id": "c_dce607e2",
+ "roles": [
+  {
+   "role": "stock_action",
+   "conf": 0.45
+  },
+  {
+   "role": "hook_visual",
+   "conf": 0.25
+  }
+ ],
+ "craft_step": null,
+ "craft_step_conf": 0.0,
+ "shot_size": "wide",
+ "camera": "handheld",
+ "subject": [
+  "person"
+ ],
+ "huyk_present": false,
+ "person_speaking_to_camera": false,
+ "product_visible": false,
+ "product_type": "none",
+ "metal": "unknown",
+ "stone_color": [],
+ "lighting": "good",
+ "text_or_watermark": "none",
+ "motion_level": 3,
+ "aesthetic": 2,
+ "best_moment_s": 2.6,
+ "usable_from_s": 0.0,
+ "usable_to_s": 3.5,
+ "description_vi": "Cảnh ngoài trời người đạp xe địa hình lao xuống dốc, bay lên rồi ngã nhào, clip hài không liên quan trang sức, dùng làm chuyển cảnh.",
+ "keywords_vi": [
+  "xe đạp địa hình",
+  "ngã nhào",
+  "ngoài trời",
+  "chuyển cảnh",
+  "hài hước",
+  "cảnh động",
+  "không liên quan sản phẩm"
+ ]
+}

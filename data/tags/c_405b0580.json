@@ -1,0 +1,52 @@
+{
+ "id": "c_405b0580",
+ "roles": [
+  {
+   "role": "product_hero",
+   "conf": 0.85
+  },
+  {
+   "role": "craft_pov",
+   "conf": 0.35
+  },
+  {
+   "role": "craft",
+   "conf": 0.35
+  }
+ ],
+ "craft_step": "hoan_thien",
+ "craft_step_conf": 0.45,
+ "shot_size": "close",
+ "camera": "static",
+ "subject": [
+  "hands",
+  "product",
+  "stone"
+ ],
+ "huyk_present": false,
+ "person_speaking_to_camera": false,
+ "product_visible": true,
+ "product_type": "nhan",
+ "metal": "vang_trang",
+ "stone_color": [
+  "trắng"
+ ],
+ "lighting": "good",
+ "text_or_watermark": "none",
+ "motion_level": 2,
+ "aesthetic": 4,
+ "best_moment_s": 7.9,
+ "usable_from_s": 0.0,
+ "usable_to_s": 18.5,
+ "description_vi": "Hai ngón tay thợ cầm xoay nhẫn kim hoa đá trắng trên bàn đe, kiểm tra thành phẩm, nền gỗ tối ấm.",
+ "keywords_vi": [
+  "nhẫn kim hoa",
+  "đá trắng",
+  "xoay nhẫn",
+  "kiểm tra",
+  "thành phẩm",
+  "bàn đe",
+  "cận cảnh",
+  "thợ kim hoàn"
+ ]
+}

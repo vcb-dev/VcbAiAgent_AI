@@ -1,0 +1,53 @@
+{
+ "id": "c_cda93128",
+ "roles": [
+  {
+   "role": "craft",
+   "conf": 0.9
+  },
+  {
+   "role": "craft_macro",
+   "conf": 0.5
+  },
+  {
+   "role": "craft_pov",
+   "conf": 0.3
+  }
+ ],
+ "craft_step": "gan_da_chu",
+ "craft_step_conf": 0.8,
+ "shot_size": "close",
+ "camera": "static",
+ "subject": [
+  "hands",
+  "tool",
+  "stone",
+  "product"
+ ],
+ "huyk_present": false,
+ "person_speaking_to_camera": false,
+ "product_visible": true,
+ "product_type": "nhan",
+ "metal": "bac",
+ "stone_color": [
+  "xanh lá"
+ ],
+ "lighting": "dark",
+ "text_or_watermark": "own_logo",
+ "motion_level": 1,
+ "aesthetic": 3,
+ "best_moment_s": 8.0,
+ "usable_from_s": 0.0,
+ "usable_to_s": 23.5,
+ "description_vi": "Cận cảnh tay thợ dùng dụng cụ cố định viên đá xanh lá lên nhẫn bạc đính đá viền, nền tối, bảng logo Viễn Chí Bảo phía sau.",
+ "keywords_vi": [
+  "gắn đá chủ",
+  "đá xanh lá",
+  "nhẫn mắt thần Horus",
+  "nhẫn bạc",
+  "đá viền",
+  "tay thợ",
+  "chế tác",
+  "cận cảnh"
+ ]
+}

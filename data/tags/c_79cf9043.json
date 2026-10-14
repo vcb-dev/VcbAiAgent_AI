@@ -1,0 +1,6 @@
+{"id": "c_79cf9043", "roles": [{"role": "craft", "conf": 0.9}, {"role": "craft_macro", "conf": 0.8}], "craft_step": "dinh_da", "craft_step_conf": 0.65,
+ "shot_size": "extreme_close", "camera": "static", "subject": ["hands", "tool", "metal", "product"], "huyk_present": false, "person_speaking_to_camera": false,
+ "product_visible": true, "product_type": "nhan", "metal": "bac", "stone_color": [], "lighting": "good",
+ "text_or_watermark": "own_logo", "motion_level": 1, "aesthetic": 4, "best_moment_s": 10.7, "usable_from_s": 0.0, "usable_to_s": 15.5,
+ "description_vi": "Cận cực gần mũi khoan nhỏ xử lý hạt viền và ổ đá trên nhẫn bạc chưa gắn đá, tay thợ giữ nhẫn ổn định.",
+ "keywords_vi": ["đính đá viền", "hạt viền", "ổ đá", "mũi khoan", "nhẫn bạc", "cận cực gần", "tay thợ", "chế tác"]}

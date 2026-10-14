@@ -1,0 +1,51 @@
+{
+ "id": "c_a2dbfeee",
+ "roles": [
+  {
+   "role": "craft",
+   "conf": 0.9
+  },
+  {
+   "role": "craft_macro",
+   "conf": 0.85
+  },
+  {
+   "role": "craft_pov",
+   "conf": 0.3
+  }
+ ],
+ "craft_step": "khoan",
+ "craft_step_conf": 0.9,
+ "shot_size": "extreme_close",
+ "camera": "static",
+ "subject": [
+  "hands",
+  "tool",
+  "metal",
+  "product"
+ ],
+ "huyk_present": false,
+ "person_speaking_to_camera": false,
+ "product_visible": true,
+ "product_type": "nhan",
+ "metal": "bac",
+ "stone_color": [],
+ "lighting": "mixed",
+ "text_or_watermark": "own_logo",
+ "motion_level": 2,
+ "aesthetic": 4,
+ "best_moment_s": 3.7,
+ "usable_from_s": 0.0,
+ "usable_to_s": 14.0,
+ "description_vi": "Cận cực gần mũi khoan nhỏ khoét hốc đá trên thân nhẫn bạc, tay thợ giữ nhẫn, nền tối ấm, bảng tên HuyK phía sau.",
+ "keywords_vi": [
+  "khoan",
+  "hốc đá",
+  "mũi khoan",
+  "nhẫn bạc",
+  "cận cực gần",
+  "tay thợ",
+  "chế tác",
+  "HuyK"
+ ]
+}

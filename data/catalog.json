@@ -1,0 +1,4781 @@
+[
+ {
+  "id": "c_06efd4b9",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V1. Cảnh mở đầu/1.mp4",
+  "name": "1.mp4",
+  "folder": "V1",
+  "role_hint": "hook_visual",
+  "rights": "owned",
+  "product_set": null,
+  "parsed": {
+   "raw": "1",
+   "date": null,
+   "type": null,
+   "koc": null,
+   "sku": null,
+   "product": null,
+   "action": null,
+   "staff": null,
+   "stt": 1,
+   "craft_step": null,
+   "craft_order": null,
+   "parse_confidence": 0.0
+  },
+  "tech": {
+   "duration": 8.87,
+   "width": 576,
+   "height": 1024,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": false,
+   "codec": "h264"
+  },
+  "proxy": "media/proxy/c_06efd4b9.mp4",
+  "thumb": "media/thumbs/c_06efd4b9.jpg",
+  "sheet": "media/sheets/c_06efd4b9.jpg",
+  "craft_step": "hoan_thien",
+  "craft_step_source": "ai",
+  "usable": [
+   0.0,
+   8.8
+  ],
+  "best_moment_s": 3.7,
+  "roles": {
+   "product_hero": 0.9,
+   "product_final": 0.85,
+   "hook_visual": 0.8
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "handheld",
+   "subject": [
+    "hands",
+    "product"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "lac_tay",
+   "metal": "vang",
+   "stone_color": [
+    "trắng"
+   ],
+   "lighting": "mixed",
+   "text_or_watermark": "none",
+   "motion_level": 2,
+   "aesthetic": 4
+  },
+  "description_vi": "Tay nữ cầm và đeo lắc tay hoa đính đá trắng bên gương bạc cổ điển, ánh sáng mềm lấp lánh.",
+  "keywords_vi": [
+   "lắc tay",
+   "hoa đính đá",
+   "đeo thử",
+   "gương cổ điển",
+   "lấp lánh",
+   "nữ tính",
+   "trang sức vàng"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_197f444d",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V1. Cảnh mở đầu/260526_CT_HK_N0002-S-WH_Nhan-kim-vu_Tha-bac-vao-bat_MDA04_05.mov",
+  "name": "260526_CT_HK_N0002-S-WH_Nhan-kim-vu_Tha-bac-vao-bat_MDA04_05.mov",
+  "folder": "V1",
+  "role_hint": "hook_visual",
+  "rights": "owned",
+  "product_set": "N0002-S-WH",
+  "parsed": {
+   "raw": "260526_CT_HK_N0002-S-WH_Nhan-kim-vu_Tha-bac-vao-bat_MDA04_05",
+   "date": "260526",
+   "type": "CT",
+   "koc": "HK",
+   "sku": "N0002-S-WH",
+   "product": "Nhan-kim-vu",
+   "action": "Tha-bac-vao-bat",
+   "staff": "MDA04",
+   "stt": 5,
+   "craft_step": "nung_nau",
+   "craft_order": 30,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 5.61,
+   "width": 2160,
+   "height": 3840,
+   "rotation": 0,
+   "fps": 29.97,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "h264"
+  },
+  "proxy": "media/proxy/c_197f444d.mp4",
+  "thumb": "media/thumbs/c_197f444d.jpg",
+  "sheet": "media/sheets/c_197f444d.jpg",
+  "craft_step": "nung_nau",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   5.6
+  ],
+  "best_moment_s": 0.5,
+  "roles": {
+   "hook_visual": 0.8,
+   "craft": 0.75,
+   "craft_macro": 0.45
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "metal",
+    "tool"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": false,
+   "product_type": "none",
+   "metal": "bac",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 1,
+   "aesthetic": 3
+  },
+  "description_vi": "Tay thả các vòng bạc vào chén sứ trắng chuẩn bị nung chảy, cận cảnh trên bàn thợ.",
+  "keywords_vi": [
+   "thả bạc",
+   "chén nung",
+   "nguyên liệu bạc",
+   "nung chảy",
+   "xưởng kim hoàn",
+   "chế tác",
+   "cận cảnh"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_edbac14f",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V1. Cảnh mở đầu/demo 321.mp4",
+  "name": "demo 321.mp4",
+  "folder": "V1",
+  "role_hint": "hook_visual",
+  "rights": "owned",
+  "product_set": null,
+  "parsed": {
+   "raw": "demo 321",
+   "date": null,
+   "type": null,
+   "koc": null,
+   "sku": null,
+   "product": null,
+   "action": "demo 321",
+   "staff": null,
+   "stt": null,
+   "craft_step": null,
+   "craft_order": null,
+   "parse_confidence": 0.25
+  },
+  "tech": {
+   "duration": 12.8,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "h264"
+  },
+  "proxy": "media/proxy/c_edbac14f.mp4",
+  "thumb": "media/thumbs/c_edbac14f.jpg",
+  "sheet": "media/sheets/c_edbac14f.jpg",
+  "craft_step": "hoan_thien",
+  "craft_step_source": "ai",
+  "usable": [
+   0.0,
+   12.5
+  ],
+  "best_moment_s": 4.3,
+  "roles": {
+   "product_hero": 0.85,
+   "product_final": 0.85,
+   "hook_visual": 0.8
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "handheld",
+   "subject": [
+    "hands",
+    "product"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "vang",
+   "stone_color": [
+    "trắng"
+   ],
+   "lighting": "mixed",
+   "text_or_watermark": "none",
+   "motion_level": 1,
+   "aesthetic": 3
+  },
+  "description_vi": "Hai tay xoay nhẹ chiếc nhẫn vàng hồng bản rộng đính kim cương pavé và đá chủ nhỏ, nền gỗ ấm.",
+  "keywords_vi": [
+   "nhẫn",
+   "vàng hồng",
+   "kim cương",
+   "pavé",
+   "xoay nhẫn",
+   "cận cảnh",
+   "sản phẩm hoàn thiện"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_fd886a1a",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V2. Cảnh chế tác các công đoạn/260818_CT_HK_N0017_Nhan-mat-than-Horus-da-xanh_Dap-thanh-bac_DTA01_2.mp4",
+  "name": "260818_CT_HK_N0017_Nhan-mat-than-Horus-da-xanh_Dap-thanh-bac_DTA01_2.mp4",
+  "folder": "V2",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N0017",
+  "parsed": {
+   "raw": "260818_CT_HK_N0017_Nhan-mat-than-Horus-da-xanh_Dap-thanh-bac_DTA01_2",
+   "date": "260818",
+   "type": "CT",
+   "koc": "HK",
+   "sku": "N0017",
+   "product": "Nhan-mat-than-Horus-da-xanh",
+   "action": "Dap-thanh-bac",
+   "staff": "DTA01",
+   "stt": 2,
+   "craft_step": "dap_can",
+   "craft_order": 50,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 15.26,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "h264"
+  },
+  "proxy": "media/proxy/c_fd886a1a.mp4",
+  "thumb": "media/thumbs/c_fd886a1a.jpg",
+  "sheet": "media/sheets/c_fd886a1a.jpg",
+  "craft_step": "dap_can",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   15.0
+  ],
+  "best_moment_s": 6.4,
+  "roles": {
+   "craft": 0.9,
+   "craft_macro": 0.6
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "tool",
+    "metal"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": false,
+   "product_type": "none",
+   "metal": "bac",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 2,
+   "aesthetic": 3
+  },
+  "description_vi": "Đục búa đập thanh bạc trên đe sắt, tay thợ giữ phôi; cận cảnh nền mờ.",
+  "keywords_vi": [
+   "đập thanh bạc",
+   "búa",
+   "đe",
+   "tạo phôi",
+   "chế tác thủ công",
+   "xưởng kim hoàn",
+   "cận cảnh"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_f0bb9314",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V2. Cảnh chế tác các công đoạn/260818_CT_HK_N0017_Nhan-mat-than-Horus-da-xanh_Dua-hoc-da_DTA01_5.mp4",
+  "name": "260818_CT_HK_N0017_Nhan-mat-than-Horus-da-xanh_Dua-hoc-da_DTA01_5.mp4",
+  "folder": "V2",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N0017",
+  "parsed": {
+   "raw": "260818_CT_HK_N0017_Nhan-mat-than-Horus-da-xanh_Dua-hoc-da_DTA01_5",
+   "date": "260818",
+   "type": "CT",
+   "koc": "HK",
+   "sku": "N0017",
+   "product": "Nhan-mat-than-Horus-da-xanh",
+   "action": "Dua-hoc-da",
+   "staff": "DTA01",
+   "stt": 5,
+   "craft_step": "dua_mai",
+   "craft_order": 80,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 19.64,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "h264"
+  },
+  "proxy": "media/proxy/c_f0bb9314.mp4",
+  "thumb": "media/thumbs/c_f0bb9314.jpg",
+  "sheet": "media/sheets/c_f0bb9314.jpg",
+  "craft_step": "dua_mai",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   19.0
+  ],
+  "best_moment_s": 9.8,
+  "roles": {
+   "craft": 0.9,
+   "craft_macro": 0.4,
+   "craft_pov": 0.3
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "tool",
+    "product",
+    "metal"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "bac",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 2,
+   "aesthetic": 4
+  },
+  "description_vi": "Tay thợ giũa hốc đá trên phôi nhẫn bạc, bụi bạc bám ngón tay, bàn gỗ ấm phía sau.",
+  "keywords_vi": [
+   "giũa",
+   "hốc đá",
+   "phôi nhẫn",
+   "bạc",
+   "chế tác thủ công",
+   "bàn thợ",
+   "cận cảnh"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_7ad267ac",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V2. Cảnh chế tác các công đoạn/260818_CT_HK_N0017_Nhan-mat-than-Horus-da-xanh_Gan-da-chu_DTA01_2.mp4",
+  "name": "260818_CT_HK_N0017_Nhan-mat-than-Horus-da-xanh_Gan-da-chu_DTA01_2.mp4",
+  "folder": "V2",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N0017",
+  "parsed": {
+   "raw": "260818_CT_HK_N0017_Nhan-mat-than-Horus-da-xanh_Gan-da-chu_DTA01_2",
+   "date": "260818",
+   "type": "CT",
+   "koc": "HK",
+   "sku": "N0017",
+   "product": "Nhan-mat-than-Horus-da-xanh",
+   "action": "Gan-da-chu",
+   "staff": "DTA01",
+   "stt": 2,
+   "craft_step": "gan_da_chu",
+   "craft_order": 100,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 26.82,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "h264"
+  },
+  "proxy": "media/proxy/c_7ad267ac.mp4",
+  "thumb": "media/thumbs/c_7ad267ac.jpg",
+  "sheet": "media/sheets/c_7ad267ac.jpg",
+  "craft_step": "gan_da_chu",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   26.0
+  ],
+  "best_moment_s": 22.4,
+  "roles": {
+   "craft": 0.9,
+   "craft_macro": 0.8,
+   "product_hero": 0.4
+  },
+  "tags": {
+   "shot_size": "extreme_close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "tool",
+    "stone",
+    "product"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "bac",
+   "stone_color": [
+    "xanh lá"
+   ],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 1,
+   "aesthetic": 5
+  },
+  "description_vi": "Dùng nhíp đặt viên đá xanh lá vào ổ chủ trên nhẫn bạc, cận cực gần, nền nâu mờ đẹp.",
+  "keywords_vi": [
+   "gắn đá chủ",
+   "đá xanh lá",
+   "nhíp",
+   "nhẫn bạc",
+   "cận cực gần",
+   "chế tác",
+   "xưởng kim hoàn"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_c991c1f3",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V2. Cảnh chế tác các công đoạn/260818_CT_HK_N0017_Nhan-mat-than-Horus-da-xanh_Gan-da-chu_DTA01_6.mp4",
+  "name": "260818_CT_HK_N0017_Nhan-mat-than-Horus-da-xanh_Gan-da-chu_DTA01_6.mp4",
+  "folder": "V2",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N0017",
+  "parsed": {
+   "raw": "260818_CT_HK_N0017_Nhan-mat-than-Horus-da-xanh_Gan-da-chu_DTA01_6",
+   "date": "260818",
+   "type": "CT",
+   "koc": "HK",
+   "sku": "N0017",
+   "product": "Nhan-mat-than-Horus-da-xanh",
+   "action": "Gan-da-chu",
+   "staff": "DTA01",
+   "stt": 6,
+   "craft_step": "gan_da_chu",
+   "craft_order": 100,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 6.5,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "h264"
+  },
+  "proxy": "media/proxy/c_c991c1f3.mp4",
+  "thumb": "media/thumbs/c_c991c1f3.jpg",
+  "sheet": "media/sheets/c_c991c1f3.jpg",
+  "craft_step": "gan_da_chu",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   6.5
+  ],
+  "best_moment_s": 4.3,
+  "roles": {
+   "craft": 0.8,
+   "product_hero": 0.8,
+   "craft_macro": 0.7,
+   "hook_visual": 0.5
+  },
+  "tags": {
+   "shot_size": "extreme_close",
+   "camera": "static",
+   "subject": [
+    "tool",
+    "stone",
+    "product"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "bac",
+   "stone_color": [
+    "xanh lá"
+   ],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 1,
+   "aesthetic": 5
+  },
+  "description_vi": "Nhíp đặt viên đá xanh lá vào nhẫn bạc, đá khớp ổ và lóe sáng tia cầu vồng rất đẹp.",
+  "keywords_vi": [
+   "gắn đá chủ",
+   "đá xanh lá",
+   "lóe sáng",
+   "nhẫn bạc",
+   "cận cực gần",
+   "khoảnh khắc đẹp",
+   "chế tác"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_0a8d1c7d",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V3. Cảnh nhâc vật Huyk/260718_KB_HK_3-dieu-ve-vang-anh-chi-em-biet-som-se-do-mat-tien-oan_DTA01.mp4",
+  "name": "260718_KB_HK_3-dieu-ve-vang-anh-chi-em-biet-som-se-do-mat-tien-oan_DTA01.mp4",
+  "folder": "V3",
+  "role_hint": "huyk",
+  "rights": "owned",
+  "product_set": null,
+  "parsed": {
+   "raw": "260718_KB_HK_3-dieu-ve-vang-anh-chi-em-biet-som-se-do-mat-tien-oan_DTA01",
+   "date": "260718",
+   "type": "KB",
+   "koc": "HK",
+   "sku": null,
+   "product": null,
+   "action": "3-dieu-ve-vang-anh-chi-em-biet-som-se-do-mat-tien-oan",
+   "staff": "DTA01",
+   "stt": null,
+   "craft_step": null,
+   "craft_order": null,
+   "parse_confidence": 0.75
+  },
+  "tech": {
+   "duration": 58.07,
+   "width": 1440,
+   "height": 2560,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_0a8d1c7d.mp4",
+  "thumb": "media/thumbs/c_0a8d1c7d.jpg",
+  "sheet": "media/sheets/c_0a8d1c7d.jpg",
+  "craft_step": null,
+  "craft_step_source": null,
+  "usable": [
+   0.0,
+   58.0
+  ],
+  "best_moment_s": 9.7,
+  "roles": {
+   "huyk_talk": 0.95
+  },
+  "tags": {
+   "shot_size": "medium",
+   "camera": "static",
+   "subject": [
+    "huyk_face",
+    "person",
+    "workshop"
+   ],
+   "huyk_present": true,
+   "person_speaking_to_camera": true,
+   "product_visible": false,
+   "product_type": "none",
+   "metal": "unknown",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 1,
+   "aesthetic": 4
+  },
+  "description_vi": "HuyK ngồi bàn thợ, mặc tạp dề, nói trực diện camera với cử chỉ tay; nền kệ tối có đèn vàng.",
+  "keywords_vi": [
+   "HuyK",
+   "nói trực diện",
+   "tư vấn vàng",
+   "tạp dề",
+   "bàn thợ",
+   "kệ trang trí",
+   "talking head"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_63cea0c2",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V3. Cảnh nhâc vật Huyk/260826_ST_HK_Bua-sao-su_DTA01_2.mp4",
+  "name": "260826_ST_HK_Bua-sao-su_DTA01_2.mp4",
+  "folder": "V3",
+  "role_hint": "huyk",
+  "rights": "owned",
+  "product_set": null,
+  "parsed": {
+   "raw": "260826_ST_HK_Bua-sao-su_DTA01_2",
+   "date": "260826",
+   "type": "ST",
+   "koc": "HK",
+   "sku": null,
+   "product": null,
+   "action": "Bua-sao-su",
+   "staff": "DTA01",
+   "stt": 2,
+   "craft_step": "dap_can",
+   "craft_order": 50,
+   "parse_confidence": 0.75
+  },
+  "tech": {
+   "duration": 24.17,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "h264"
+  },
+  "proxy": "media/proxy/c_63cea0c2.mp4",
+  "thumb": "media/thumbs/c_63cea0c2.jpg",
+  "sheet": "media/sheets/c_63cea0c2.jpg",
+  "craft_step": "dap_can",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   24.0
+  ],
+  "best_moment_s": 10.1,
+  "roles": {
+   "huyk_silent": 0.8,
+   "craft": 0.6,
+   "stock_action": 0.3
+  },
+  "tags": {
+   "shot_size": "medium",
+   "camera": "static",
+   "subject": [
+    "huyk_face",
+    "person",
+    "hands",
+    "tool",
+    "workshop"
+   ],
+   "huyk_present": true,
+   "person_speaking_to_camera": false,
+   "product_visible": false,
+   "product_type": "none",
+   "metal": "unknown",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 2,
+   "aesthetic": 3
+  },
+  "description_vi": "HuyK cúi nhìn xuống, dùng búa gõ lên chi tiết nhỏ trên bàn thợ; không nói với camera.",
+  "keywords_vi": [
+   "HuyK",
+   "búa",
+   "gõ búa",
+   "bàn thợ",
+   "chế tác",
+   "tạp dề",
+   "xưởng kim hoàn"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_981fc683",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V3. Cảnh nhâc vật Huyk/260826_ST_HK_Thiet-ke_DTA01_3.mp4",
+  "name": "260826_ST_HK_Thiet-ke_DTA01_3.mp4",
+  "folder": "V3",
+  "role_hint": "huyk",
+  "rights": "owned",
+  "product_set": null,
+  "parsed": {
+   "raw": "260826_ST_HK_Thiet-ke_DTA01_3",
+   "date": "260826",
+   "type": "ST",
+   "koc": "HK",
+   "sku": null,
+   "product": null,
+   "action": "Thiet-ke",
+   "staff": "DTA01",
+   "stt": 3,
+   "craft_step": "thiet_ke",
+   "craft_order": 10,
+   "parse_confidence": 0.75
+  },
+  "tech": {
+   "duration": 23.0,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "h264"
+  },
+  "proxy": "media/proxy/c_981fc683.mp4",
+  "thumb": "media/thumbs/c_981fc683.jpg",
+  "sheet": "media/sheets/c_981fc683.jpg",
+  "craft_step": "thiet_ke",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   23.0
+  ],
+  "best_moment_s": 11.5,
+  "roles": {
+   "craft": 0.8,
+   "huyk_silent": 0.8,
+   "huyk_talk": 0.2
+  },
+  "tags": {
+   "shot_size": "medium",
+   "camera": "static",
+   "subject": [
+    "huyk_face",
+    "person",
+    "hands",
+    "tool",
+    "paper",
+    "workshop"
+   ],
+   "huyk_present": true,
+   "person_speaking_to_camera": false,
+   "product_visible": false,
+   "product_type": "none",
+   "metal": "unknown",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 1,
+   "aesthetic": 4
+  },
+  "description_vi": "HuyK cúi vẽ phác thảo thiết kế trang sức lên giấy bằng bút, đèn nấm ấm phía sau.",
+  "keywords_vi": [
+   "HuyK",
+   "thiết kế",
+   "vẽ phác thảo",
+   "bút vẽ",
+   "bản vẽ",
+   "xưởng kim hoàn",
+   "tạp dề"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_d7b1d768",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V4. Cảnh POV góc máy/260601_CT_HK_N101220_Nhan-Xoay-Rang-Cua_Do-khuon_DTA01_1.mp4",
+  "name": "260601_CT_HK_N101220_Nhan-Xoay-Rang-Cua_Do-khuon_DTA01_1.mp4",
+  "folder": "V4",
+  "role_hint": "craft_pov",
+  "rights": "owned",
+  "product_set": "N101220",
+  "parsed": {
+   "raw": "260601_CT_HK_N101220_Nhan-Xoay-Rang-Cua_Do-khuon_DTA01_1",
+   "date": "260601",
+   "type": "CT",
+   "koc": "HK",
+   "sku": "N101220",
+   "product": "Nhan-Xoay-Rang-Cua",
+   "action": "Do-khuon",
+   "staff": "DTA01",
+   "stt": 1,
+   "craft_step": "do_khuon",
+   "craft_order": 40,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 12.35,
+   "width": 2160,
+   "height": 3840,
+   "rotation": 0,
+   "fps": 60.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "h264"
+  },
+  "proxy": "media/proxy/c_d7b1d768.mp4",
+  "thumb": "media/thumbs/c_d7b1d768.jpg",
+  "sheet": "media/sheets/c_d7b1d768.jpg",
+  "craft_step": "do_khuon",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   12.0
+  ],
+  "best_moment_s": 4.6,
+  "roles": {
+   "craft": 0.9,
+   "craft_pov": 0.8,
+   "craft_macro": 0.4
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "fire",
+    "metal",
+    "tool"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": false,
+   "product_type": "none",
+   "metal": "vang",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 2,
+   "aesthetic": 4
+  },
+  "description_vi": "Cận cảnh rót kim loại nóng chảy màu cam từ chén sứ vào khuôn thỏi, ngọn khò xanh phun lửa trên khuôn.",
+  "keywords_vi": [
+   "đổ khuôn",
+   "kim loại nóng chảy",
+   "chén nung",
+   "khò lửa",
+   "khuôn thỏi",
+   "chế tác",
+   "xưởng kim hoàn"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_3a6ce7fa",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V4. Cảnh POV góc máy/260601_CT_HK_N101220_Nhan-Xoay-Rang-Cua_Do-khuon_DTA01_2.mp4",
+  "name": "260601_CT_HK_N101220_Nhan-Xoay-Rang-Cua_Do-khuon_DTA01_2.mp4",
+  "folder": "V4",
+  "role_hint": "craft_pov",
+  "rights": "owned",
+  "product_set": "N101220",
+  "parsed": {
+   "raw": "260601_CT_HK_N101220_Nhan-Xoay-Rang-Cua_Do-khuon_DTA01_2",
+   "date": "260601",
+   "type": "CT",
+   "koc": "HK",
+   "sku": "N101220",
+   "product": "Nhan-Xoay-Rang-Cua",
+   "action": "Do-khuon",
+   "staff": "DTA01",
+   "stt": 2,
+   "craft_step": "do_khuon",
+   "craft_order": 40,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 12.91,
+   "width": 2160,
+   "height": 3840,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "h264"
+  },
+  "proxy": "media/proxy/c_3a6ce7fa.mp4",
+  "thumb": "media/thumbs/c_3a6ce7fa.jpg",
+  "sheet": "media/sheets/c_3a6ce7fa.jpg",
+  "craft_step": "do_khuon",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   12.5
+  ],
+  "best_moment_s": 3.2,
+  "roles": {
+   "craft": 0.9,
+   "craft_pov": 0.8
+  },
+  "tags": {
+   "shot_size": "medium",
+   "camera": "static",
+   "subject": [
+    "fire",
+    "metal",
+    "tool",
+    "hands"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": false,
+   "product_type": "none",
+   "metal": "vang",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 2,
+   "aesthetic": 4
+  },
+  "description_vi": "Dùng kẹp nghiêng chén sứ đổ kim loại nóng vào khuôn thỏi trên bàn gỗ, ngọn khò xanh hâm khuôn, kìm đỏ hỗ trợ.",
+  "keywords_vi": [
+   "đổ khuôn",
+   "chén sứ",
+   "kẹp",
+   "khò lửa",
+   "khuôn thỏi",
+   "bàn gỗ",
+   "chế tác",
+   "kim loại nóng chảy"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_52d6c7f0",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V5. Source sưu tầm và tự quay/Sưu tầm/1.mp4",
+  "name": "1.mp4",
+  "folder": "V5-SUUTAM",
+  "role_hint": "stock_action",
+  "rights": "collected",
+  "product_set": null,
+  "parsed": {
+   "raw": "1",
+   "date": null,
+   "type": null,
+   "koc": null,
+   "sku": null,
+   "product": null,
+   "action": null,
+   "staff": null,
+   "stt": 1,
+   "craft_step": null,
+   "craft_order": null,
+   "parse_confidence": 0.0
+  },
+  "tech": {
+   "duration": 24.0,
+   "width": 720,
+   "height": 1280,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "h264"
+  },
+  "proxy": "media/proxy/c_52d6c7f0.mp4",
+  "thumb": "media/thumbs/c_52d6c7f0.jpg",
+  "sheet": "media/sheets/c_52d6c7f0.jpg",
+  "craft_step": "hoan_thien",
+  "craft_step_source": "ai",
+  "usable": [
+   0.0,
+   23.5
+  ],
+  "best_moment_s": 10.0,
+  "roles": {
+   "product_final": 0.85,
+   "product_hero": 0.8,
+   "stock_action": 0.8
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "handheld",
+   "subject": [
+    "hands",
+    "product",
+    "stone"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "vang",
+   "stone_color": [
+    "trắng"
+   ],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 1,
+   "aesthetic": 4
+  },
+  "description_vi": "Nhẫn vàng hồng đá trắng kèm nhẫn đệm lá trên ngón tay, nền bokeh ấm, tay nghiêng nhẹ để lấp lánh.",
+  "keywords_vi": [
+   "nhẫn",
+   "vàng hồng",
+   "đá trắng",
+   "đeo thử",
+   "nhẫn đôi",
+   "lấp lánh",
+   "bokeh",
+   "trên tay"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_723d2f67",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V5. Source sưu tầm và tự quay/Sưu tầm/2.mp4",
+  "name": "2.mp4",
+  "folder": "V5-SUUTAM",
+  "role_hint": "stock_action",
+  "rights": "collected",
+  "product_set": null,
+  "parsed": {
+   "raw": "2",
+   "date": null,
+   "type": null,
+   "koc": null,
+   "sku": null,
+   "product": null,
+   "action": null,
+   "staff": null,
+   "stt": 2,
+   "craft_step": null,
+   "craft_order": null,
+   "parse_confidence": 0.0
+  },
+  "tech": {
+   "duration": 10.6,
+   "width": 720,
+   "height": 1280,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "h264"
+  },
+  "proxy": "media/proxy/c_723d2f67.mp4",
+  "thumb": "media/thumbs/c_723d2f67.jpg",
+  "sheet": "media/sheets/c_723d2f67.jpg",
+  "craft_step": "hoan_thien",
+  "craft_step_source": "ai",
+  "usable": [
+   0.0,
+   10.2
+  ],
+  "best_moment_s": 4.4,
+  "roles": {
+   "product_hero": 0.85,
+   "product_final": 0.85,
+   "stock_action": 0.8
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "handheld",
+   "subject": [
+    "hands",
+    "product",
+    "stone"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "vang",
+   "stone_color": [
+    "trắng"
+   ],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 1,
+   "aesthetic": 4
+  },
+  "description_vi": "Nhẫn vàng hồng đá tròn viền halo, thân nhẫn đính đá nhỏ, đeo trên ngón tay móng dài, tay xoay nhẹ khoe nhẫn.",
+  "keywords_vi": [
+   "nhẫn",
+   "halo",
+   "đá tròn",
+   "vàng hồng",
+   "đeo thử",
+   "lòng bàn tay",
+   "móng tay",
+   "lấp lánh"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_405b0580",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V5. Source sưu tầm và tự quay/Tự quay/260619_N610006-8_Nhan-kim-hoa_MDA07_04.MOV",
+  "name": "260619_N610006-8_Nhan-kim-hoa_MDA07_04.MOV",
+  "folder": "V5-TUQUAY",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N610006-8",
+  "parsed": {
+   "raw": "260619_N610006-8_Nhan-kim-hoa_MDA07_04",
+   "date": "260619",
+   "type": null,
+   "koc": null,
+   "sku": "N610006-8",
+   "product": "Nhan-kim-hoa",
+   "action": null,
+   "staff": "MDA07",
+   "stt": 4,
+   "craft_step": null,
+   "craft_order": null,
+   "parse_confidence": 0.75
+  },
+  "tech": {
+   "duration": 19.04,
+   "width": 1920,
+   "height": 1080,
+   "rotation": 0,
+   "fps": 59.94,
+   "hdr": true,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_405b0580.mp4",
+  "thumb": "media/thumbs/c_405b0580.jpg",
+  "sheet": "media/sheets/c_405b0580.jpg",
+  "craft_step": null,
+  "craft_step_source": null,
+  "usable": [
+   0.0,
+   18.5
+  ],
+  "best_moment_s": 7.9,
+  "roles": {
+   "product_hero": 0.85,
+   "craft": 0.8,
+   "craft_pov": 0.35
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "product",
+    "stone"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "vang_trang",
+   "stone_color": [
+    "trắng"
+   ],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 2,
+   "aesthetic": 4
+  },
+  "description_vi": "Hai ngón tay thợ cầm xoay nhẫn kim hoa đá trắng trên bàn đe, kiểm tra thành phẩm, nền gỗ tối ấm.",
+  "keywords_vi": [
+   "nhẫn kim hoa",
+   "đá trắng",
+   "xoay nhẫn",
+   "kiểm tra",
+   "thành phẩm",
+   "bàn đe",
+   "cận cảnh",
+   "thợ kim hoàn"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_406d8142",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V5. Source sưu tầm và tự quay/Tự quay/260619_N610006-8_Nhan-kim-hoa_MDA07_07.MOV",
+  "name": "260619_N610006-8_Nhan-kim-hoa_MDA07_07.MOV",
+  "folder": "V5-TUQUAY",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N610006-8",
+  "parsed": {
+   "raw": "260619_N610006-8_Nhan-kim-hoa_MDA07_07",
+   "date": "260619",
+   "type": null,
+   "koc": null,
+   "sku": "N610006-8",
+   "product": "Nhan-kim-hoa",
+   "action": null,
+   "staff": "MDA07",
+   "stt": 7,
+   "craft_step": null,
+   "craft_order": null,
+   "parse_confidence": 0.75
+  },
+  "tech": {
+   "duration": 17.75,
+   "width": 1920,
+   "height": 1080,
+   "rotation": 0,
+   "fps": 59.94,
+   "hdr": true,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_406d8142.mp4",
+  "thumb": "media/thumbs/c_406d8142.jpg",
+  "sheet": "media/sheets/c_406d8142.jpg",
+  "craft_step": "hoan_thien",
+  "craft_step_source": "ai",
+  "usable": [
+   0.0,
+   17.3
+  ],
+  "best_moment_s": 7.4,
+  "roles": {
+   "product_hero": 0.9,
+   "product_final": 0.85,
+   "craft": 0.8
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "product",
+    "stone"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "vang_trang",
+   "stone_color": [
+    "trắng"
+   ],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 1,
+   "aesthetic": 4
+  },
+  "description_vi": "Nhẫn kim hoa đá trắng đeo trên tay nữ, nền hũ vàng thỏi ánh sáng ấm tối, đá lấp lánh khi tay nghiêng.",
+  "keywords_vi": [
+   "nhẫn kim hoa",
+   "đeo thử",
+   "đá trắng",
+   "hũ vàng",
+   "tài lộc",
+   "tay nữ",
+   "lấp lánh",
+   "hoàn thiện"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_8cfc956c",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V5. Source sưu tầm và tự quay/Tự quay/260701_N610005T-6_Nhan-cong-chua_DTA01_5.MOV",
+  "name": "260701_N610005T-6_Nhan-cong-chua_DTA01_5.MOV",
+  "folder": "V5-TUQUAY",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N610005T-6",
+  "parsed": {
+   "raw": "260701_N610005T-6_Nhan-cong-chua_DTA01_5",
+   "date": "260701",
+   "type": null,
+   "koc": null,
+   "sku": "N610005T-6",
+   "product": "Nhan-cong-chua",
+   "action": null,
+   "staff": "DTA01",
+   "stt": 5,
+   "craft_step": null,
+   "craft_order": null,
+   "parse_confidence": 0.75
+  },
+  "tech": {
+   "duration": 25.18,
+   "width": 1920,
+   "height": 1080,
+   "rotation": 0,
+   "fps": 59.94,
+   "hdr": true,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_8cfc956c.mp4",
+  "thumb": "media/thumbs/c_8cfc956c.jpg",
+  "sheet": "media/sheets/c_8cfc956c.jpg",
+  "craft_step": "hoan_thien",
+  "craft_step_source": "ai",
+  "usable": [
+   0.0,
+   24.5
+  ],
+  "best_moment_s": 14.7,
+  "roles": {
+   "product_hero": 0.9,
+   "product_final": 0.85,
+   "craft": 0.8
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "product",
+    "stone"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "vang_trang",
+   "stone_color": [
+    "trắng"
+   ],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 1,
+   "aesthetic": 4
+  },
+  "description_vi": "Hai ngón tay nữ móng hồng cầm bộ nhẫn công chúa đá hình thoi, xoay nhẹ khoe đá, nền hũ vàng thỏi.",
+  "keywords_vi": [
+   "nhẫn công chúa",
+   "bộ nhẫn",
+   "đá thoi",
+   "cầm tay",
+   "xoay nhẫn",
+   "hũ vàng",
+   "lấp lánh",
+   "sản phẩm"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_16084c20",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V5. Source sưu tầm và tự quay/Tự quay/260701_N610005T-6_Nhan-cong-chua_DTA01_6.MOV",
+  "name": "260701_N610005T-6_Nhan-cong-chua_DTA01_6.MOV",
+  "folder": "V5-TUQUAY",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N610005T-6",
+  "parsed": {
+   "raw": "260701_N610005T-6_Nhan-cong-chua_DTA01_6",
+   "date": "260701",
+   "type": null,
+   "koc": null,
+   "sku": "N610005T-6",
+   "product": "Nhan-cong-chua",
+   "action": null,
+   "staff": "DTA01",
+   "stt": 6,
+   "craft_step": null,
+   "craft_order": null,
+   "parse_confidence": 0.75
+  },
+  "tech": {
+   "duration": 22.37,
+   "width": 1920,
+   "height": 1080,
+   "rotation": 0,
+   "fps": 59.94,
+   "hdr": true,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_16084c20.mp4",
+  "thumb": "media/thumbs/c_16084c20.jpg",
+  "sheet": "media/sheets/c_16084c20.jpg",
+  "craft_step": "hoan_thien",
+  "craft_step_source": "ai",
+  "usable": [
+   0.0,
+   22.0
+  ],
+  "best_moment_s": 9.3,
+  "roles": {
+   "product_hero": 0.9,
+   "product_final": 0.85,
+   "craft": 0.8
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "product",
+    "stone"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "vang_trang",
+   "stone_color": [
+    "trắng"
+   ],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 1,
+   "aesthetic": 4
+  },
+  "description_vi": "Bộ nhẫn công chúa đá hình thoi đeo trên bàn tay nữ, nền tối có hũ vàng, tay nghiêng cho đá lấp lánh.",
+  "keywords_vi": [
+   "nhẫn công chúa",
+   "bộ nhẫn",
+   "đeo thử",
+   "đá trắng",
+   "bàn tay",
+   "hũ vàng",
+   "lấp lánh",
+   "hoàn thiện"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_8a5fc438",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V6. Cảnh sản phẩm hoàn thiện/260914_CTX_N0006-Nhan-tang-hinh_DTA06_Hoan-thien_05.mp4",
+  "name": "260914_CTX_N0006-Nhan-tang-hinh_DTA06_Hoan-thien_05.mp4",
+  "folder": "V6",
+  "role_hint": "product_final",
+  "rights": "owned",
+  "product_set": "N0006",
+  "parsed": {
+   "raw": "260914_CTX_N0006-Nhan-tang-hinh_DTA06_Hoan-thien_05",
+   "date": "260914",
+   "type": "CTX",
+   "koc": null,
+   "sku": "N0006",
+   "product": "Nhan-tang-hinh",
+   "action": "Hoan-thien",
+   "staff": "DTA06",
+   "stt": 5,
+   "craft_step": "hoan_thien",
+   "craft_order": 130,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 22.94,
+   "width": 2160,
+   "height": 3840,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "h264"
+  },
+  "proxy": "media/proxy/c_8a5fc438.mp4",
+  "thumb": "media/thumbs/c_8a5fc438.jpg",
+  "sheet": "media/sheets/c_8a5fc438.jpg",
+  "craft_step": "hoan_thien",
+  "craft_step_source": "filename",
+  "usable": [
+   0.5,
+   22.5
+  ],
+  "best_moment_s": 5.7,
+  "roles": {
+   "product_hero": 0.9,
+   "product_final": 0.85
+  },
+  "tags": {
+   "shot_size": "medium",
+   "camera": "static",
+   "subject": [
+    "product",
+    "stone"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "vang_trang",
+   "stone_color": [
+    "trắng"
+   ],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 2,
+   "aesthetic": 4
+  },
+  "description_vi": "Nhẫn tàng hình đính đá quanh vòng xoay chậm trên nền đen phản chiếu, studio tối sang trọng.",
+  "keywords_vi": [
+   "nhẫn tàng hình",
+   "nhẫn eternity",
+   "xoay",
+   "nền đen",
+   "phản chiếu",
+   "đá trắng",
+   "sản phẩm",
+   "studio"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_43a1ae1b",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V6. Cảnh sản phẩm hoàn thiện/260914_CTX_N0006-Nhan-tang-hinh_DTA06_Hoan-thien_15.mp4",
+  "name": "260914_CTX_N0006-Nhan-tang-hinh_DTA06_Hoan-thien_15.mp4",
+  "folder": "V6",
+  "role_hint": "product_final",
+  "rights": "owned",
+  "product_set": "N0006",
+  "parsed": {
+   "raw": "260914_CTX_N0006-Nhan-tang-hinh_DTA06_Hoan-thien_15",
+   "date": "260914",
+   "type": "CTX",
+   "koc": null,
+   "sku": "N0006",
+   "product": "Nhan-tang-hinh",
+   "action": "Hoan-thien",
+   "staff": "DTA06",
+   "stt": 15,
+   "craft_step": "hoan_thien",
+   "craft_order": 130,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 5.2,
+   "width": 2160,
+   "height": 3840,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "h264"
+  },
+  "proxy": "media/proxy/c_43a1ae1b.mp4",
+  "thumb": "media/thumbs/c_43a1ae1b.jpg",
+  "sheet": "media/sheets/c_43a1ae1b.jpg",
+  "craft_step": "hoan_thien",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   5.0
+  ],
+  "best_moment_s": 1.7,
+  "roles": {
+   "product_final": 0.85,
+   "product_hero": 0.7,
+   "outro": 0.3
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "product",
+    "stone",
+    "hands"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "vang_trang",
+   "stone_color": [
+    "trắng"
+   ],
+   "lighting": "good",
+   "text_or_watermark": "own_logo",
+   "motion_level": 1,
+   "aesthetic": 4
+  },
+  "description_vi": "Nhẫn tàng hình trong hộp nhung có logo, ngón tay đóng nắp, hộp xanh lục viền đồng ánh vàng logo Viễn Chí Bảo.",
+  "keywords_vi": [
+   "nhẫn tàng hình",
+   "hộp nhẫn",
+   "logo",
+   "Viễn Chí Bảo",
+   "đóng hộp",
+   "bao bì",
+   "thành phẩm",
+   "hộp xanh"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_1c245ad8",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V6. Cảnh sản phẩm hoàn thiện/260914_CTX_N0006-Nhan-tang-hinh_DTA06_Hoan-thien_25.mp4",
+  "name": "260914_CTX_N0006-Nhan-tang-hinh_DTA06_Hoan-thien_25.mp4",
+  "folder": "V6",
+  "role_hint": "product_final",
+  "rights": "owned",
+  "product_set": "N0006",
+  "parsed": {
+   "raw": "260914_CTX_N0006-Nhan-tang-hinh_DTA06_Hoan-thien_25",
+   "date": "260914",
+   "type": "CTX",
+   "koc": null,
+   "sku": "N0006",
+   "product": "Nhan-tang-hinh",
+   "action": "Hoan-thien",
+   "staff": "DTA06",
+   "stt": 25,
+   "craft_step": "hoan_thien",
+   "craft_order": 130,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 14.51,
+   "width": 2160,
+   "height": 3840,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "h264"
+  },
+  "proxy": "media/proxy/c_1c245ad8.mp4",
+  "thumb": "media/thumbs/c_1c245ad8.jpg",
+  "sheet": "media/sheets/c_1c245ad8.jpg",
+  "craft_step": "hoan_thien",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   14.0
+  ],
+  "best_moment_s": 1.2,
+  "roles": {
+   "product_hero": 0.9,
+   "product_final": 0.85
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "handheld",
+   "subject": [
+    "hands",
+    "product"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "unknown",
+   "stone_color": [
+    "trắng"
+   ],
+   "lighting": "good",
+   "text_or_watermark": "own_logo",
+   "motion_level": 1,
+   "aesthetic": 4
+  },
+  "description_vi": "Nhẫn eternity đính đá trắng được kẹp giữa hai ngón tay, xoay nhẹ cho thấy toàn vòng đá, nền gỗ ấm và tấm bảng logo HuyK phía dưới.",
+  "keywords_vi": [
+   "nhẫn",
+   "eternity",
+   "đá trắng",
+   "xoay nhẫn",
+   "cầm trên tay",
+   "hoàn thiện",
+   "cận cảnh",
+   "logo HuyK"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_0c549b22",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V6. Cảnh sản phẩm hoàn thiện/260914_CTX_N0006-Nhan-tang-hinh_DTA06_Hoan-thien_26.mp4",
+  "name": "260914_CTX_N0006-Nhan-tang-hinh_DTA06_Hoan-thien_26.mp4",
+  "folder": "V6",
+  "role_hint": "product_final",
+  "rights": "owned",
+  "product_set": "N0006",
+  "parsed": {
+   "raw": "260914_CTX_N0006-Nhan-tang-hinh_DTA06_Hoan-thien_26",
+   "date": "260914",
+   "type": "CTX",
+   "koc": null,
+   "sku": "N0006",
+   "product": "Nhan-tang-hinh",
+   "action": "Hoan-thien",
+   "staff": "DTA06",
+   "stt": 26,
+   "craft_step": "hoan_thien",
+   "craft_order": 130,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 4.55,
+   "width": 2160,
+   "height": 3840,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "h264"
+  },
+  "proxy": "media/proxy/c_0c549b22.mp4",
+  "thumb": "media/thumbs/c_0c549b22.jpg",
+  "sheet": "media/sheets/c_0c549b22.jpg",
+  "craft_step": "hoan_thien",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   4.4
+  ],
+  "best_moment_s": 2.65,
+  "roles": {
+   "product_hero": 0.95,
+   "product_final": 0.9,
+   "hook_visual": 0.5
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "handheld",
+   "subject": [
+    "hands",
+    "product",
+    "stone"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "unknown",
+   "stone_color": [
+    "trắng"
+   ],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 1,
+   "aesthetic": 5
+  },
+  "description_vi": "Nhẫn đính đá nhỏ đặt trên đầu ngón tay, nền đen, đá lấp lánh tia sáng rõ ở giây thứ ba, rất đẹp để reveal sản phẩm.",
+  "keywords_vi": [
+   "nhẫn",
+   "đá lấp lánh",
+   "nền đen",
+   "đầu ngón tay",
+   "reveal",
+   "sản phẩm hoàn thiện",
+   "cận cảnh",
+   "sang trọng"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_840577db",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V7. Outro Huyk và cảnh có gắn tag/0930(1).mp4",
+  "name": "0930(1).mp4",
+  "folder": "V7",
+  "role_hint": "outro",
+  "rights": "owned",
+  "product_set": null,
+  "parsed": {
+   "raw": "0930(1)",
+   "date": null,
+   "type": null,
+   "koc": null,
+   "sku": null,
+   "product": null,
+   "action": "0930(1)",
+   "staff": null,
+   "stt": null,
+   "craft_step": null,
+   "craft_order": null,
+   "parse_confidence": 0.25
+  },
+  "tech": {
+   "duration": 4.07,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "h264"
+  },
+  "proxy": "media/proxy/c_840577db.mp4",
+  "thumb": "media/thumbs/c_840577db.jpg",
+  "sheet": "media/sheets/c_840577db.jpg",
+  "craft_step": null,
+  "craft_step_source": null,
+  "usable": [
+   1.0,
+   4.0
+  ],
+  "best_moment_s": 3.4,
+  "roles": {
+   "outro": 0.9,
+   "huyk_talk": 0.75,
+   "huyk_silent": 0.4
+  },
+  "tags": {
+   "shot_size": "medium",
+   "camera": "static",
+   "subject": [
+    "person",
+    "huyk_face",
+    "workshop"
+   ],
+   "huyk_present": true,
+   "person_speaking_to_camera": true,
+   "product_visible": false,
+   "product_type": "none",
+   "metal": "unknown",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "own_logo",
+   "motion_level": 3,
+   "aesthetic": 3
+  },
+  "description_vi": "HuyK nhảy vào khung hình, giơ hai ngón cái chào khán giả, logo HuyK Mê Kim Hoàn và chữ Viễn Chí Bảo hiện dưới khung.",
+  "keywords_vi": [
+   "HuyK",
+   "outro",
+   "giơ ngón cái",
+   "logo",
+   "Viễn Chí Bảo",
+   "Mê Kim Hoàn",
+   "kết video",
+   "xưởng"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_b15730f8",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V7. Outro Huyk và cảnh có gắn tag/0930(2).mp4",
+  "name": "0930(2).mp4",
+  "folder": "V7",
+  "role_hint": "outro",
+  "rights": "owned",
+  "product_set": null,
+  "parsed": {
+   "raw": "0930(2)",
+   "date": null,
+   "type": null,
+   "koc": null,
+   "sku": null,
+   "product": null,
+   "action": "0930(2)",
+   "staff": null,
+   "stt": null,
+   "craft_step": null,
+   "craft_order": null,
+   "parse_confidence": 0.25
+  },
+  "tech": {
+   "duration": 7.6,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "h264"
+  },
+  "proxy": "media/proxy/c_b15730f8.mp4",
+  "thumb": "media/thumbs/c_b15730f8.jpg",
+  "sheet": "media/sheets/c_b15730f8.jpg",
+  "craft_step": null,
+  "craft_step_source": null,
+  "usable": [
+   3.8,
+   7.6
+  ],
+  "best_moment_s": 6.3,
+  "roles": {
+   "outro": 0.8,
+   "huyk_talk": 0.75,
+   "stock_action": 0.3
+  },
+  "tags": {
+   "shot_size": "medium",
+   "camera": "static",
+   "subject": [
+    "person",
+    "huyk_face",
+    "workshop"
+   ],
+   "huyk_present": true,
+   "person_speaking_to_camera": true,
+   "product_visible": false,
+   "product_type": "none",
+   "metal": "unknown",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "own_logo",
+   "motion_level": 3,
+   "aesthetic": 3
+  },
+  "description_vi": "Cảnh đạp xe địa hình ngã nhào làm chuyển cảnh hài, sau đó HuyK nhảy vào giơ ngón cái, hiện logo HuyK và Viễn Chí Bảo.",
+  "keywords_vi": [
+   "outro",
+   "HuyK",
+   "ngã xe",
+   "chuyển cảnh hài",
+   "ngón cái",
+   "logo",
+   "Viễn Chí Bảo",
+   "kết video"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_dce607e2",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V7. Outro Huyk và cảnh có gắn tag/0930.mp4",
+  "name": "0930.mp4",
+  "folder": "V7",
+  "role_hint": "outro",
+  "rights": "owned",
+  "product_set": null,
+  "parsed": {
+   "raw": "0930",
+   "date": null,
+   "type": null,
+   "koc": null,
+   "sku": null,
+   "product": null,
+   "action": "0930",
+   "staff": null,
+   "stt": null,
+   "craft_step": null,
+   "craft_order": null,
+   "parse_confidence": 0.25
+  },
+  "tech": {
+   "duration": 3.53,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "h264"
+  },
+  "proxy": "media/proxy/c_dce607e2.mp4",
+  "thumb": "media/thumbs/c_dce607e2.jpg",
+  "sheet": "media/sheets/c_dce607e2.jpg",
+  "craft_step": null,
+  "craft_step_source": null,
+  "usable": [
+   0.0,
+   3.5
+  ],
+  "best_moment_s": 2.6,
+  "roles": {
+   "outro": 0.8,
+   "stock_action": 0.45,
+   "hook_visual": 0.25
+  },
+  "tags": {
+   "shot_size": "wide",
+   "camera": "handheld",
+   "subject": [
+    "person"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": false,
+   "product_type": "none",
+   "metal": "unknown",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 3,
+   "aesthetic": 2
+  },
+  "description_vi": "Cảnh ngoài trời người đạp xe địa hình lao xuống dốc, bay lên rồi ngã nhào, clip hài không liên quan trang sức, dùng làm chuyển cảnh.",
+  "keywords_vi": [
+   "xe đạp địa hình",
+   "ngã nhào",
+   "ngoài trời",
+   "chuyển cảnh",
+   "hài hước",
+   "cảnh động",
+   "không liên quan sản phẩm"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_6d818007",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V8. Footahe gốc chưa cắt ( đều đã đc xử lý max 15s trước khi tải lên NAS)/260914_CTX_N0006-Nhan-tang-hinh_DTA06_Gan-da-to_02.mp4",
+  "name": "260914_CTX_N0006-Nhan-tang-hinh_DTA06_Gan-da-to_02.mp4",
+  "folder": "V8",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N0006",
+  "parsed": {
+   "raw": "260914_CTX_N0006-Nhan-tang-hinh_DTA06_Gan-da-to_02",
+   "date": "260914",
+   "type": "CTX",
+   "koc": null,
+   "sku": "N0006",
+   "product": "Nhan-tang-hinh",
+   "action": "Gan-da-to",
+   "staff": "DTA06",
+   "stt": 2,
+   "craft_step": "dinh_da",
+   "craft_order": 110,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 15.14,
+   "width": 2160,
+   "height": 3840,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "h264"
+  },
+  "proxy": "media/proxy/c_6d818007.mp4",
+  "thumb": "media/thumbs/c_6d818007.jpg",
+  "sheet": "media/sheets/c_6d818007.jpg",
+  "craft_step": "dinh_da",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   15.0
+  ],
+  "best_moment_s": 2.5,
+  "roles": {
+   "craft": 0.9,
+   "craft_macro": 0.85
+  },
+  "tags": {
+   "shot_size": "extreme_close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "tool",
+    "stone",
+    "metal"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "bac",
+   "stone_color": [
+    "trắng"
+   ],
+   "lighting": "good",
+   "text_or_watermark": "own_logo",
+   "motion_level": 1,
+   "aesthetic": 4
+  },
+  "description_vi": "Cận cực gần thợ dùng nhíp gắp từng viên đá nhỏ đặt vào các chấu trên vòng nhẫn bạc, ngón tay giữ nhẫn trên bàn gỗ.",
+  "keywords_vi": [
+   "đính đá",
+   "nhíp",
+   "chấu",
+   "cận cực gần",
+   "nhẫn bạc",
+   "viên đá nhỏ",
+   "chế tác",
+   "thợ kim hoàn"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_6d9dfd5c",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V8. Footahe gốc chưa cắt ( đều đã đc xử lý max 15s trước khi tải lên NAS)/260914_CTX_N0006-Nhan-tang-hinh_DTA06_Gan-da-to_16.mp4",
+  "name": "260914_CTX_N0006-Nhan-tang-hinh_DTA06_Gan-da-to_16.mp4",
+  "folder": "V8",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N0006",
+  "parsed": {
+   "raw": "260914_CTX_N0006-Nhan-tang-hinh_DTA06_Gan-da-to_16",
+   "date": "260914",
+   "type": "CTX",
+   "koc": null,
+   "sku": "N0006",
+   "product": "Nhan-tang-hinh",
+   "action": "Gan-da-to",
+   "staff": "DTA06",
+   "stt": 16,
+   "craft_step": "dinh_da",
+   "craft_order": 110,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 15.0,
+   "width": 2160,
+   "height": 3840,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "h264"
+  },
+  "proxy": "media/proxy/c_6d9dfd5c.mp4",
+  "thumb": "media/thumbs/c_6d9dfd5c.jpg",
+  "sheet": "media/sheets/c_6d9dfd5c.jpg",
+  "craft_step": "dinh_da",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   13.0
+  ],
+  "best_moment_s": 1.25,
+  "roles": {
+   "craft": 0.9,
+   "craft_macro": 0.9
+  },
+  "tags": {
+   "shot_size": "extreme_close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "tool",
+    "stone",
+    "metal"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "bac",
+   "stone_color": [
+    "trắng"
+   ],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 1,
+   "aesthetic": 4
+  },
+  "description_vi": "Cận cảnh nhíp gắp viên đá trắng lấp lánh đặt vào hàng chấu trên nhẫn, nền nâu tối, nhiều lần đính đá liên tiếp.",
+  "keywords_vi": [
+   "đính đá",
+   "nhíp",
+   "đá lấp lánh",
+   "cận cực gần",
+   "nhẫn",
+   "chấu",
+   "chế tác",
+   "nền tối"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_f87c0604",
+  "file": "Tài Nguyên VCB Real Sample/3.2 Video input (source)/V8. Footahe gốc chưa cắt ( đều đã đc xử lý max 15s trước khi tải lên NAS)/260914_CTX_N0006-Nhan-tang-hinh_DTA06_Han-noi_05.mp4",
+  "name": "260914_CTX_N0006-Nhan-tang-hinh_DTA06_Han-noi_05.mp4",
+  "folder": "V8",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N0006",
+  "parsed": {
+   "raw": "260914_CTX_N0006-Nhan-tang-hinh_DTA06_Han-noi_05",
+   "date": "260914",
+   "type": "CTX",
+   "koc": null,
+   "sku": "N0006",
+   "product": "Nhan-tang-hinh",
+   "action": "Han-noi",
+   "staff": "DTA06",
+   "stt": 5,
+   "craft_step": "han",
+   "craft_order": 70,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 17.11,
+   "width": 2160,
+   "height": 3840,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "h264"
+  },
+  "proxy": "media/proxy/c_f87c0604.mp4",
+  "thumb": "media/thumbs/c_f87c0604.jpg",
+  "sheet": "media/sheets/c_f87c0604.jpg",
+  "craft_step": "han",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   16.5
+  ],
+  "best_moment_s": 2.85,
+  "roles": {
+   "craft": 0.9,
+   "craft_macro": 0.5
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "fire",
+    "metal",
+    "tool",
+    "product"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "vang",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 2,
+   "aesthetic": 4
+  },
+  "description_vi": "Khò lửa hàn nối vòng nhẫn vàng đặt trên giá kẹp, ngọn lửa cam bùng lên chạm điểm hàn, kìm nhọn giữ chi tiết.",
+  "keywords_vi": [
+   "hàn nối",
+   "khò lửa",
+   "ngọn lửa",
+   "nhẫn vàng",
+   "kìm",
+   "điểm hàn",
+   "chế tác",
+   "cận cảnh"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_34468b28",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/1. VE PHAC THAO-12.mp4",
+  "name": "1. VE PHAC THAO-12.mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": null,
+  "parsed": {
+   "raw": "1. VE PHAC THAO-12",
+   "date": null,
+   "type": null,
+   "koc": null,
+   "sku": null,
+   "product": null,
+   "action": "1. VE PHAC THAO-12",
+   "staff": null,
+   "stt": null,
+   "craft_step": "thiet_ke",
+   "craft_order": 10,
+   "parse_confidence": 0.25
+  },
+  "tech": {
+   "duration": 14.72,
+   "width": 1440,
+   "height": 2560,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_34468b28.mp4",
+  "thumb": "media/thumbs/c_34468b28.jpg",
+  "sheet": "media/sheets/c_34468b28.jpg",
+  "craft_step": null,
+  "craft_step_source": null,
+  "usable": [
+   0.0,
+   14.5
+  ],
+  "best_moment_s": 3.7,
+  "roles": {
+   "huyk_silent": 0.8,
+   "craft": 0.8,
+   "stock_action": 0.4
+  },
+  "tags": {
+   "shot_size": "wide",
+   "camera": "static",
+   "subject": [
+    "person",
+    "huyk_face",
+    "paper",
+    "workshop"
+   ],
+   "huyk_present": true,
+   "person_speaking_to_camera": false,
+   "product_visible": false,
+   "product_type": "none",
+   "metal": "unknown",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 2,
+   "aesthetic": 4
+  },
+  "description_vi": "HuyK ngồi xem tài liệu trên bàn làm việc, rồi đứng dậy đi tới kệ kính hiển vi và quay lại bàn trong xưởng ánh đèn vàng.",
+  "keywords_vi": [
+   "HuyK",
+   "bản vẽ",
+   "xem tài liệu",
+   "xưởng",
+   "bàn làm việc",
+   "kính hiển vi",
+   "thiết kế",
+   "toàn cảnh"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_d1e02779",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/12. DUA-15.mp4",
+  "name": "12. DUA-15.mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": null,
+  "parsed": {
+   "raw": "12. DUA-15",
+   "date": null,
+   "type": null,
+   "koc": null,
+   "sku": null,
+   "product": null,
+   "action": "12. DUA-15",
+   "staff": null,
+   "stt": null,
+   "craft_step": "dua_mai",
+   "craft_order": 80,
+   "parse_confidence": 0.25
+  },
+  "tech": {
+   "duration": 18.9,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_d1e02779.mp4",
+  "thumb": "media/thumbs/c_d1e02779.jpg",
+  "sheet": "media/sheets/c_d1e02779.jpg",
+  "craft_step": "dua_mai",
+  "craft_step_source": "ai",
+  "usable": [
+   0.0,
+   16.0
+  ],
+  "best_moment_s": 6.3,
+  "roles": {
+   "craft": 0.85,
+   "huyk_silent": 0.7
+  },
+  "tags": {
+   "shot_size": "medium",
+   "camera": "static",
+   "subject": [
+    "person",
+    "huyk_face",
+    "hands",
+    "tool",
+    "workshop"
+   ],
+   "huyk_present": true,
+   "person_speaking_to_camera": false,
+   "product_visible": false,
+   "product_type": "none",
+   "metal": "unknown",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 1,
+   "aesthetic": 4
+  },
+  "description_vi": "HuyK cúi đầu tập trung giũa chi tiết trên khối gỗ ở bàn thợ, giá sách ánh đèn vàng phía sau, cuối clip ngẩng lên.",
+  "keywords_vi": [
+   "HuyK",
+   "giũa",
+   "mài định hình",
+   "bàn thợ",
+   "tập trung",
+   "chế tác thủ công",
+   "xưởng",
+   "trung cảnh"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_27998f99",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/260525_CTX_N620144_Nhan-mat-than-Horus_Can-bac_DTA01_6.mp4",
+  "name": "260525_CTX_N620144_Nhan-mat-than-Horus_Can-bac_DTA01_6.mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620144",
+  "parsed": {
+   "raw": "260525_CTX_N620144_Nhan-mat-than-Horus_Can-bac_DTA01_6",
+   "date": "260525",
+   "type": "CTX",
+   "koc": null,
+   "sku": "N620144",
+   "product": "Nhan-mat-than-Horus",
+   "action": "Can-bac",
+   "staff": "DTA01",
+   "stt": 6,
+   "craft_step": "chuan_bi_nguyen_lieu",
+   "craft_order": 20,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 22.01,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_27998f99.mp4",
+  "thumb": "media/thumbs/c_27998f99.jpg",
+  "sheet": "media/sheets/c_27998f99.jpg",
+  "craft_step": "chuan_bi_nguyen_lieu",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   21.5
+  ],
+  "best_moment_s": 9.2,
+  "roles": {
+   "craft": 0.85,
+   "craft_macro": 0.35,
+   "stock_action": 0.3
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "tool",
+    "metal",
+    "workshop"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": false,
+   "product_type": "none",
+   "metal": "unknown",
+   "stone_color": [],
+   "lighting": "mixed",
+   "text_or_watermark": "none",
+   "motion_level": 2,
+   "aesthetic": 3
+  },
+  "description_vi": "Cận cảnh máy cán kim loại, hai trục lăn có rãnh quay liên tục dưới ánh sáng ấm, nhãn giấy nhỏ bên cạnh.",
+  "keywords_vi": [
+   "máy cán",
+   "trục lăn",
+   "cán bạc",
+   "xưởng kim hoàn",
+   "chế tác",
+   "cận cảnh",
+   "kim loại",
+   "công cụ"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_9746542f",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/260525_CTX_N620144_Nhan-mat-than-Horus_Cua-bac-thua_DTA01_2.mp4",
+  "name": "260525_CTX_N620144_Nhan-mat-than-Horus_Cua-bac-thua_DTA01_2.mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620144",
+  "parsed": {
+   "raw": "260525_CTX_N620144_Nhan-mat-than-Horus_Cua-bac-thua_DTA01_2",
+   "date": "260525",
+   "type": "CTX",
+   "koc": null,
+   "sku": "N620144",
+   "product": "Nhan-mat-than-Horus",
+   "action": "Cua-bac-thua",
+   "staff": "DTA01",
+   "stt": 2,
+   "craft_step": "cua_cat",
+   "craft_order": 60,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 14.2,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_9746542f.mp4",
+  "thumb": "media/thumbs/c_9746542f.jpg",
+  "sheet": "media/sheets/c_9746542f.jpg",
+  "craft_step": "cua_cat",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   14.0
+  ],
+  "best_moment_s": 5.9,
+  "roles": {
+   "craft": 0.92,
+   "craft_macro": 0.6,
+   "craft_pov": 0.25
+  },
+  "tags": {
+   "shot_size": "extreme_close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "tool",
+    "metal"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": false,
+   "product_type": "none",
+   "metal": "bac",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 2,
+   "aesthetic": 4
+  },
+  "description_vi": "Cận cực gần ngón tay thợ giữ vòng nhẫn bạc, cưa lọng cắt phần thừa, mạt bạc rơi trên bàn gỗ.",
+  "keywords_vi": [
+   "cưa lọng",
+   "cắt bạc",
+   "nhẫn bạc",
+   "bàn gỗ",
+   "mạt bạc",
+   "thợ kim hoàn",
+   "cận cảnh",
+   "thủ công"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_7984d467",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/260525_CTX_N620144_Nhan-mat-than-Horus_Danh-lua_DTA01_8.mp4",
+  "name": "260525_CTX_N620144_Nhan-mat-than-Horus_Danh-lua_DTA01_8.mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620144",
+  "parsed": {
+   "raw": "260525_CTX_N620144_Nhan-mat-than-Horus_Danh-lua_DTA01_8",
+   "date": "260525",
+   "type": "CTX",
+   "koc": null,
+   "sku": "N620144",
+   "product": "Nhan-mat-than-Horus",
+   "action": "Danh-lua",
+   "staff": "DTA01",
+   "stt": 8,
+   "craft_step": "nung_nau",
+   "craft_order": 30,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 5.3,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_7984d467.mp4",
+  "thumb": "media/thumbs/c_7984d467.jpg",
+  "sheet": "media/sheets/c_7984d467.jpg",
+  "craft_step": "nung_nau",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   5.3
+  ],
+  "best_moment_s": 1.3,
+  "roles": {
+   "craft": 0.8,
+   "hook_visual": 0.45,
+   "stock_action": 0.4
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "fire",
+    "tool",
+    "metal"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": false,
+   "product_type": "none",
+   "metal": "unknown",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 2,
+   "aesthetic": 4
+  },
+  "description_vi": "Đầu khò vàng đồng bật lửa xanh lướt qua phía sau khối kim loại bóng loáng có chi tiết đồng vàng, nền mờ đẹp.",
+  "keywords_vi": [
+   "đánh lửa",
+   "đèn khò",
+   "ngọn lửa xanh",
+   "khối kim loại",
+   "bóng loáng",
+   "nền mờ",
+   "xưởng",
+   "nung"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_b938234d",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/260525_CTX_N620144_Nhan-mat-than-Horus_Dap-thanh-bac_DTA01_4.mp4",
+  "name": "260525_CTX_N620144_Nhan-mat-than-Horus_Dap-thanh-bac_DTA01_4.mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620144",
+  "parsed": {
+   "raw": "260525_CTX_N620144_Nhan-mat-than-Horus_Dap-thanh-bac_DTA01_4",
+   "date": "260525",
+   "type": "CTX",
+   "koc": null,
+   "sku": "N620144",
+   "product": "Nhan-mat-than-Horus",
+   "action": "Dap-thanh-bac",
+   "staff": "DTA01",
+   "stt": 4,
+   "craft_step": "dap_can",
+   "craft_order": 50,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 8.22,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_b938234d.mp4",
+  "thumb": "media/thumbs/c_b938234d.jpg",
+  "sheet": "media/sheets/c_b938234d.jpg",
+  "craft_step": "dap_can",
+  "craft_step_source": "filename",
+  "usable": [
+   4.5,
+   8.2
+  ],
+  "best_moment_s": 6.85,
+  "roles": {
+   "craft": 0.85,
+   "stock_action": 0.3
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "tool",
+    "metal",
+    "hands"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": false,
+   "product_type": "none",
+   "metal": "bac",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 2,
+   "aesthetic": 4
+  },
+  "description_vi": "Búa đen giáng xuống thanh bạc đặt trên đe gỗ tròn, bên cạnh có phôi bạc nhỏ, nền xưởng mờ ấm.",
+  "keywords_vi": [
+   "búa",
+   "đập bạc",
+   "thanh bạc",
+   "đe gỗ",
+   "phôi bạc",
+   "chế tác",
+   "xưởng kim hoàn"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_95cb02ab",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/260525_CTX_N620144_Nhan-mat-than-Horus_Dap-tron-thanh-bac_DTA01_1.mp4",
+  "name": "260525_CTX_N620144_Nhan-mat-than-Horus_Dap-tron-thanh-bac_DTA01_1.mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620144",
+  "parsed": {
+   "raw": "260525_CTX_N620144_Nhan-mat-than-Horus_Dap-tron-thanh-bac_DTA01_1",
+   "date": "260525",
+   "type": "CTX",
+   "koc": null,
+   "sku": "N620144",
+   "product": "Nhan-mat-than-Horus",
+   "action": "Dap-tron-thanh-bac",
+   "staff": "DTA01",
+   "stt": 1,
+   "craft_step": "dap_can",
+   "craft_order": 50,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 18.32,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_95cb02ab.mp4",
+  "thumb": "media/thumbs/c_95cb02ab.jpg",
+  "sheet": "media/sheets/c_95cb02ab.jpg",
+  "craft_step": "dap_can",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   18.0
+  ],
+  "best_moment_s": 7.6,
+  "roles": {
+   "craft": 0.9,
+   "craft_macro": 0.4
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "tool",
+    "metal"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": false,
+   "product_type": "none",
+   "metal": "bac",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 2,
+   "aesthetic": 4
+  },
+  "description_vi": "Tay thợ uốn thanh bạc trên khuôn thép có rãnh tròn, dùng búa gõ lên dùi thép để tạo hình phôi.",
+  "keywords_vi": [
+   "uốn bạc",
+   "búa",
+   "khuôn thép",
+   "thanh bạc",
+   "tạo phôi",
+   "đập tròn",
+   "bàn tay thợ",
+   "chế tác"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_5313bb1c",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/260525_CTX_N620144_Nhan-mat-than-Horus_Dap-tron-thanh-bac_DTA01_3.mp4",
+  "name": "260525_CTX_N620144_Nhan-mat-than-Horus_Dap-tron-thanh-bac_DTA01_3.mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620144",
+  "parsed": {
+   "raw": "260525_CTX_N620144_Nhan-mat-than-Horus_Dap-tron-thanh-bac_DTA01_3",
+   "date": "260525",
+   "type": "CTX",
+   "koc": null,
+   "sku": "N620144",
+   "product": "Nhan-mat-than-Horus",
+   "action": "Dap-tron-thanh-bac",
+   "staff": "DTA01",
+   "stt": 3,
+   "craft_step": "dap_can",
+   "craft_order": 50,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 14.8,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_5313bb1c.mp4",
+  "thumb": "media/thumbs/c_5313bb1c.jpg",
+  "sheet": "media/sheets/c_5313bb1c.jpg",
+  "craft_step": "dap_can",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   14.5
+  ],
+  "best_moment_s": 9.9,
+  "roles": {
+   "craft": 0.9,
+   "craft_macro": 0.4
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "tool",
+    "metal"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": false,
+   "product_type": "none",
+   "metal": "bac",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 2,
+   "aesthetic": 4
+  },
+  "description_vi": "Thanh bạc được búa gõ uốn tròn quanh trục thép, búa khắc tên HuyK, nền cam mờ nghệ thuật.",
+  "keywords_vi": [
+   "búa HuyK",
+   "uốn tròn",
+   "trục thép",
+   "đập bạc",
+   "tạo hình nhẫn",
+   "phôi bạc",
+   "chế tác",
+   "cận cảnh"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_f74a8bd7",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/260525_CTX_N620144_Nhan-mat-than-Horus_Do-khuon_DTA01_2.mp4",
+  "name": "260525_CTX_N620144_Nhan-mat-than-Horus_Do-khuon_DTA01_2.mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620144",
+  "parsed": {
+   "raw": "260525_CTX_N620144_Nhan-mat-than-Horus_Do-khuon_DTA01_2",
+   "date": "260525",
+   "type": "CTX",
+   "koc": null,
+   "sku": "N620144",
+   "product": "Nhan-mat-than-Horus",
+   "action": "Do-khuon",
+   "staff": "DTA01",
+   "stt": 2,
+   "craft_step": "do_khuon",
+   "craft_order": 40,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 15.47,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_f74a8bd7.mp4",
+  "thumb": "media/thumbs/c_f74a8bd7.jpg",
+  "sheet": "media/sheets/c_f74a8bd7.jpg",
+  "craft_step": "do_khuon",
+  "craft_step_source": "filename",
+  "usable": [
+   1.3,
+   15.4
+  ],
+  "best_moment_s": 7.7,
+  "roles": {
+   "craft": 0.9,
+   "hook_visual": 0.6,
+   "craft_macro": 0.45
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "fire",
+    "metal",
+    "tool"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": false,
+   "product_type": "none",
+   "metal": "bac",
+   "stone_color": [],
+   "lighting": "mixed",
+   "text_or_watermark": "none",
+   "motion_level": 3,
+   "aesthetic": 5
+  },
+  "description_vi": "Bạc nóng chảy đỏ rực trong chén được rót vào khuôn thỏi, đèn khò lửa xanh hơ giữ nhiệt, ánh lửa rất bắt mắt.",
+  "keywords_vi": [
+   "đổ khuôn",
+   "bạc nóng chảy",
+   "chén nung",
+   "đèn khò",
+   "lửa",
+   "khuôn thỏi",
+   "rót kim loại",
+   "bạc"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_d1e83d85",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/260525_CTX_N620144_Nhan-mat-than-Horus_Do-nguyen-lieu_DTA01_6.mp4",
+  "name": "260525_CTX_N620144_Nhan-mat-than-Horus_Do-nguyen-lieu_DTA01_6.mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620144",
+  "parsed": {
+   "raw": "260525_CTX_N620144_Nhan-mat-than-Horus_Do-nguyen-lieu_DTA01_6",
+   "date": "260525",
+   "type": "CTX",
+   "koc": null,
+   "sku": "N620144",
+   "product": "Nhan-mat-than-Horus",
+   "action": "Do-nguyen-lieu",
+   "staff": "DTA01",
+   "stt": 6,
+   "craft_step": "chuan_bi_nguyen_lieu",
+   "craft_order": 20,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 5.32,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_d1e83d85.mp4",
+  "thumb": "media/thumbs/c_d1e83d85.jpg",
+  "sheet": "media/sheets/c_d1e83d85.jpg",
+  "craft_step": "chuan_bi_nguyen_lieu",
+  "craft_step_source": "filename",
+  "usable": [
+   1.0,
+   5.3
+  ],
+  "best_moment_s": 3.1,
+  "roles": {
+   "craft": 0.8,
+   "stock_action": 0.4,
+   "craft_macro": 0.3
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "metal",
+    "workshop"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": false,
+   "product_type": "none",
+   "metal": "bac",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 2,
+   "aesthetic": 4
+  },
+  "description_vi": "Đổ các mẩu bạc nhỏ sáng bóng vào chén sứ trên bàn gỗ, nhãn giấy bên dưới, chuẩn bị nguyên liệu nấu chảy.",
+  "keywords_vi": [
+   "nguyên liệu",
+   "mẩu bạc",
+   "chén sứ",
+   "đổ bạc",
+   "chuẩn bị",
+   "bạc vụn",
+   "xưởng kim hoàn"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_918b432c",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/260525_CTX_N620144_Nhan-mat-than-Horus_Dua-mat-chau-da_DTA01_6.mp4",
+  "name": "260525_CTX_N620144_Nhan-mat-than-Horus_Dua-mat-chau-da_DTA01_6.mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620144",
+  "parsed": {
+   "raw": "260525_CTX_N620144_Nhan-mat-than-Horus_Dua-mat-chau-da_DTA01_6",
+   "date": "260525",
+   "type": "CTX",
+   "koc": null,
+   "sku": "N620144",
+   "product": "Nhan-mat-than-Horus",
+   "action": "Dua-mat-chau-da",
+   "staff": "DTA01",
+   "stt": 6,
+   "craft_step": "dua_mai",
+   "craft_order": 80,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 16.8,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_918b432c.mp4",
+  "thumb": "media/thumbs/c_918b432c.jpg",
+  "sheet": "media/sheets/c_918b432c.jpg",
+  "craft_step": "dua_mai",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   16.5
+  ],
+  "best_moment_s": 8.4,
+  "roles": {
+   "craft": 0.9,
+   "craft_macro": 0.65,
+   "craft_pov": 0.2
+  },
+  "tags": {
+   "shot_size": "extreme_close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "tool",
+    "metal"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": false,
+   "product_type": "none",
+   "metal": "bac",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 2,
+   "aesthetic": 4
+  },
+  "description_vi": "Cận cực gần ngón tay giữ vòng nhẫn bạc, dùng giũa mài mặt chậu đá trên bàn gỗ, bụi bạc bay nhẹ.",
+  "keywords_vi": [
+   "giũa",
+   "mài",
+   "mặt chậu đá",
+   "nhẫn bạc",
+   "bàn gỗ",
+   "bụi bạc",
+   "thợ kim hoàn",
+   "cận cực"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_dc0238fd",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/260525_CTX_N620144_Nhan-mat-than-Horus_Dua_DTA01_31.mp4",
+  "name": "260525_CTX_N620144_Nhan-mat-than-Horus_Dua_DTA01_31.mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620144",
+  "parsed": {
+   "raw": "260525_CTX_N620144_Nhan-mat-than-Horus_Dua_DTA01_31",
+   "date": "260525",
+   "type": "CTX",
+   "koc": null,
+   "sku": "N620144",
+   "product": "Nhan-mat-than-Horus",
+   "action": "Dua",
+   "staff": "DTA01",
+   "stt": 31,
+   "craft_step": "dua_mai",
+   "craft_order": 80,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 15.35,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_dc0238fd.mp4",
+  "thumb": "media/thumbs/c_dc0238fd.jpg",
+  "sheet": "media/sheets/c_dc0238fd.jpg",
+  "craft_step": "dua_mai",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   15.0
+  ],
+  "best_moment_s": 8.9,
+  "roles": {
+   "craft": 0.88,
+   "craft_macro": 0.4
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "tool",
+    "metal"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": false,
+   "product_type": "none",
+   "metal": "bac",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 3,
+   "aesthetic": 3
+  },
+  "description_vi": "Tay thợ cầm vòng bạc dẹt, giũa liên tục để định hình, bụi bạc bám trên ngón tay, nền xưởng tối ấm.",
+  "keywords_vi": [
+   "giũa",
+   "định hình",
+   "vòng bạc",
+   "bụi bạc",
+   "bàn tay thợ",
+   "thủ công",
+   "xưởng kim hoàn"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_7b3cddd1",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/260525_CTX_N620144_Nhan-mat-than-Horus_Dua_DTA01_4.mp4",
+  "name": "260525_CTX_N620144_Nhan-mat-than-Horus_Dua_DTA01_4.mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620144",
+  "parsed": {
+   "raw": "260525_CTX_N620144_Nhan-mat-than-Horus_Dua_DTA01_4",
+   "date": "260525",
+   "type": "CTX",
+   "koc": null,
+   "sku": "N620144",
+   "product": "Nhan-mat-than-Horus",
+   "action": "Dua",
+   "staff": "DTA01",
+   "stt": 4,
+   "craft_step": "dua_mai",
+   "craft_order": 80,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 22.71,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_7b3cddd1.mp4",
+  "thumb": "media/thumbs/c_7b3cddd1.jpg",
+  "sheet": "media/sheets/c_7b3cddd1.jpg",
+  "craft_step": "dua_mai",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   22.0
+  ],
+  "best_moment_s": 9.5,
+  "roles": {
+   "craft": 0.9,
+   "craft_macro": 0.8,
+   "product_hero": 0.2
+  },
+  "tags": {
+   "shot_size": "extreme_close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "tool",
+    "metal",
+    "product"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "bac",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 2,
+   "aesthetic": 4
+  },
+  "description_vi": "Cận cực gần tay thợ dùng giũa mài định hình thân nhẫn bạc, bụi bạc bám trên ngón tay, nền nâu ấm mờ.",
+  "keywords_vi": [
+   "giũa",
+   "mài nhẫn",
+   "nhẫn bạc",
+   "cận cảnh",
+   "tay thợ",
+   "chế tác",
+   "xưởng kim hoàn",
+   "bụi bạc"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_945a3887",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/260525_CTX_N620144_Nhan-mat-than-Horus_Han-noi_DTA01_5.mp4",
+  "name": "260525_CTX_N620144_Nhan-mat-than-Horus_Han-noi_DTA01_5.mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620144",
+  "parsed": {
+   "raw": "260525_CTX_N620144_Nhan-mat-than-Horus_Han-noi_DTA01_5",
+   "date": "260525",
+   "type": "CTX",
+   "koc": null,
+   "sku": "N620144",
+   "product": "Nhan-mat-than-Horus",
+   "action": "Han-noi",
+   "staff": "DTA01",
+   "stt": 5,
+   "craft_step": "han",
+   "craft_order": 70,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 18.27,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_945a3887.mp4",
+  "thumb": "media/thumbs/c_945a3887.jpg",
+  "sheet": "media/sheets/c_945a3887.jpg",
+  "craft_step": "han",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   17.5
+  ],
+  "best_moment_s": 1.5,
+  "roles": {
+   "craft": 0.9,
+   "craft_macro": 0.7,
+   "hook_visual": 0.3
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "tool",
+    "fire",
+    "metal",
+    "product"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "bac",
+   "stone_color": [],
+   "lighting": "mixed",
+   "text_or_watermark": "none",
+   "motion_level": 2,
+   "aesthetic": 4
+  },
+  "description_vi": "Cận cảnh kẹp nhẫn bạc bằng nhíp, khò lửa hàn nối điểm nhỏ, ngọn lửa cam rực và kim loại nóng đỏ.",
+  "keywords_vi": [
+   "hàn nối",
+   "khò lửa",
+   "nhíp",
+   "nhẫn bạc",
+   "ngọn lửa",
+   "kim loại nóng đỏ",
+   "chế tác",
+   "cận cảnh"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_a2dbfeee",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/260525_CTX_N620144_Nhan-mat-than-Horus_Khoan-hoc-da_DTA01_15.mp4",
+  "name": "260525_CTX_N620144_Nhan-mat-than-Horus_Khoan-hoc-da_DTA01_15.mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620144",
+  "parsed": {
+   "raw": "260525_CTX_N620144_Nhan-mat-than-Horus_Khoan-hoc-da_DTA01_15",
+   "date": "260525",
+   "type": "CTX",
+   "koc": null,
+   "sku": "N620144",
+   "product": "Nhan-mat-than-Horus",
+   "action": "Khoan-hoc-da",
+   "staff": "DTA01",
+   "stt": 15,
+   "craft_step": "khoan",
+   "craft_order": 90,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 14.91,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_a2dbfeee.mp4",
+  "thumb": "media/thumbs/c_a2dbfeee.jpg",
+  "sheet": "media/sheets/c_a2dbfeee.jpg",
+  "craft_step": "khoan",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   14.0
+  ],
+  "best_moment_s": 3.7,
+  "roles": {
+   "craft": 0.9,
+   "craft_macro": 0.85,
+   "craft_pov": 0.3
+  },
+  "tags": {
+   "shot_size": "extreme_close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "tool",
+    "metal",
+    "product"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "bac",
+   "stone_color": [],
+   "lighting": "mixed",
+   "text_or_watermark": "own_logo",
+   "motion_level": 2,
+   "aesthetic": 4
+  },
+  "description_vi": "Cận cực gần mũi khoan nhỏ khoét hốc đá trên thân nhẫn bạc, tay thợ giữ nhẫn, nền tối ấm, bảng tên HuyK phía sau.",
+  "keywords_vi": [
+   "khoan",
+   "hốc đá",
+   "mũi khoan",
+   "nhẫn bạc",
+   "cận cực gần",
+   "tay thợ",
+   "chế tác",
+   "HuyK"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_dd5c8f4f",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/260525_CTX_N620144_Nhan-mat-than-Horus_Khoan-hoc-da_DTA01_20.mp4",
+  "name": "260525_CTX_N620144_Nhan-mat-than-Horus_Khoan-hoc-da_DTA01_20.mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620144",
+  "parsed": {
+   "raw": "260525_CTX_N620144_Nhan-mat-than-Horus_Khoan-hoc-da_DTA01_20",
+   "date": "260525",
+   "type": "CTX",
+   "koc": null,
+   "sku": "N620144",
+   "product": "Nhan-mat-than-Horus",
+   "action": "Khoan-hoc-da",
+   "staff": "DTA01",
+   "stt": 20,
+   "craft_step": "khoan",
+   "craft_order": 90,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 13.21,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_dd5c8f4f.mp4",
+  "thumb": "media/thumbs/c_dd5c8f4f.jpg",
+  "sheet": "media/sheets/c_dd5c8f4f.jpg",
+  "craft_step": "khoan",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   12.5
+  ],
+  "best_moment_s": 4.4,
+  "roles": {
+   "craft": 0.9,
+   "craft_macro": 0.85
+  },
+  "tags": {
+   "shot_size": "extreme_close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "tool",
+    "metal",
+    "product"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "bac",
+   "stone_color": [],
+   "lighting": "mixed",
+   "text_or_watermark": "none",
+   "motion_level": 2,
+   "aesthetic": 4
+  },
+  "description_vi": "Cận cực gần mũi khoan tạo chi tiết hốc đá hình lục giác trên thân nhẫn bạc, nền đen, ánh sáng ấm.",
+  "keywords_vi": [
+   "khoan",
+   "hốc đá",
+   "mũi khoan",
+   "nhẫn bạc",
+   "cận cực gần",
+   "chế tác",
+   "nền đen",
+   "chi tiết"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_23320159",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/260525_CTX_N620144_Nhan-mat-than-Horus_Khoan-hoc-da_DTA01_4.mp4",
+  "name": "260525_CTX_N620144_Nhan-mat-than-Horus_Khoan-hoc-da_DTA01_4.mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620144",
+  "parsed": {
+   "raw": "260525_CTX_N620144_Nhan-mat-than-Horus_Khoan-hoc-da_DTA01_4",
+   "date": "260525",
+   "type": "CTX",
+   "koc": null,
+   "sku": "N620144",
+   "product": "Nhan-mat-than-Horus",
+   "action": "Khoan-hoc-da",
+   "staff": "DTA01",
+   "stt": 4,
+   "craft_step": "khoan",
+   "craft_order": 90,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 16.97,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_23320159.mp4",
+  "thumb": "media/thumbs/c_23320159.jpg",
+  "sheet": "media/sheets/c_23320159.jpg",
+  "craft_step": "khoan",
+  "craft_step_source": "filename",
+  "usable": [
+   0.5,
+   16.0
+  ],
+  "best_moment_s": 8.5,
+  "roles": {
+   "craft": 0.9,
+   "craft_macro": 0.85
+  },
+  "tags": {
+   "shot_size": "extreme_close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "tool",
+    "metal",
+    "product"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "bac",
+   "stone_color": [],
+   "lighting": "mixed",
+   "text_or_watermark": "own_logo",
+   "motion_level": 2,
+   "aesthetic": 4
+  },
+  "description_vi": "Cận cực gần mũi khoan mài hốc đá trên nhẫn bạc kẹp giữa các ngón tay, bảng tên HuyK phía sau, tông nâu ấm.",
+  "keywords_vi": [
+   "khoan",
+   "hốc đá",
+   "mũi khoan",
+   "nhẫn bạc",
+   "cận cực gần",
+   "tay thợ",
+   "chế tác",
+   "HuyK"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_41a68bc5",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/260525_CTX_N620144_Nhan-mat-than-Horus_Nung-bac_DTA01_14.mp4",
+  "name": "260525_CTX_N620144_Nhan-mat-than-Horus_Nung-bac_DTA01_14.mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620144",
+  "parsed": {
+   "raw": "260525_CTX_N620144_Nhan-mat-than-Horus_Nung-bac_DTA01_14",
+   "date": "260525",
+   "type": "CTX",
+   "koc": null,
+   "sku": "N620144",
+   "product": "Nhan-mat-than-Horus",
+   "action": "Nung-bac",
+   "staff": "DTA01",
+   "stt": 14,
+   "craft_step": "nung_nau",
+   "craft_order": 30,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 15.67,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_41a68bc5.mp4",
+  "thumb": "media/thumbs/c_41a68bc5.jpg",
+  "sheet": "media/sheets/c_41a68bc5.jpg",
+  "craft_step": "nung_nau",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   14.5
+  ],
+  "best_moment_s": 1.3,
+  "roles": {
+   "craft": 0.9,
+   "craft_macro": 0.5,
+   "hook_visual": 0.4
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "fire",
+    "metal",
+    "tool"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": false,
+   "product_type": "none",
+   "metal": "bac",
+   "stone_color": [],
+   "lighting": "mixed",
+   "text_or_watermark": "none",
+   "motion_level": 2,
+   "aesthetic": 4
+  },
+  "description_vi": "Khò lửa nung chảy các mảnh bạc vụn trong chén sứ, ngọn lửa cam vàng rực, kim loại nóng đỏ dần tan chảy.",
+  "keywords_vi": [
+   "nung chảy",
+   "khò lửa",
+   "chén sứ",
+   "bạc vụn",
+   "ngọn lửa",
+   "nấu bạc",
+   "kim loại nóng chảy",
+   "chế tác"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_2b746d54",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/260525_CTX_N620144_Nhan-mat-than-Horus_Nung-bac_DTA01_3.mp4",
+  "name": "260525_CTX_N620144_Nhan-mat-than-Horus_Nung-bac_DTA01_3.mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620144",
+  "parsed": {
+   "raw": "260525_CTX_N620144_Nhan-mat-than-Horus_Nung-bac_DTA01_3",
+   "date": "260525",
+   "type": "CTX",
+   "koc": null,
+   "sku": "N620144",
+   "product": "Nhan-mat-than-Horus",
+   "action": "Nung-bac",
+   "staff": "DTA01",
+   "stt": 3,
+   "craft_step": "nung_nau",
+   "craft_order": 30,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 14.87,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_2b746d54.mp4",
+  "thumb": "media/thumbs/c_2b746d54.jpg",
+  "sheet": "media/sheets/c_2b746d54.jpg",
+  "craft_step": "nung_nau",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   14.0
+  ],
+  "best_moment_s": 6.2,
+  "roles": {
+   "craft": 0.9,
+   "craft_macro": 0.4,
+   "hook_visual": 0.3
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "fire",
+    "metal",
+    "tool"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": false,
+   "product_type": "none",
+   "metal": "bac",
+   "stone_color": [],
+   "lighting": "mixed",
+   "text_or_watermark": "none",
+   "motion_level": 2,
+   "aesthetic": 4
+  },
+  "description_vi": "Đầu khò đồng thau nung chảy giọt bạc sáng đỏ trong chén sứ, bên cạnh có bột borax trắng, góc quay nghiêng từ trên.",
+  "keywords_vi": [
+   "nung bạc",
+   "khò lửa",
+   "chén sứ",
+   "bạc nóng chảy",
+   "borax",
+   "ngọn lửa xanh",
+   "chế tác",
+   "cận cảnh"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_e186ff2a",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/8. CUA BAC THUA-10.mp4",
+  "name": "8. CUA BAC THUA-10.mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": null,
+  "parsed": {
+   "raw": "8. CUA BAC THUA-10",
+   "date": null,
+   "type": null,
+   "koc": null,
+   "sku": null,
+   "product": null,
+   "action": "8. CUA BAC THUA-10",
+   "staff": null,
+   "stt": null,
+   "craft_step": "cua_cat",
+   "craft_order": 60,
+   "parse_confidence": 0.25
+  },
+  "tech": {
+   "duration": 6.92,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_e186ff2a.mp4",
+  "thumb": "media/thumbs/c_e186ff2a.jpg",
+  "sheet": "media/sheets/c_e186ff2a.jpg",
+  "craft_step": "dap_can",
+  "craft_step_source": "ai",
+  "usable": [
+   0.0,
+   6.5
+  ],
+  "best_moment_s": 0.6,
+  "roles": {
+   "craft": 0.8,
+   "huyk_silent": 0.7
+  },
+  "tags": {
+   "shot_size": "medium",
+   "camera": "static",
+   "subject": [
+    "person",
+    "huyk_face",
+    "hands",
+    "tool",
+    "metal",
+    "workshop"
+   ],
+   "huyk_present": true,
+   "person_speaking_to_camera": false,
+   "product_visible": false,
+   "product_type": "none",
+   "metal": "bac",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 3,
+   "aesthetic": 3
+  },
+  "description_vi": "HuyK mặc tạp dề cúi xuống bàn thợ, tay phải đập búa liên tục lên phôi bạc, sau đó ngẩng lên nói nhỏ rồi thu dọn.",
+  "keywords_vi": [
+   "HuyK",
+   "đập búa",
+   "phôi bạc",
+   "thợ kim hoàn",
+   "tạp dề",
+   "bàn thợ",
+   "xưởng",
+   "chế tác"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_cda93128",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/N620112_Nhẫn mắt thần Horus đá xanh_Gắn đá chủ_DTA01_190326_ (4).mp4",
+  "name": "N620112_Nhẫn mắt thần Horus đá xanh_Gắn đá chủ_DTA01_190326_ (4).mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620112",
+  "parsed": {
+   "raw": "N620112_Nhẫn mắt thần Horus đá xanh_Gắn đá chủ_DTA01_190326_ (4)",
+   "date": "190326",
+   "type": null,
+   "koc": null,
+   "sku": "N620112",
+   "product": "Nhẫn mắt thần Horus đá xanh",
+   "action": "Gắn đá chủ",
+   "staff": "DTA01",
+   "stt": 4,
+   "craft_step": "gan_da_chu",
+   "craft_order": 100,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 24.06,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_cda93128.mp4",
+  "thumb": "media/thumbs/c_cda93128.jpg",
+  "sheet": "media/sheets/c_cda93128.jpg",
+  "craft_step": "gan_da_chu",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   23.5
+  ],
+  "best_moment_s": 8.0,
+  "roles": {
+   "craft": 0.9,
+   "craft_macro": 0.5,
+   "craft_pov": 0.3
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "tool",
+    "stone",
+    "product"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "bac",
+   "stone_color": [
+    "xanh lá"
+   ],
+   "lighting": "dark",
+   "text_or_watermark": "own_logo",
+   "motion_level": 1,
+   "aesthetic": 3
+  },
+  "description_vi": "Cận cảnh tay thợ dùng dụng cụ cố định viên đá xanh lá lên nhẫn bạc đính đá viền, nền tối, bảng logo Viễn Chí Bảo phía sau.",
+  "keywords_vi": [
+   "gắn đá chủ",
+   "đá xanh lá",
+   "nhẫn mắt thần Horus",
+   "nhẫn bạc",
+   "đá viền",
+   "tay thợ",
+   "chế tác",
+   "cận cảnh"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_4e988437",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/N620112_Nhẫn mắt thần Horus đá xanh_Hoàn thành_DTA01_190326_ (3).mp4",
+  "name": "N620112_Nhẫn mắt thần Horus đá xanh_Hoàn thành_DTA01_190326_ (3).mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620112",
+  "parsed": {
+   "raw": "N620112_Nhẫn mắt thần Horus đá xanh_Hoàn thành_DTA01_190326_ (3)",
+   "date": "190326",
+   "type": null,
+   "koc": null,
+   "sku": "N620112",
+   "product": "Nhẫn mắt thần Horus đá xanh",
+   "action": "Hoàn thành",
+   "staff": "DTA01",
+   "stt": 3,
+   "craft_step": "hoan_thien",
+   "craft_order": 130,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 18.57,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_4e988437.mp4",
+  "thumb": "media/thumbs/c_4e988437.jpg",
+  "sheet": "media/sheets/c_4e988437.jpg",
+  "craft_step": "hoan_thien",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   18.0
+  ],
+  "best_moment_s": 6.2,
+  "roles": {
+   "product_hero": 0.9,
+   "product_final": 0.85,
+   "craft": 0.8
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "product",
+    "stone"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "bac",
+   "stone_color": [
+    "xanh lá"
+   ],
+   "lighting": "good",
+   "text_or_watermark": "own_logo",
+   "motion_level": 2,
+   "aesthetic": 4
+  },
+  "description_vi": "Hai tay xoay ngắm nhẫn bạc đá xanh lá đã hoàn thành, đính đá viền hai bên, bảng logo Viễn Chí Bảo phía sau.",
+  "keywords_vi": [
+   "nhẫn hoàn thiện",
+   "đá xanh lá",
+   "nhẫn mắt thần Horus",
+   "xoay nhẫn",
+   "nhẫn bạc",
+   "đá viền",
+   "trên tay",
+   "sản phẩm"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_ac4ed679",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/N620112_Nhẫn mắt thần Horus đá xanh_Hoàn thành_DTA01_190326_ (5).mp4",
+  "name": "N620112_Nhẫn mắt thần Horus đá xanh_Hoàn thành_DTA01_190326_ (5).mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620112",
+  "parsed": {
+   "raw": "N620112_Nhẫn mắt thần Horus đá xanh_Hoàn thành_DTA01_190326_ (5)",
+   "date": "190326",
+   "type": null,
+   "koc": null,
+   "sku": "N620112",
+   "product": "Nhẫn mắt thần Horus đá xanh",
+   "action": "Hoàn thành",
+   "staff": "DTA01",
+   "stt": 5,
+   "craft_step": "hoan_thien",
+   "craft_order": 130,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 22.55,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_ac4ed679.mp4",
+  "thumb": "media/thumbs/c_ac4ed679.jpg",
+  "sheet": "media/sheets/c_ac4ed679.jpg",
+  "craft_step": "hoan_thien",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   20.0
+  ],
+  "best_moment_s": 11.3,
+  "roles": {
+   "product_hero": 0.9,
+   "product_final": 0.85,
+   "craft": 0.8,
+   "craft_macro": 0.3
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "product",
+    "stone"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "bac",
+   "stone_color": [
+    "xanh lá"
+   ],
+   "lighting": "good",
+   "text_or_watermark": "own_logo",
+   "motion_level": 1,
+   "aesthetic": 4
+  },
+  "description_vi": "Tay thợ xoay nhẫn bạc hoàn thiện đính đá xanh lá hình thoi và đá nhỏ viền, nền tấm logo Viễn Chí Bảo mờ phía sau.",
+  "keywords_vi": [
+   "nhẫn bạc",
+   "đá xanh lá",
+   "hoàn thiện",
+   "xoay nhẫn",
+   "cận cảnh",
+   "logo Viễn Chí Bảo",
+   "Horus",
+   "trưng bày"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_e8340e6e",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/N620112_Nhẫn mắt thần Horus đá xanh_Khoan chi tiết_DTA01_190326_ (6).mp4",
+  "name": "N620112_Nhẫn mắt thần Horus đá xanh_Khoan chi tiết_DTA01_190326_ (6).mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620112",
+  "parsed": {
+   "raw": "N620112_Nhẫn mắt thần Horus đá xanh_Khoan chi tiết_DTA01_190326_ (6)",
+   "date": "190326",
+   "type": null,
+   "koc": null,
+   "sku": "N620112",
+   "product": "Nhẫn mắt thần Horus đá xanh",
+   "action": "Khoan chi tiết",
+   "staff": "DTA01",
+   "stt": 6,
+   "craft_step": "khoan",
+   "craft_order": 90,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 12.07,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_e8340e6e.mp4",
+  "thumb": "media/thumbs/c_e8340e6e.jpg",
+  "sheet": "media/sheets/c_e8340e6e.jpg",
+  "craft_step": "khoan",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   9.8
+  ],
+  "best_moment_s": 3.0,
+  "roles": {
+   "craft": 0.9,
+   "craft_macro": 0.8
+  },
+  "tags": {
+   "shot_size": "extreme_close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "tool",
+    "metal",
+    "product"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "bac",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "own_logo",
+   "motion_level": 2,
+   "aesthetic": 4
+  },
+  "description_vi": "Cận cảnh thợ dùng máy khoan mũi nhỏ khoan chi tiết trên thân nhẫn bạc, tay giữ nhẫn vững trên bàn kê gỗ.",
+  "keywords_vi": [
+   "khoan",
+   "chế tác",
+   "nhẫn bạc",
+   "mũi khoan",
+   "cận cảnh",
+   "tay thợ",
+   "xưởng kim hoàn",
+   "chi tiết"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_e1713d12",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/N620112_Nhẫn mắt thần Horus đá xanh_Khoan chi tiết_DTA01_190326_ (7).mp4",
+  "name": "N620112_Nhẫn mắt thần Horus đá xanh_Khoan chi tiết_DTA01_190326_ (7).mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620112",
+  "parsed": {
+   "raw": "N620112_Nhẫn mắt thần Horus đá xanh_Khoan chi tiết_DTA01_190326_ (7)",
+   "date": "190326",
+   "type": null,
+   "koc": null,
+   "sku": "N620112",
+   "product": "Nhẫn mắt thần Horus đá xanh",
+   "action": "Khoan chi tiết",
+   "staff": "DTA01",
+   "stt": 7,
+   "craft_step": "khoan",
+   "craft_order": 90,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 19.04,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_e1713d12.mp4",
+  "thumb": "media/thumbs/c_e1713d12.jpg",
+  "sheet": "media/sheets/c_e1713d12.jpg",
+  "craft_step": "khoan",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   18.5
+  ],
+  "best_moment_s": 9.5,
+  "roles": {
+   "craft": 0.9,
+   "craft_macro": 0.7
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "tool",
+    "metal",
+    "product"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "bac",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "own_logo",
+   "motion_level": 2,
+   "aesthetic": 4
+  },
+  "description_vi": "Thợ giữ nhẫn bạc và dùng mũi khoan nhỏ khoét chi tiết quanh ổ đá, bàn kê gỗ và tấm logo phía sau.",
+  "keywords_vi": [
+   "khoan",
+   "mũi khoan",
+   "nhẫn bạc",
+   "ổ đá",
+   "chế tác",
+   "tay thợ",
+   "cận cảnh",
+   "xưởng kim hoàn"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_37e95497",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/N620112_Nhẫn mắt thần Horus đá xanh_Đánh bóng_DTA01_190326_ (5).mp4",
+  "name": "N620112_Nhẫn mắt thần Horus đá xanh_Đánh bóng_DTA01_190326_ (5).mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620112",
+  "parsed": {
+   "raw": "N620112_Nhẫn mắt thần Horus đá xanh_Đánh bóng_DTA01_190326_ (5)",
+   "date": "190326",
+   "type": null,
+   "koc": null,
+   "sku": "N620112",
+   "product": "Nhẫn mắt thần Horus đá xanh",
+   "action": "Đánh bóng",
+   "staff": "DTA01",
+   "stt": 5,
+   "craft_step": "danh_bong",
+   "craft_order": 120,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 22.04,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_37e95497.mp4",
+  "thumb": "media/thumbs/c_37e95497.jpg",
+  "sheet": "media/sheets/c_37e95497.jpg",
+  "craft_step": "danh_bong",
+  "craft_step_source": "filename",
+  "usable": [
+   1.5,
+   21.0
+  ],
+  "best_moment_s": 3.7,
+  "roles": {
+   "craft": 0.9,
+   "craft_pov": 0.4
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "tool",
+    "product",
+    "metal"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "bac",
+   "stone_color": [
+    "xanh lá"
+   ],
+   "lighting": "mixed",
+   "text_or_watermark": "none",
+   "motion_level": 2,
+   "aesthetic": 3
+  },
+  "description_vi": "Thợ đeo găng tay đưa nhẫn bạc đá xanh lá vào bánh xe đánh bóng quay, ánh sáng xưởng hơi tối.",
+  "keywords_vi": [
+   "đánh bóng",
+   "bánh xe đánh bóng",
+   "găng tay",
+   "nhẫn bạc",
+   "đá xanh lá",
+   "xưởng kim hoàn",
+   "chế tác",
+   "làm sáng"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_79cf9043",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/N620112_Nhẫn mắt thần Horus đá xanh_Đính đá viền_DTA01_190326_ (10).mp4",
+  "name": "N620112_Nhẫn mắt thần Horus đá xanh_Đính đá viền_DTA01_190326_ (10).mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620112",
+  "parsed": {
+   "raw": "N620112_Nhẫn mắt thần Horus đá xanh_Đính đá viền_DTA01_190326_ (10)",
+   "date": "190326",
+   "type": null,
+   "koc": null,
+   "sku": "N620112",
+   "product": "Nhẫn mắt thần Horus đá xanh",
+   "action": "Đính đá viền",
+   "staff": "DTA01",
+   "stt": 10,
+   "craft_step": "dinh_da",
+   "craft_order": 110,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 16.05,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_79cf9043.mp4",
+  "thumb": "media/thumbs/c_79cf9043.jpg",
+  "sheet": "media/sheets/c_79cf9043.jpg",
+  "craft_step": "dinh_da",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   15.5
+  ],
+  "best_moment_s": 10.7,
+  "roles": {
+   "craft": 0.9,
+   "craft_macro": 0.8
+  },
+  "tags": {
+   "shot_size": "extreme_close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "tool",
+    "metal",
+    "product"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "bac",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "own_logo",
+   "motion_level": 1,
+   "aesthetic": 4
+  },
+  "description_vi": "Cận cực gần mũi khoan nhỏ xử lý hạt viền và ổ đá trên nhẫn bạc chưa gắn đá, tay thợ giữ nhẫn ổn định.",
+  "keywords_vi": [
+   "đính đá viền",
+   "hạt viền",
+   "ổ đá",
+   "mũi khoan",
+   "nhẫn bạc",
+   "cận cực gần",
+   "tay thợ",
+   "chế tác"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_5b123562",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/N620112_Nhẫn mắt thần Horus đá xanh_Đính đá viền_DTA01_190326_ (9).mp4",
+  "name": "N620112_Nhẫn mắt thần Horus đá xanh_Đính đá viền_DTA01_190326_ (9).mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620112",
+  "parsed": {
+   "raw": "N620112_Nhẫn mắt thần Horus đá xanh_Đính đá viền_DTA01_190326_ (9)",
+   "date": "190326",
+   "type": null,
+   "koc": null,
+   "sku": "N620112",
+   "product": "Nhẫn mắt thần Horus đá xanh",
+   "action": "Đính đá viền",
+   "staff": "DTA01",
+   "stt": 9,
+   "craft_step": "dinh_da",
+   "craft_order": 110,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 9.57,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_5b123562.mp4",
+  "thumb": "media/thumbs/c_5b123562.jpg",
+  "sheet": "media/sheets/c_5b123562.jpg",
+  "craft_step": "dinh_da",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   9.3
+  ],
+  "best_moment_s": 3.2,
+  "roles": {
+   "craft": 0.9,
+   "craft_macro": 0.8
+  },
+  "tags": {
+   "shot_size": "extreme_close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "tool",
+    "metal",
+    "product"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "bac",
+   "stone_color": [],
+   "lighting": "good",
+   "text_or_watermark": "own_logo",
+   "motion_level": 1,
+   "aesthetic": 4
+  },
+  "description_vi": "Cận cảnh mũi dụng cụ làm hạt viền quanh ổ đá thoi trên nhẫn bạc, sau đó ngón tay giữ nhẫn xoay nhẹ.",
+  "keywords_vi": [
+   "đính đá viền",
+   "hạt viền",
+   "ổ đá",
+   "dụng cụ",
+   "nhẫn bạc",
+   "cận cực gần",
+   "tay thợ",
+   "chế tác"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_2adf8938",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/N620120_Nhẫn Mắt Thần Horus đá xanh lá HK49336_Nhìn đá_DTA04_300326_2.mp4",
+  "name": "N620120_Nhẫn Mắt Thần Horus đá xanh lá HK49336_Nhìn đá_DTA04_300326_2.mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620120",
+  "parsed": {
+   "raw": "N620120_Nhẫn Mắt Thần Horus đá xanh lá HK49336_Nhìn đá_DTA04_300326_2",
+   "date": "300326",
+   "type": null,
+   "koc": null,
+   "sku": "N620120",
+   "product": "Nhẫn Mắt Thần Horus đá xanh lá HK49336",
+   "action": "Nhìn đá",
+   "staff": "DTA04",
+   "stt": 2,
+   "craft_step": "dinh_da",
+   "craft_order": 110,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 15.77,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_2adf8938.mp4",
+  "thumb": "media/thumbs/c_2adf8938.jpg",
+  "sheet": "media/sheets/c_2adf8938.jpg",
+  "craft_step": "dinh_da",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   15.5
+  ],
+  "best_moment_s": 6.6,
+  "roles": {
+   "craft": 0.8,
+   "craft_macro": 0.8,
+   "product_hero": 0.5
+  },
+  "tags": {
+   "shot_size": "extreme_close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "stone",
+    "tool",
+    "product"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "bac",
+   "stone_color": [
+    "xanh lá"
+   ],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 1,
+   "aesthetic": 5
+  },
+  "description_vi": "Nhíp kẹp viên đá xanh lá hình thoi xoay lấp lánh phía trước thân nhẫn bạc chưa gắn đá, kiểm tra đá trước khi đính.",
+  "keywords_vi": [
+   "nhìn đá",
+   "đá xanh lá",
+   "nhíp",
+   "đá hình thoi",
+   "lấp lánh",
+   "nhẫn bạc",
+   "cận cực gần",
+   "kiểm đá"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_e1333733",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/N620120_Nhẫn Mắt Thần Horus đá xanh lá HK49336_Đính đá_DTA04_300326_1.mp4",
+  "name": "N620120_Nhẫn Mắt Thần Horus đá xanh lá HK49336_Đính đá_DTA04_300326_1.mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620120",
+  "parsed": {
+   "raw": "N620120_Nhẫn Mắt Thần Horus đá xanh lá HK49336_Đính đá_DTA04_300326_1",
+   "date": "300326",
+   "type": null,
+   "koc": null,
+   "sku": "N620120",
+   "product": "Nhẫn Mắt Thần Horus đá xanh lá HK49336",
+   "action": "Đính đá",
+   "staff": "DTA04",
+   "stt": 1,
+   "craft_step": "dinh_da",
+   "craft_order": 110,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 13.54,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_e1333733.mp4",
+  "thumb": "media/thumbs/c_e1333733.jpg",
+  "sheet": "media/sheets/c_e1333733.jpg",
+  "craft_step": "dinh_da",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   12.8
+  ],
+  "best_moment_s": 6.8,
+  "roles": {
+   "craft": 0.9,
+   "craft_macro": 0.7,
+   "product_hero": 0.4
+  },
+  "tags": {
+   "shot_size": "extreme_close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "stone",
+    "tool",
+    "product"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "bac",
+   "stone_color": [
+    "xanh lá"
+   ],
+   "lighting": "good",
+   "text_or_watermark": "none",
+   "motion_level": 1,
+   "aesthetic": 5
+  },
+  "description_vi": "Nhíp đưa viên đá xanh lá hình thoi vào ổ trên nhẫn bạc, đá khớp vị trí rồi lóe sáng dưới đèn, nền nâu ấm.",
+  "keywords_vi": [
+   "gắn đá",
+   "đá xanh lá",
+   "nhíp",
+   "ổ đá",
+   "nhẫn bạc",
+   "cận cực gần",
+   "lấp lánh",
+   "đính đá"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_c5be1926",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/N620120_Nhẫn Mắt Thần Horus đá xanh lá HK49336_Đính đá_DTA04_300326_2.mp4",
+  "name": "N620120_Nhẫn Mắt Thần Horus đá xanh lá HK49336_Đính đá_DTA04_300326_2.mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "owned",
+  "product_set": "N620120",
+  "parsed": {
+   "raw": "N620120_Nhẫn Mắt Thần Horus đá xanh lá HK49336_Đính đá_DTA04_300326_2",
+   "date": "300326",
+   "type": null,
+   "koc": null,
+   "sku": "N620120",
+   "product": "Nhẫn Mắt Thần Horus đá xanh lá HK49336",
+   "action": "Đính đá",
+   "staff": "DTA04",
+   "stt": 2,
+   "craft_step": "dinh_da",
+   "craft_order": 110,
+   "parse_confidence": 1.0
+  },
+  "tech": {
+   "duration": 17.44,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_c5be1926.mp4",
+  "thumb": "media/thumbs/c_c5be1926.jpg",
+  "sheet": "media/sheets/c_c5be1926.jpg",
+  "craft_step": "dinh_da",
+  "craft_step_source": "filename",
+  "usable": [
+   0.0,
+   16.5
+  ],
+  "best_moment_s": 8.7,
+  "roles": {
+   "craft": 0.9,
+   "craft_macro": 0.5,
+   "product_hero": 0.4
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "static",
+   "subject": [
+    "hands",
+    "stone",
+    "tool",
+    "product",
+    "workshop"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "bac",
+   "stone_color": [
+    "xanh lá"
+   ],
+   "lighting": "mixed",
+   "text_or_watermark": "none",
+   "motion_level": 1,
+   "aesthetic": 4
+  },
+  "description_vi": "Tay thợ giữ nhẫn bạc trên bàn kê, tay kia dùng nhíp đặt và chỉnh viên đá xanh lá vào ổ, nền tối ấm.",
+  "keywords_vi": [
+   "gắn đá",
+   "đá xanh lá",
+   "nhíp",
+   "nhẫn bạc",
+   "tay thợ",
+   "đính đá",
+   "bàn kê",
+   "xưởng kim hoàn"
+  ],
+  "tagged": true
+ },
+ {
+  "id": "c_71b6151f",
+  "file": "Tài Nguyên VCB Real Sample/3.7 Project Capcut/Nhan_Than_Hor/materials/video/银莫桑石戒指冰蓝湖水绿戒指#银饰 #情侣戒指 #美出高级感 (1).mp4",
+  "name": "银莫桑石戒指冰蓝湖水绿戒指#银饰 #情侣戒指 #美出高级感 (1).mp4",
+  "folder": "CAPCUT",
+  "role_hint": "craft",
+  "rights": "collected",
+  "product_set": null,
+  "parsed": {
+   "raw": "银莫桑石戒指冰蓝湖水绿戒指#银饰 #情侣戒指 #美出高级感 (1)",
+   "date": null,
+   "type": null,
+   "koc": null,
+   "sku": null,
+   "product": null,
+   "action": "银莫桑石戒指冰蓝湖水绿戒指#银饰 #情侣戒指 #美出高级感 (1)",
+   "staff": null,
+   "stt": null,
+   "craft_step": null,
+   "craft_order": null,
+   "parse_confidence": 0.25
+  },
+  "tech": {
+   "duration": 9.06,
+   "width": 1080,
+   "height": 1920,
+   "rotation": 0,
+   "fps": 30.0,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "hevc"
+  },
+  "proxy": "media/proxy/c_71b6151f.mp4",
+  "thumb": "media/thumbs/c_71b6151f.jpg",
+  "sheet": "media/sheets/c_71b6151f.jpg",
+  "craft_step": "hoan_thien",
+  "craft_step_source": "ai",
+  "usable": [
+   0.0,
+   8.8
+  ],
+  "best_moment_s": 5.3,
+  "roles": {
+   "product_hero": 0.9,
+   "product_final": 0.85,
+   "stock_action": 0.3
+  },
+  "tags": {
+   "shot_size": "close",
+   "camera": "handheld",
+   "subject": [
+    "hands",
+    "product",
+    "stone",
+    "person"
+   ],
+   "huyk_present": false,
+   "person_speaking_to_camera": false,
+   "product_visible": true,
+   "product_type": "nhan",
+   "metal": "bac",
+   "stone_color": [
+    "xanh lá",
+    "xanh dương"
+   ],
+   "lighting": "mixed",
+   "text_or_watermark": "third_party",
+   "motion_level": 2,
+   "aesthetic": 3
+  },
+  "description_vi": "Video bên thứ ba: nhẫn bạc đá xanh lục lam hình thoi đeo trên bàn tay xăm, trong hộp và cận cảnh đá lấp lánh, có phụ đề Trung.",
+  "keywords_vi": [
+   "nhẫn bạc",
+   "đá xanh",
+   "moissanite",
+   "bàn tay xăm",
+   "đeo thử",
+   "hộp nhẫn",
+   "cận cảnh",
+   "video ngoài"
+  ],
+  "tagged": true
+ }
+]

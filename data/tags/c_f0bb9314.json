@@ -1,0 +1,5 @@
+{"id": "c_f0bb9314", "roles": [{"role": "craft", "conf": 0.9}, {"role": "craft_macro", "conf": 0.4}, {"role": "craft_pov", "conf": 0.3}], "craft_step": "dua_mai", "craft_step_conf": 0.8,
+ "shot_size": "close", "camera": "static", "subject": ["hands", "tool", "product", "metal"], "huyk_present": false, "person_speaking_to_camera": false,
+ "product_visible": true, "product_type": "nhan", "metal": "bac", "stone_color": [], "lighting": "good",
+ "text_or_watermark": "none", "motion_level": 2, "aesthetic": 4, "best_moment_s": 9.8, "usable_from_s": 0.0, "usable_to_s": 19.0,
+ "description_vi": "Tay thợ giũa hốc đá trên phôi nhẫn bạc, bụi bạc bám ngón tay, bàn gỗ ấm phía sau.", "keywords_vi": ["giũa", "hốc đá", "phôi nhẫn", "bạc", "chế tác thủ công", "bàn thợ", "cận cảnh"]}

@@ -1,0 +1,6 @@
+{"id": "c_5b123562", "roles": [{"role": "craft", "conf": 0.9}, {"role": "craft_macro", "conf": 0.8}], "craft_step": "dinh_da", "craft_step_conf": 0.65,
+ "shot_size": "extreme_close", "camera": "static", "subject": ["hands", "tool", "metal", "product"], "huyk_present": false, "person_speaking_to_camera": false,
+ "product_visible": true, "product_type": "nhan", "metal": "bac", "stone_color": [], "lighting": "good",
+ "text_or_watermark": "own_logo", "motion_level": 1, "aesthetic": 4, "best_moment_s": 3.2, "usable_from_s": 0.0, "usable_to_s": 9.3,
+ "description_vi": "Cận cảnh mũi dụng cụ làm hạt viền quanh ổ đá thoi trên nhẫn bạc, sau đó ngón tay giữ nhẫn xoay nhẹ.",
+ "keywords_vi": ["đính đá viền", "hạt viền", "ổ đá", "dụng cụ", "nhẫn bạc", "cận cực gần", "tay thợ", "chế tác"]}

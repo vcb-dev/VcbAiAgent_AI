@@ -1,0 +1,5 @@
+{"id": "c_06efd4b9", "roles": [{"role": "hook_visual", "conf": 0.8}, {"role": "product_hero", "conf": 0.9}, {"role": "product_final", "conf": 0.7}], "craft_step": "hoan_thien", "craft_step_conf": 0.6,
+ "shot_size": "close", "camera": "handheld", "subject": ["hands", "product"], "huyk_present": false, "person_speaking_to_camera": false,
+ "product_visible": true, "product_type": "lac_tay", "metal": "vang", "stone_color": ["trắng"], "lighting": "mixed",
+ "text_or_watermark": "none", "motion_level": 2, "aesthetic": 4, "best_moment_s": 3.7, "usable_from_s": 0.0, "usable_to_s": 8.8,
+ "description_vi": "Tay nữ cầm và đeo lắc tay hoa đính đá trắng bên gương bạc cổ điển, ánh sáng mềm lấp lánh.", "keywords_vi": ["lắc tay", "hoa đính đá", "đeo thử", "gương cổ điển", "lấp lánh", "nữ tính", "trang sức vàng"]}

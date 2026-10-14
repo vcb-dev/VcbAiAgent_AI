@@ -1,0 +1,416 @@
+[
+  {
+    "script_id": "A4_2",
+    "template_id": "A4",
+    "parts": [
+      {
+        "part_no": 1,
+        "role": "product_hero",
+        "vo_text": "Đây là một mẫu nhẫn mà mỗi lần khách đặt, thợ nhà HuyK chỉ biết nhìn nhau rồi đòi bỏ nghề.",
+        "on_screen_text": "Mẫu nhẫn khiến thợ đòi bỏ nghề",
+        "visual_intent_vi": "Cận cảnh nhẫn mắt thần Horus N620144 hoàn thiện xoay chậm trên nền tối, ánh sáng lấp lánh",
+        "craft_step": null,
+        "needs_generation": {
+          "type": "product_video",
+          "reason": "Kho không có footage sản phẩm hoàn thiện N620144; tạo video sản phẩm từ ảnh/3D thật của N620144 (hoặc quay bổ sung), không bịa chi tiết."
+        }
+      },
+      {
+        "part_no": 2,
+        "role": "huyk_talk",
+        "vo_text": "Chiếc nhẫn này khó tới mức chỉ cần lệch một chi tiết nhỏ thôi là gần như bỏ cả sản phẩm.",
+        "on_screen_text": "Lệch một chi tiết là bỏ",
+        "visual_intent_vi": "HuyK nói tại xưởng, nhìn thẳng camera, giọng thật lòng",
+        "craft_step": null,
+        "needs_generation": {
+          "type": "huyk_avatar",
+          "reason": "Clip HuyK nói có sẵn (nói về vàng) không khớp câu này; cần avatar HuyK nói đúng nguyên văn."
+        }
+      },
+      {
+        "part_no": 3,
+        "role": "craft",
+        "vo_text": "Có hôm anh em làm hơn 10 tiếng, tới công đoạn cuối mới phát hiện lỗi,",
+        "on_screen_text": "Hơn 10 tiếng mới phát hiện lỗi",
+        "visual_intent_vi": "Thợ chuẩn bị, cân vàng nguyên liệu trên bàn xưởng, không khí làm việc lâu, mệt",
+        "craft_step": "chuan_bi_nguyen_lieu",
+        "needs_generation": {
+          "type": "none",
+          "reason": "Có footage công đoạn này của N620144 trong kho."
+        }
+      },
+      {
+        "part_no": 4,
+        "role": "craft",
+        "vo_text": "lại lặng lẽ tháo ra làm lại từ đầu.",
+        "on_screen_text": "Tháo ra, làm lại từ đầu",
+        "visual_intent_vi": "Nung nấu chảy vàng trong nồi, lửa đỏ, quay chậm (ẩn ý làm lại từ đầu)",
+        "craft_step": "nung_nau",
+        "needs_generation": {
+          "type": "none",
+          "reason": "Có footage công đoạn này của N620144 trong kho."
+        }
+      },
+      {
+        "part_no": 5,
+        "role": "craft",
+        "vo_text": "Vậy mà rồi vẫn có chiếc thứ hai, rồi chiếc thứ ba, thứ tư.",
+        "on_screen_text": "Chiếc thứ hai, thứ ba, thứ tư",
+        "visual_intent_vi": "Đổ vàng nóng chảy vào khuôn, ra phôi",
+        "craft_step": "do_khuon",
+        "needs_generation": {
+          "type": "none",
+          "reason": "Có footage công đoạn này của N620144 trong kho."
+        }
+      },
+      {
+        "part_no": 6,
+        "role": "huyk_silent",
+        "vo_text": "Vì thật ra người làm nghề đâu phải lúc nào cũng được chọn làm cái mình thích.",
+        "on_screen_text": "Đâu phải lúc nào cũng được chọn",
+        "visual_intent_vi": "HuyK thao tác tại bàn thợ, trầm ngâm, không nói",
+        "craft_step": null,
+        "needs_generation": {
+          "type": "none",
+          "reason": "Dùng clip HuyK thao tác không nói có sẵn, VO lồng đè."
+        }
+      },
+      {
+        "part_no": 7,
+        "role": "craft",
+        "vo_text": "Phía sau một xưởng nhỏ còn là tiền lương cho anh em,",
+        "on_screen_text": "Phía sau một xưởng nhỏ",
+        "visual_intent_vi": "Đập cán phôi vàng, thấy không gian xưởng nhỏ và anh em thợ",
+        "craft_step": "dap_can",
+        "needs_generation": {
+          "type": "none",
+          "reason": "Có footage công đoạn này của N620144 trong kho."
+        }
+      },
+      {
+        "part_no": 8,
+        "role": "craft",
+        "vo_text": "là cơm áo gạo tiền, là cuộc sống của rất nhiều người.",
+        "on_screen_text": "Cơm áo gạo tiền của anh em",
+        "visual_intent_vi": "Cưa cắt chi tiết nhẫn, cận tay thợ",
+        "craft_step": "cua_cat",
+        "needs_generation": {
+          "type": "none",
+          "reason": "Có footage công đoạn này của N620144 trong kho."
+        }
+      },
+      {
+        "part_no": 9,
+        "role": "craft",
+        "vo_text": "Nên nhiều khi thấy mọi người xem hết video, để lại một câu động viên",
+        "on_screen_text": "Một câu động viên, một cái tim",
+        "visual_intent_vi": "Hàn ghép chi tiết nhẫn, tia lửa nhỏ; có thể overlay icon tim/bình luận",
+        "craft_step": "han",
+        "needs_generation": {
+          "type": "none",
+          "reason": "Có footage công đoạn này của N620144 trong kho."
+        }
+      },
+      {
+        "part_no": 10,
+        "role": "huyk_talk",
+        "vo_text": "hay chỉ đơn giản là một cái tim thôi, HuyK quý lắm.",
+        "on_screen_text": "HuyK quý lắm",
+        "visual_intent_vi": "HuyK nói tại hình, cười nhẹ, cảm xúc biết ơn",
+        "craft_step": null,
+        "needs_generation": {
+          "type": "huyk_avatar",
+          "reason": "Clip HuyK nói có sẵn (nói về vàng) không khớp câu này; cần avatar HuyK nói đúng nguyên văn."
+        }
+      },
+      {
+        "part_no": 11,
+        "role": "craft_macro",
+        "vo_text": "Vì nó làm người thợ cảm thấy những đêm thức tới khuya, những lần sửa đi sửa lại tới mỏi mắt,",
+        "on_screen_text": "Những đêm thức tới khuya",
+        "visual_intent_vi": "Macro giũa mài chi tiết nhỏ dưới đèn bàn, thợ cúi sát, không khí đêm",
+        "craft_step": "dua_mai",
+        "needs_generation": {
+          "type": "none",
+          "reason": "Có footage công đoạn này của N620144 trong kho."
+        }
+      },
+      {
+        "part_no": 12,
+        "role": "product_final",
+        "vo_text": "cuối cùng cũng không phải cố gắng vô nghĩa.",
+        "on_screen_text": "Không phải cố gắng vô nghĩa",
+        "visual_intent_vi": "Reveal nhẫn mắt thần Horus N620144 hoàn thiện, xoay chậm, giữ hình 3-4s",
+        "craft_step": "hoan_thien",
+        "needs_generation": {
+          "type": "product_video",
+          "reason": "Kho không có footage sản phẩm hoàn thiện N620144; tạo video sản phẩm từ ảnh/3D thật của N620144 (hoặc quay bổ sung), không bịa chi tiết."
+        }
+      },
+      {
+        "part_no": 13,
+        "role": "outro",
+        "vo_text": "Mình là HuyK đến từ Viễn Chí Bảo.",
+        "on_screen_text": "HuyK – Viễn Chí Bảo",
+        "visual_intent_vi": "Outro HuyK có logo Viễn Chí Bảo",
+        "craft_step": null,
+        "needs_generation": {
+          "type": "none",
+          "reason": "Dùng 1 trong 3 clip outro HuyK có logo sẵn trong kho."
+        }
+      }
+    ]
+  },
+  {
+    "script_id": "A4_3",
+    "template_id": "A4",
+    "parts": [
+      {
+        "part_no": 1,
+        "role": "product_hero",
+        "vo_text": "Khách: \"3 triệu vào việc!\"",
+        "on_screen_text": "3 triệu vào việc?!",
+        "visual_intent_vi": "Nhẫn N620144 hoàn thiện cận cảnh, overlay bong bóng tin nhắn khách trả giá",
+        "craft_step": null,
+        "needs_generation": {
+          "type": "product_video",
+          "reason": "Kho không có footage sản phẩm hoàn thiện N620144; tạo video sản phẩm từ ảnh/3D thật của N620144 (hoặc quay bổ sung), không bịa chi tiết. Lưu ý: kịch bản mô tả nhẫn xoay bánh răng vàng 18K full Moissanite – cần xác nhận khớp N620144 (nhẫn mắt thần Horus) trước khi gen."
+        }
+      },
+      {
+        "part_no": 2,
+        "role": "huyk_talk",
+        "vo_text": "HuyK: \"3 triệu sao được anh trai ơi, mẫu này bên em là vàng cơ mà.",
+        "on_screen_text": "Mẫu này là vàng cơ mà!",
+        "visual_intent_vi": "HuyK nói tại hình, phản ứng hài hước, lắc đầu",
+        "craft_step": null,
+        "needs_generation": {
+          "type": "huyk_avatar",
+          "reason": "Clip HuyK nói có sẵn (nói về vàng) không khớp câu trả lời giá; cần avatar HuyK nói đúng nguyên văn."
+        }
+      },
+      {
+        "part_no": 3,
+        "role": "craft",
+        "vo_text": "Đây là mẫu nhẫn xoay bánh răng, là một thiết kế dạng cơ khí kinh điển,",
+        "on_screen_text": "Nhẫn xoay bánh răng cơ khí",
+        "visual_intent_vi": "Clip vẽ phác thảo thiết kế nhẫn (có sẵn trong kho dùng chung)",
+        "craft_step": "thiet_ke",
+        "needs_generation": {
+          "type": "none",
+          "reason": "Dùng clip vẽ phác thảo dùng chung có sẵn."
+        }
+      },
+      {
+        "part_no": 4,
+        "role": "craft",
+        "vo_text": "mang lại sự đẳng cấp như những chiếc đồng hồ Thụy Sĩ.",
+        "on_screen_text": "Đẳng cấp như đồng hồ Thụy Sĩ",
+        "visual_intent_vi": "Nung nấu vàng, vàng nóng chảy sóng sánh, quay chậm sang trọng",
+        "craft_step": "nung_nau",
+        "needs_generation": {
+          "type": "none",
+          "reason": "Có footage công đoạn này của N620144 trong kho."
+        }
+      },
+      {
+        "part_no": 5,
+        "role": "huyk_silent",
+        "vo_text": "Trước đây HuyK thường từ chối không làm mẫu này cho anh em, tại vì gia công rất khó và phức tạp.",
+        "on_screen_text": "Từng từ chối vì quá khó",
+        "visual_intent_vi": "HuyK thao tác tại bàn thợ, vẻ tập trung, không nói",
+        "craft_step": null,
+        "needs_generation": {
+          "type": "none",
+          "reason": "Dùng clip HuyK thao tác không nói có sẵn, VO lồng đè."
+        }
+      },
+      {
+        "part_no": 6,
+        "role": "craft_macro",
+        "vo_text": "Như anh em xem, chiếc nhẫn này có đến hàng chục chi tiết nhỏ",
+        "on_screen_text": "Hàng chục chi tiết nhỏ",
+        "visual_intent_vi": "Macro cưa cắt các chi tiết nhỏ của nhẫn",
+        "craft_step": "cua_cat",
+        "needs_generation": {
+          "type": "none",
+          "reason": "Có footage công đoạn này của N620144 trong kho."
+        }
+      },
+      {
+        "part_no": 7,
+        "role": "craft_macro",
+        "vo_text": "cần lắp ghép chính xác, không sai một ly.",
+        "on_screen_text": "Lắp ghép không sai một ly",
+        "visual_intent_vi": "Macro hàn ghép chi tiết, thao tác tỉ mỉ",
+        "craft_step": "han",
+        "needs_generation": {
+          "type": "none",
+          "reason": "Có footage công đoạn này của N620144 trong kho."
+        }
+      },
+      {
+        "part_no": 8,
+        "role": "craft",
+        "vo_text": "Hiện tại, nhờ mày mò học hỏi và áp dụng công nghệ, tối ưu quy trình sản xuất,",
+        "on_screen_text": "Áp dụng công nghệ, tối ưu quy trình",
+        "visual_intent_vi": "Khoan chi tiết bằng máy, thao tác chính xác",
+        "craft_step": "khoan",
+        "needs_generation": {
+          "type": "none",
+          "reason": "Có footage công đoạn này của N620144 trong kho."
+        }
+      },
+      {
+        "part_no": 9,
+        "role": "huyk_silent",
+        "vo_text": "HuyK đã có thể cho ra đời chiếc nhẫn xoay bánh răng kinh điển này.",
+        "on_screen_text": "Nhẫn xoay bánh răng đã ra đời",
+        "visual_intent_vi": "HuyK kiểm tra/thao tác trên nhẫn tại bàn, không nói (clip thao tác thứ 2)",
+        "craft_step": null,
+        "needs_generation": {
+          "type": "none",
+          "reason": "Dùng clip HuyK thao tác không nói có sẵn, VO lồng đè."
+        }
+      },
+      {
+        "part_no": 10,
+        "role": "craft_macro",
+        "vo_text": "Chiếc nhẫn sử dụng chất liệu vàng 18K đính full đá Moissanite đẳng cấp.",
+        "on_screen_text": "Vàng 18K, full đá Moissanite",
+        "visual_intent_vi": "Macro đính từng viên đá lên nhẫn vàng",
+        "craft_step": "dinh_da",
+        "needs_generation": {
+          "type": "broll",
+          "reason": "Kho không có cảnh đính đá cho N620144; cần gen b-roll đính đá hoặc quay bổ sung, không thể hiện sai thiết kế."
+        }
+      },
+      {
+        "part_no": 11,
+        "role": "product_final",
+        "vo_text": "Sản phẩm chính là lời tri ân sự ủng hộ của anh em đối với HuyK trong suốt thời gian qua.",
+        "on_screen_text": "Lời tri ân gửi anh em",
+        "visual_intent_vi": "Reveal nhẫn hoàn thiện, xoay bánh răng, đá lấp lánh, giữ hình",
+        "craft_step": "hoan_thien",
+        "needs_generation": {
+          "type": "product_video",
+          "reason": "Kho không có footage sản phẩm hoàn thiện N620144; tạo video sản phẩm từ ảnh/3D thật của N620144 (hoặc quay bổ sung), không bịa chi tiết. Lưu ý: kịch bản mô tả nhẫn xoay bánh răng vàng 18K full Moissanite – cần xác nhận khớp N620144 (nhẫn mắt thần Horus) trước khi gen."
+        }
+      },
+      {
+        "part_no": 12,
+        "role": "huyk_talk",
+        "vo_text": "Những bình luận, những lời động viên của anh em HuyK đều đọc hết, không sót cái nào. Cảm ơn anh em rất nhiều!",
+        "on_screen_text": "Cảm ơn anh em rất nhiều!",
+        "visual_intent_vi": "HuyK nói tại hình, chân thành cảm ơn",
+        "craft_step": null,
+        "needs_generation": {
+          "type": "huyk_avatar",
+          "reason": "Clip HuyK nói có sẵn (nói về vàng) không khớp lời cảm ơn; cần avatar HuyK nói đúng nguyên văn."
+        }
+      },
+      {
+        "part_no": 13,
+        "role": "outro",
+        "vo_text": "Mình là HuyK đến từ Viễn Chí Bảo.",
+        "on_screen_text": "HuyK – Viễn Chí Bảo",
+        "visual_intent_vi": "Outro HuyK có logo Viễn Chí Bảo",
+        "craft_step": null,
+        "needs_generation": {
+          "type": "none",
+          "reason": "Dùng 1 trong 3 clip outro HuyK có logo sẵn trong kho."
+        }
+      }
+    ]
+  },
+  {
+    "script_id": "A2",
+    "template_id": "A1_A3",
+    "parts": [
+      {
+        "part_no": 1,
+        "role": "hook_visual",
+        "vo_text": "Hai chiếc huy chương vàng Olympic này thì một chiếc sẽ được dát vàng trên ngọc thật, còn một chiếc khác lại được cắt từ sắt của tháp Eiffel.",
+        "on_screen_text": "Ngọc thật hay sắt tháp Eiffel?",
+        "visual_intent_vi": "Hai huy chương vàng Olympic Bắc Kinh 2008 và Paris 2024 đặt cạnh nhau, xoay chậm, ánh sáng sang trọng",
+        "craft_step": null,
+        "needs_generation": {
+          "type": "illustration",
+          "reason": "Kho không có hình huy chương/Olympic; ưu tiên ảnh/video tư liệu có bản quyền, nếu gen AI phải bám đúng thiết kế thật."
+        }
+      },
+      {
+        "part_no": 2,
+        "role": "huyk_talk",
+        "vo_text": "Cả hai chiếc huy chương vàng này rất nổi tiếng và gây ra cũng rất nhiều các cuộc tranh cãi: Giữa hai tấm huy chương, cái nào đỉnh hơn?",
+        "on_screen_text": "Tấm huy chương nào đỉnh hơn?",
+        "visual_intent_vi": "HuyK nói tại hình, đặt câu hỏi gợi tò mò",
+        "craft_step": null,
+        "needs_generation": {
+          "type": "huyk_avatar",
+          "reason": "Clip HuyK nói có sẵn (nói về vàng) không khớp câu này; cần avatar HuyK nói đúng nguyên văn."
+        }
+      },
+      {
+        "part_no": 3,
+        "role": "content_illustration",
+        "vo_text": "Huy chương vàng Olympic Bắc Kinh 2008 rất ấn tượng, nổi bật, có thể coi là những thiết kế đặc biệt nhất trong dàn huy chương của Olympic. Về thiết kế, huy chương vàng năm đó của Trung Quốc là vàng được dát ở trên ngọc thật.",
+        "on_screen_text": "Bắc Kinh 2008: vàng dát trên ngọc",
+        "visual_intent_vi": "Cận cảnh huy chương vàng Bắc Kinh 2008, zoom phần ngọc và lớp vàng dát",
+        "craft_step": null,
+        "needs_generation": {
+          "type": "illustration",
+          "reason": "Kho không có hình huy chương/Olympic; ưu tiên ảnh/video tư liệu có bản quyền, nếu gen AI phải bám đúng thiết kế thật."
+        }
+      },
+      {
+        "part_no": 4,
+        "role": "huyk_talk",
+        "vo_text": "Huy chương vàng Olympic Paris 2024 lại được thiết kế bởi thương hiệu Chaumet.",
+        "on_screen_text": "Paris 2024: thiết kế bởi Chaumet",
+        "visual_intent_vi": "HuyK nói tại hình, chuyển ý sang huy chương Paris",
+        "craft_step": null,
+        "needs_generation": {
+          "type": "huyk_avatar",
+          "reason": "Clip HuyK nói có sẵn (nói về vàng) không khớp câu này; cần avatar HuyK nói đúng nguyên văn."
+        }
+      },
+      {
+        "part_no": 5,
+        "role": "content_illustration",
+        "vo_text": "Miếng kim loại ở giữa đây chính là thép nguyên bản của tháp Eiffel, có hình lục giác và được khắc những hình có ý nghĩa lịch sử, văn hóa của Paris.",
+        "on_screen_text": "Thép tháp Eiffel, hình lục giác",
+        "visual_intent_vi": "Cận cảnh huy chương Paris 2024, miếng kim loại lục giác ở giữa và hình khắc; xen tháp Eiffel",
+        "craft_step": null,
+        "needs_generation": {
+          "type": "illustration",
+          "reason": "Kho không có hình huy chương/Olympic; ưu tiên ảnh/video tư liệu có bản quyền, nếu gen AI phải bám đúng thiết kế thật."
+        }
+      },
+      {
+        "part_no": 6,
+        "role": "huyk_talk",
+        "vo_text": "Với cảm nhận của cá nhân mình thì mình thấy là hai thiết kế này đều rất đẹp và ý nghĩa. Vậy thì cá nhân của mọi người thích thiết kế nào hơn?",
+        "on_screen_text": "Bạn thích thiết kế nào hơn?",
+        "visual_intent_vi": "HuyK kết tại hình, nêu cảm nhận và hỏi người xem",
+        "craft_step": null,
+        "needs_generation": {
+          "type": "huyk_avatar",
+          "reason": "Clip HuyK nói có sẵn (nói về vàng) không khớp câu này; cần avatar HuyK nói đúng nguyên văn."
+        }
+      },
+      {
+        "part_no": 7,
+        "role": "outro",
+        "vo_text": "Hãy comment ở bên dưới cho HuyK cùng biết với nhé!",
+        "on_screen_text": "Comment cho HuyK biết nhé!",
+        "visual_intent_vi": "Outro HuyK có logo Viễn Chí Bảo + CTA comment",
+        "craft_step": null,
+        "needs_generation": {
+          "type": "none",
+          "reason": "Dùng clip outro có logo sẵn, VO CTA lồng đè (tắt tiếng gốc nếu clip có thoại)."
+        }
+      }
+    ]
+  }
+]

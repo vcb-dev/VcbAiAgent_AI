@@ -1,0 +1,6 @@
+{"id": "c_71b6151f", "roles": [{"role": "product_hero", "conf": 0.9}, {"role": "product_final", "conf": 0.7}, {"role": "stock_action", "conf": 0.3}], "craft_step": "hoan_thien", "craft_step_conf": 0.8,
+ "shot_size": "close", "camera": "handheld", "subject": ["hands", "product", "stone", "person"], "huyk_present": false, "person_speaking_to_camera": false,
+ "product_visible": true, "product_type": "nhan", "metal": "bac", "stone_color": ["xanh lá", "xanh dương"], "lighting": "mixed",
+ "text_or_watermark": "third_party", "motion_level": 2, "aesthetic": 3, "best_moment_s": 5.3, "usable_from_s": 0.0, "usable_to_s": 8.8,
+ "description_vi": "Video bên thứ ba: nhẫn bạc đá xanh lục lam hình thoi đeo trên bàn tay xăm, trong hộp và cận cảnh đá lấp lánh, có phụ đề Trung.",
+ "keywords_vi": ["nhẫn bạc", "đá xanh", "moissanite", "bàn tay xăm", "đeo thử", "hộp nhẫn", "cận cảnh", "video ngoài"]}

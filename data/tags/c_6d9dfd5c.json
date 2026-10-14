@@ -1,0 +1,49 @@
+{
+ "id": "c_6d9dfd5c",
+ "roles": [
+  {
+   "role": "craft",
+   "conf": 0.9
+  },
+  {
+   "role": "craft_macro",
+   "conf": 0.9
+  }
+ ],
+ "craft_step": "dinh_da",
+ "craft_step_conf": 0.85,
+ "shot_size": "extreme_close",
+ "camera": "static",
+ "subject": [
+  "hands",
+  "tool",
+  "stone",
+  "metal"
+ ],
+ "huyk_present": false,
+ "person_speaking_to_camera": false,
+ "product_visible": true,
+ "product_type": "nhan",
+ "metal": "bac",
+ "stone_color": [
+  "trắng"
+ ],
+ "lighting": "good",
+ "text_or_watermark": "none",
+ "motion_level": 1,
+ "aesthetic": 4,
+ "best_moment_s": 1.25,
+ "usable_from_s": 0.0,
+ "usable_to_s": 13.0,
+ "description_vi": "Cận cảnh nhíp gắp viên đá trắng lấp lánh đặt vào hàng chấu trên nhẫn, nền nâu tối, nhiều lần đính đá liên tiếp.",
+ "keywords_vi": [
+  "đính đá",
+  "nhíp",
+  "đá lấp lánh",
+  "cận cực gần",
+  "nhẫn",
+  "chấu",
+  "chế tác",
+  "nền tối"
+ ]
+}

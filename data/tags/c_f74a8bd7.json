@@ -1,0 +1,50 @@
+{
+ "id": "c_f74a8bd7",
+ "roles": [
+  {
+   "role": "craft",
+   "conf": 0.9
+  },
+  {
+   "role": "hook_visual",
+   "conf": 0.6
+  },
+  {
+   "role": "craft_macro",
+   "conf": 0.45
+  }
+ ],
+ "craft_step": "do_khuon",
+ "craft_step_conf": 0.9,
+ "shot_size": "close",
+ "camera": "static",
+ "subject": [
+  "fire",
+  "metal",
+  "tool"
+ ],
+ "huyk_present": false,
+ "person_speaking_to_camera": false,
+ "product_visible": false,
+ "product_type": "none",
+ "metal": "bac",
+ "stone_color": [],
+ "lighting": "mixed",
+ "text_or_watermark": "none",
+ "motion_level": 3,
+ "aesthetic": 5,
+ "best_moment_s": 7.7,
+ "usable_from_s": 1.3,
+ "usable_to_s": 15.4,
+ "description_vi": "Bạc nóng chảy đỏ rực trong chén được rót vào khuôn thỏi, đèn khò lửa xanh hơ giữ nhiệt, ánh lửa rất bắt mắt.",
+ "keywords_vi": [
+  "đổ khuôn",
+  "bạc nóng chảy",
+  "chén nung",
+  "đèn khò",
+  "lửa",
+  "khuôn thỏi",
+  "rót kim loại",
+  "bạc"
+ ]
+}

@@ -1,0 +1,213 @@
+{
+ "date": "2026-10-10",
+ "models": {
+  "haiku": {
+   "model_id": "claude-haiku-5-5",
+   "tagging": {
+    "role_acc": 1.0,
+    "craft_step_acc": 0.889,
+    "craft_step_within_1": 1.0,
+    "huyk_acc": 1.0,
+    "watermark_logo_acc": 0.5,
+    "step_misses": [
+     "c_f74a8bd7: do_khuon → nung_nau"
+    ],
+    "api_cost_per_1000_clips_usd": 0.505
+   },
+   "planning": {
+    "A4_2": {
+     "parts": 10,
+     "verbatim_ratio": 1.0,
+     "verbatim": true,
+     "hook_first": true,
+     "craft_monotonic": true,
+     "has_huyk": true,
+     "outro_last": true,
+     "gap_detected": true,
+     "score": 100
+    },
+    "A4_3": {
+     "parts": 10,
+     "verbatim_ratio": 0.99,
+     "verbatim": true,
+     "hook_first": true,
+     "craft_monotonic": true,
+     "has_huyk": true,
+     "outro_last": true,
+     "gap_detected": true,
+     "score": 100
+    },
+    "A2": {
+     "parts": 7,
+     "verbatim_ratio": 1.0,
+     "verbatim": true,
+     "hook_first": true,
+     "craft_monotonic": true,
+     "has_huyk": true,
+     "gap_detected": true,
+     "score": 100
+    }
+   },
+   "planning_avg_score": 100,
+   "api_cost_per_1000_scripts_usd": 1.6,
+   "run_stats": {
+    "tagging": {
+     "agent_tokens": 124848,
+     "tool_uses": 14,
+     "duration_ms": 179611
+    },
+    "planning": {
+     "agent_tokens": 134389,
+     "tool_uses": 2,
+     "duration_ms": 279167
+    }
+   }
+  },
+  "sonnet": {
+   "model_id": "claude-sonnet-5-5",
+   "tagging": {
+    "role_acc": 0.917,
+    "craft_step_acc": 1.0,
+    "craft_step_within_1": 1.0,
+    "huyk_acc": 1.0,
+    "watermark_logo_acc": 1.0,
+    "step_misses": [],
+    "api_cost_per_1000_clips_usd": 10.1
+   },
+   "planning": {
+    "A4_2": {
+     "parts": 9,
+     "verbatim_ratio": 1.0,
+     "verbatim": true,
+     "hook_first": true,
+     "craft_monotonic": true,
+     "has_huyk": true,
+     "outro_last": true,
+     "gap_detected": true,
+     "score": 100
+    },
+    "A4_3": {
+     "parts": 10,
+     "verbatim_ratio": 1.0,
+     "verbatim": true,
+     "hook_first": true,
+     "craft_monotonic": true,
+     "has_huyk": true,
+     "outro_last": true,
+     "gap_detected": true,
+     "score": 100
+    },
+    "A2": {
+     "parts": 5,
+     "verbatim_ratio": 1.0,
+     "verbatim": true,
+     "hook_first": true,
+     "craft_monotonic": true,
+     "has_huyk": true,
+     "gap_detected": true,
+     "score": 100
+    }
+   },
+   "planning_avg_score": 100,
+   "api_cost_per_1000_scripts_usd": 32.0,
+   "run_stats": {
+    "tagging": {
+     "agent_tokens": 91668,
+     "tool_uses": 14,
+     "duration_ms": 73654
+    },
+    "planning": {
+     "agent_tokens": 86470,
+     "tool_uses": 3,
+     "duration_ms": 160577,
+     "note": "tự phát hiện A4_3 nói nhẫn bánh răng nhưng footage là nhẫn Horus"
+    }
+   }
+  },
+  "opus": {
+   "model_id": "claude-opus-5-5",
+   "tagging": {
+    "role_acc": 1.0,
+    "craft_step_acc": 1.0,
+    "craft_step_within_1": 1.0,
+    "huyk_acc": 1.0,
+    "watermark_logo_acc": 0.5,
+    "step_misses": [],
+    "api_cost_per_1000_clips_usd": 20.2
+   },
+   "planning": {
+    "A4_2": {
+     "parts": 13,
+     "verbatim_ratio": 1.0,
+     "verbatim": true,
+     "hook_first": true,
+     "craft_monotonic": true,
+     "has_huyk": true,
+     "outro_last": true,
+     "gap_detected": true,
+     "score": 100
+    },
+    "A4_3": {
+     "parts": 13,
+     "verbatim_ratio": 1.0,
+     "verbatim": true,
+     "hook_first": true,
+     "craft_monotonic": true,
+     "has_huyk": true,
+     "outro_last": true,
+     "gap_detected": true,
+     "score": 100
+    },
+    "A2": {
+     "parts": 7,
+     "verbatim_ratio": 1.0,
+     "verbatim": true,
+     "hook_first": true,
+     "craft_monotonic": true,
+     "has_huyk": true,
+     "gap_detected": true,
+     "score": 100
+    }
+   },
+   "planning_avg_score": 100,
+   "api_cost_per_1000_scripts_usd": 64.0,
+   "run_stats": {
+    "tagging": {
+     "agent_tokens": 91028,
+     "tool_uses": 14,
+     "duration_ms": 91614
+    },
+    "planning": {
+     "agent_tokens": 88260,
+     "tool_uses": 2,
+     "duration_ms": 232365,
+     "note": "tự kiểm tra nguyên văn + thứ tự công đoạn; phát hiện A4_3 lệch sản phẩm"
+    }
+   }
+  }
+ },
+ "assumptions": {
+  "tag_tokens_per_clip": [
+   2800,
+   450
+  ],
+  "plan_tokens_per_script": [
+   3500,
+   2500
+  ],
+  "price_usd_per_1M": {
+   "haiku": [
+    0.1,
+    0.5
+   ],
+   "sonnet": [
+    2.0,
+    10.0
+   ],
+   "opus": [
+    4.0,
+    20.0
+   ]
+  }
+ }
+}

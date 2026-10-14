@@ -1,0 +1,6 @@
+{"id": "c_e1713d12", "roles": [{"role": "craft", "conf": 0.9}, {"role": "craft_macro", "conf": 0.7}], "craft_step": "khoan", "craft_step_conf": 0.8,
+ "shot_size": "close", "camera": "static", "subject": ["hands", "tool", "metal", "product"], "huyk_present": false, "person_speaking_to_camera": false,
+ "product_visible": true, "product_type": "nhan", "metal": "bac", "stone_color": [], "lighting": "good",
+ "text_or_watermark": "own_logo", "motion_level": 2, "aesthetic": 4, "best_moment_s": 9.5, "usable_from_s": 0.0, "usable_to_s": 18.5,
+ "description_vi": "Thợ giữ nhẫn bạc và dùng mũi khoan nhỏ khoét chi tiết quanh ổ đá, bàn kê gỗ và tấm logo phía sau.",
+ "keywords_vi": ["khoan", "mũi khoan", "nhẫn bạc", "ổ đá", "chế tác", "tay thợ", "cận cảnh", "xưởng kim hoàn"]}

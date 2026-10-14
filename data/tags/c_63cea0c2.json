@@ -1,0 +1,5 @@
+{"id": "c_63cea0c2", "roles": [{"role": "huyk_silent", "conf": 0.8}, {"role": "craft", "conf": 0.6}, {"role": "stock_action", "conf": 0.3}], "craft_step": "dap_can", "craft_step_conf": 0.5,
+ "shot_size": "medium", "camera": "static", "subject": ["huyk_face", "person", "hands", "tool", "workshop"], "huyk_present": true, "person_speaking_to_camera": false,
+ "product_visible": false, "product_type": "none", "metal": "unknown", "stone_color": [], "lighting": "good",
+ "text_or_watermark": "none", "motion_level": 2, "aesthetic": 3, "best_moment_s": 10.1, "usable_from_s": 0.0, "usable_to_s": 24.0,
+ "description_vi": "HuyK cúi nhìn xuống, dùng búa gõ lên chi tiết nhỏ trên bàn thợ; không nói với camera.", "keywords_vi": ["HuyK", "búa", "gõ búa", "bàn thợ", "chế tác", "tạp dề", "xưởng kim hoàn"]}

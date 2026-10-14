@@ -1,0 +1,6 @@
+{"id": "c_37e95497", "roles": [{"role": "craft", "conf": 0.9}, {"role": "craft_pov", "conf": 0.4}], "craft_step": "danh_bong", "craft_step_conf": 0.9,
+ "shot_size": "close", "camera": "static", "subject": ["hands", "tool", "product", "metal"], "huyk_present": false, "person_speaking_to_camera": false,
+ "product_visible": true, "product_type": "nhan", "metal": "bac", "stone_color": ["xanh lá"], "lighting": "mixed",
+ "text_or_watermark": "none", "motion_level": 2, "aesthetic": 3, "best_moment_s": 3.7, "usable_from_s": 1.5, "usable_to_s": 21.0,
+ "description_vi": "Thợ đeo găng tay đưa nhẫn bạc đá xanh lá vào bánh xe đánh bóng quay, ánh sáng xưởng hơi tối.",
+ "keywords_vi": ["đánh bóng", "bánh xe đánh bóng", "găng tay", "nhẫn bạc", "đá xanh lá", "xưởng kim hoàn", "chế tác", "làm sáng"]}

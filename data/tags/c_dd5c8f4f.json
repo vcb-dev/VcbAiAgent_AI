@@ -1,0 +1,47 @@
+{
+ "id": "c_dd5c8f4f",
+ "roles": [
+  {
+   "role": "craft",
+   "conf": 0.9
+  },
+  {
+   "role": "craft_macro",
+   "conf": 0.85
+  }
+ ],
+ "craft_step": "khoan",
+ "craft_step_conf": 0.9,
+ "shot_size": "extreme_close",
+ "camera": "static",
+ "subject": [
+  "hands",
+  "tool",
+  "metal",
+  "product"
+ ],
+ "huyk_present": false,
+ "person_speaking_to_camera": false,
+ "product_visible": true,
+ "product_type": "nhan",
+ "metal": "bac",
+ "stone_color": [],
+ "lighting": "mixed",
+ "text_or_watermark": "none",
+ "motion_level": 2,
+ "aesthetic": 4,
+ "best_moment_s": 4.4,
+ "usable_from_s": 0.0,
+ "usable_to_s": 12.5,
+ "description_vi": "Cận cực gần mũi khoan tạo chi tiết hốc đá hình lục giác trên thân nhẫn bạc, nền đen, ánh sáng ấm.",
+ "keywords_vi": [
+  "khoan",
+  "hốc đá",
+  "mũi khoan",
+  "nhẫn bạc",
+  "cận cực gần",
+  "chế tác",
+  "nền đen",
+  "chi tiết"
+ ]
+}

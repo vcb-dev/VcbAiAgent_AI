@@ -1,0 +1,45 @@
+{
+ "id": "c_dc0238fd",
+ "roles": [
+  {
+   "role": "craft",
+   "conf": 0.88
+  },
+  {
+   "role": "craft_macro",
+   "conf": 0.4
+  }
+ ],
+ "craft_step": "dua_mai",
+ "craft_step_conf": 0.9,
+ "shot_size": "close",
+ "camera": "static",
+ "subject": [
+  "hands",
+  "tool",
+  "metal"
+ ],
+ "huyk_present": false,
+ "person_speaking_to_camera": false,
+ "product_visible": false,
+ "product_type": "none",
+ "metal": "bac",
+ "stone_color": [],
+ "lighting": "good",
+ "text_or_watermark": "none",
+ "motion_level": 3,
+ "aesthetic": 3,
+ "best_moment_s": 8.9,
+ "usable_from_s": 0.0,
+ "usable_to_s": 15.0,
+ "description_vi": "Tay thợ cầm vòng bạc dẹt, giũa liên tục để định hình, bụi bạc bám trên ngón tay, nền xưởng tối ấm.",
+ "keywords_vi": [
+  "giũa",
+  "định hình",
+  "vòng bạc",
+  "bụi bạc",
+  "bàn tay thợ",
+  "thủ công",
+  "xưởng kim hoàn"
+ ]
+}

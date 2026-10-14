@@ -1,0 +1,49 @@
+{
+ "id": "c_e186ff2a",
+ "roles": [
+  {
+   "role": "craft",
+   "conf": 0.75
+  },
+  {
+   "role": "huyk_silent",
+   "conf": 0.7
+  }
+ ],
+ "craft_step": "dap_can",
+ "craft_step_conf": 0.5,
+ "shot_size": "medium",
+ "camera": "static",
+ "subject": [
+  "person",
+  "huyk_face",
+  "hands",
+  "tool",
+  "metal",
+  "workshop"
+ ],
+ "huyk_present": true,
+ "person_speaking_to_camera": false,
+ "product_visible": false,
+ "product_type": "none",
+ "metal": "bac",
+ "stone_color": [],
+ "lighting": "good",
+ "text_or_watermark": "none",
+ "motion_level": 3,
+ "aesthetic": 3,
+ "best_moment_s": 0.6,
+ "usable_from_s": 0.0,
+ "usable_to_s": 6.5,
+ "description_vi": "HuyK mặc tạp dề cúi xuống bàn thợ, tay phải đập búa liên tục lên phôi bạc, sau đó ngẩng lên nói nhỏ rồi thu dọn.",
+ "keywords_vi": [
+  "HuyK",
+  "đập búa",
+  "phôi bạc",
+  "thợ kim hoàn",
+  "tạp dề",
+  "bàn thợ",
+  "xưởng",
+  "chế tác"
+ ]
+}

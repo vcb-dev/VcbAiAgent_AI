@@ -1,0 +1,5 @@
+{"id": "c_197f444d", "roles": [{"role": "hook_visual", "conf": 0.6}, {"role": "craft", "conf": 0.75}, {"role": "craft_macro", "conf": 0.45}], "craft_step": "nung_nau", "craft_step_conf": 0.5,
+ "shot_size": "close", "camera": "static", "subject": ["hands", "metal", "tool"], "huyk_present": false, "person_speaking_to_camera": false,
+ "product_visible": false, "product_type": "none", "metal": "bac", "stone_color": [], "lighting": "good",
+ "text_or_watermark": "none", "motion_level": 1, "aesthetic": 3, "best_moment_s": 0.5, "usable_from_s": 0.0, "usable_to_s": 5.6,
+ "description_vi": "Tay thả các vòng bạc vào chén sứ trắng chuẩn bị nung chảy, cận cảnh trên bàn thợ.", "keywords_vi": ["thả bạc", "chén nung", "nguyên liệu bạc", "nung chảy", "xưởng kim hoàn", "chế tác", "cận cảnh"]}

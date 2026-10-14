@@ -1,0 +1,5 @@
+{"id": "c_fd886a1a", "roles": [{"role": "craft", "conf": 0.9}, {"role": "craft_macro", "conf": 0.6}], "craft_step": "dap_can", "craft_step_conf": 0.8,
+ "shot_size": "close", "camera": "static", "subject": ["hands", "tool", "metal"], "huyk_present": false, "person_speaking_to_camera": false,
+ "product_visible": false, "product_type": "none", "metal": "bac", "stone_color": [], "lighting": "good",
+ "text_or_watermark": "none", "motion_level": 2, "aesthetic": 3, "best_moment_s": 6.4, "usable_from_s": 0.0, "usable_to_s": 15.0,
+ "description_vi": "Đục búa đập thanh bạc trên đe sắt, tay thợ giữ phôi; cận cảnh nền mờ.", "keywords_vi": ["đập thanh bạc", "búa", "đe", "tạo phôi", "chế tác thủ công", "xưởng kim hoàn", "cận cảnh"]}

@@ -1,0 +1,50 @@
+{
+ "id": "c_2b746d54",
+ "roles": [
+  {
+   "role": "craft",
+   "conf": 0.9
+  },
+  {
+   "role": "hook_visual",
+   "conf": 0.3
+  },
+  {
+   "role": "craft_macro",
+   "conf": 0.4
+  }
+ ],
+ "craft_step": "nung_nau",
+ "craft_step_conf": 0.9,
+ "shot_size": "close",
+ "camera": "static",
+ "subject": [
+  "fire",
+  "metal",
+  "tool"
+ ],
+ "huyk_present": false,
+ "person_speaking_to_camera": false,
+ "product_visible": false,
+ "product_type": "none",
+ "metal": "bac",
+ "stone_color": [],
+ "lighting": "mixed",
+ "text_or_watermark": "none",
+ "motion_level": 2,
+ "aesthetic": 4,
+ "best_moment_s": 6.2,
+ "usable_from_s": 0.0,
+ "usable_to_s": 14.0,
+ "description_vi": "Đầu khò đồng thau nung chảy giọt bạc sáng đỏ trong chén sứ, bên cạnh có bột borax trắng, góc quay nghiêng từ trên.",
+ "keywords_vi": [
+  "nung bạc",
+  "khò lửa",
+  "chén sứ",
+  "bạc nóng chảy",
+  "borax",
+  "ngọn lửa xanh",
+  "chế tác",
+  "cận cảnh"
+ ]
+}

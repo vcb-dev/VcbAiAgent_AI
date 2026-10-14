@@ -1,0 +1,6 @@
+{"id": "c_e8340e6e", "roles": [{"role": "craft", "conf": 0.9}, {"role": "craft_macro", "conf": 0.8}], "craft_step": "khoan", "craft_step_conf": 0.85,
+ "shot_size": "extreme_close", "camera": "static", "subject": ["hands", "tool", "metal", "product"], "huyk_present": false, "person_speaking_to_camera": false,
+ "product_visible": true, "product_type": "nhan", "metal": "bac", "stone_color": [], "lighting": "good",
+ "text_or_watermark": "own_logo", "motion_level": 2, "aesthetic": 4, "best_moment_s": 3.0, "usable_from_s": 0.0, "usable_to_s": 9.8,
+ "description_vi": "Cận cảnh thợ dùng máy khoan mũi nhỏ khoan chi tiết trên thân nhẫn bạc, tay giữ nhẫn vững trên bàn kê gỗ.",
+ "keywords_vi": ["khoan", "chế tác", "nhẫn bạc", "mũi khoan", "cận cảnh", "tay thợ", "xưởng kim hoàn", "chi tiết"]}

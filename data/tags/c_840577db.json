@@ -1,0 +1,50 @@
+{
+ "id": "c_840577db",
+ "roles": [
+  {
+   "role": "outro",
+   "conf": 0.9
+  },
+  {
+   "role": "huyk_talk",
+   "conf": 0.4
+  },
+  {
+   "role": "huyk_silent",
+   "conf": 0.4
+  }
+ ],
+ "craft_step": null,
+ "craft_step_conf": 0.0,
+ "shot_size": "medium",
+ "camera": "static",
+ "subject": [
+  "person",
+  "huyk_face",
+  "workshop"
+ ],
+ "huyk_present": true,
+ "person_speaking_to_camera": true,
+ "product_visible": false,
+ "product_type": "none",
+ "metal": "unknown",
+ "stone_color": [],
+ "lighting": "good",
+ "text_or_watermark": "own_logo",
+ "motion_level": 3,
+ "aesthetic": 3,
+ "best_moment_s": 3.4,
+ "usable_from_s": 1.0,
+ "usable_to_s": 4.0,
+ "description_vi": "HuyK nhảy vào khung hình, giơ hai ngón cái chào khán giả, logo HuyK Mê Kim Hoàn và chữ Viễn Chí Bảo hiện dưới khung.",
+ "keywords_vi": [
+  "HuyK",
+  "outro",
+  "giơ ngón cái",
+  "logo",
+  "Viễn Chí Bảo",
+  "Mê Kim Hoàn",
+  "kết video",
+  "xưởng"
+ ]
+}

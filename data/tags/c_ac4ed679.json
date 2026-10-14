@@ -1,0 +1,6 @@
+{"id": "c_ac4ed679", "roles": [{"role": "product_hero", "conf": 0.9}, {"role": "product_final", "conf": 0.85}, {"role": "craft_macro", "conf": 0.3}], "craft_step": "hoan_thien", "craft_step_conf": 0.9,
+ "shot_size": "close", "camera": "static", "subject": ["hands", "product", "stone"], "huyk_present": false, "person_speaking_to_camera": false,
+ "product_visible": true, "product_type": "nhan", "metal": "bac", "stone_color": ["xanh lá"], "lighting": "good",
+ "text_or_watermark": "own_logo", "motion_level": 1, "aesthetic": 4, "best_moment_s": 11.3, "usable_from_s": 0.0, "usable_to_s": 20.0,
+ "description_vi": "Tay thợ xoay nhẫn bạc hoàn thiện đính đá xanh lá hình thoi và đá nhỏ viền, nền tấm logo Viễn Chí Bảo mờ phía sau.",
+ "keywords_vi": ["nhẫn bạc", "đá xanh lá", "hoàn thiện", "xoay nhẫn", "cận cảnh", "logo Viễn Chí Bảo", "Horus", "trưng bày"]}

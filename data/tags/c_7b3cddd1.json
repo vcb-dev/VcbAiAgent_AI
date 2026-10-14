@@ -1,0 +1,51 @@
+{
+ "id": "c_7b3cddd1",
+ "roles": [
+  {
+   "role": "craft",
+   "conf": 0.9
+  },
+  {
+   "role": "craft_macro",
+   "conf": 0.8
+  },
+  {
+   "role": "product_hero",
+   "conf": 0.2
+  }
+ ],
+ "craft_step": "dua_mai",
+ "craft_step_conf": 0.9,
+ "shot_size": "extreme_close",
+ "camera": "static",
+ "subject": [
+  "hands",
+  "tool",
+  "metal",
+  "product"
+ ],
+ "huyk_present": false,
+ "person_speaking_to_camera": false,
+ "product_visible": true,
+ "product_type": "nhan",
+ "metal": "bac",
+ "stone_color": [],
+ "lighting": "good",
+ "text_or_watermark": "none",
+ "motion_level": 2,
+ "aesthetic": 4,
+ "best_moment_s": 9.5,
+ "usable_from_s": 0.0,
+ "usable_to_s": 22.0,
+ "description_vi": "Cận cực gần tay thợ dùng giũa mài định hình thân nhẫn bạc, bụi bạc bám trên ngón tay, nền nâu ấm mờ.",
+ "keywords_vi": [
+  "giũa",
+  "mài nhẫn",
+  "nhẫn bạc",
+  "cận cảnh",
+  "tay thợ",
+  "chế tác",
+  "xưởng kim hoàn",
+  "bụi bạc"
+ ]
+}

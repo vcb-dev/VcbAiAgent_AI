@@ -1,0 +1,51 @@
+{
+ "id": "c_34468b28",
+ "roles": [
+  {
+   "role": "huyk_silent",
+   "conf": 0.8
+  },
+  {
+   "role": "stock_action",
+   "conf": 0.4
+  },
+  {
+   "role": "craft",
+   "conf": 0.3
+  }
+ ],
+ "craft_step": "thiet_ke",
+ "craft_step_conf": 0.4,
+ "shot_size": "wide",
+ "camera": "static",
+ "subject": [
+  "person",
+  "huyk_face",
+  "paper",
+  "workshop"
+ ],
+ "huyk_present": true,
+ "person_speaking_to_camera": false,
+ "product_visible": false,
+ "product_type": "none",
+ "metal": "unknown",
+ "stone_color": [],
+ "lighting": "good",
+ "text_or_watermark": "none",
+ "motion_level": 2,
+ "aesthetic": 4,
+ "best_moment_s": 3.7,
+ "usable_from_s": 0.0,
+ "usable_to_s": 14.5,
+ "description_vi": "HuyK ngồi xem tài liệu trên bàn làm việc, rồi đứng dậy đi tới kệ kính hiển vi và quay lại bàn trong xưởng ánh đèn vàng.",
+ "keywords_vi": [
+  "HuyK",
+  "bản vẽ",
+  "xem tài liệu",
+  "xưởng",
+  "bàn làm việc",
+  "kính hiển vi",
+  "thiết kế",
+  "toàn cảnh"
+ ]
+}

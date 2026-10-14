@@ -1,0 +1,1308 @@
+{
+ "checked_date": "2026-10-10",
+ "activities": {
+  "vision_tagging": {
+   "label": "Gắn nhãn footage mới (Media Hub)",
+   "per": "clip mới",
+   "usage": {
+    "in_tok": 2800,
+    "out_tok": 450
+   }
+  },
+  "script_llm": {
+   "label": "Viết / lập kế hoạch kịch bản",
+   "per": "video",
+   "usage": {
+    "in_tok": 6000,
+    "out_tok": 2000
+   }
+  },
+  "tts": {
+   "label": "Lồng tiếng VO (mỗi ngôn ngữ)",
+   "per": "video",
+   "usage": {
+    "chars": 650
+   }
+  },
+  "asr": {
+   "label": "Phiên âm / kiểm phụ đề",
+   "per": "video",
+   "usage": {
+    "minutes": 0.75
+   }
+  },
+  "avatar_video": {
+   "label": "HuyK nói (avatar / dịch khớp môi)",
+   "per": "video",
+   "usage": {
+    "minutes": 0.067
+   }
+  },
+  "video_gen": {
+   "label": "Sinh b-roll / cảnh sản phẩm",
+   "per": "video",
+   "usage": {
+    "seconds": 3
+   }
+  },
+  "sfx_music": {
+   "label": "Sinh SFX / nhạc bổ sung",
+   "per": "video",
+   "usage": {
+    "minutes": 0.05,
+    "generations": 0.02
+   }
+  },
+  "embedding": {
+   "label": "Embedding tìm kiếm",
+   "per": "video",
+   "usage": {
+    "tokens": 2000
+   }
+  }
+ },
+ "options": [
+  {
+   "id": "vision_tagging:gemini-2.5-flash-lite",
+   "activity": "vision_tagging",
+   "provider": "Google",
+   "model": "gemini-2.5-flash-lite",
+   "tier": "rẻ",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_1M_input_tokens",
+     "usd": 0.1
+    },
+    {
+     "unit": "per_1M_output_tokens",
+     "usd": 0.4
+    }
+   ],
+   "note": "Audio input $0.30. Batch/Flex $0.05/$0.20. Page says 2.5 models stay available 'until further notice' (older gen).",
+   "quality_notes": "Cheapest Gemini option; older gen = lower tagging accuracy likely. Vendor claims multilingual; Vietnamese not individually confirmed. No public Vietnamese ranking retrieved (VinUni V-Bench Jul 2026 exists, per-model scores not found). Test on own VI/TH/JA set.",
+   "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.00046
+  },
+  {
+   "id": "vision_tagging:gemini-3.5-flash-lite",
+   "activity": "vision_tagging",
+   "provider": "Google",
+   "model": "gemini-3.5-flash-lite",
+   "tier": "rẻ",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_1M_input_tokens",
+     "usd": 0.3
+    },
+    {
+     "unit": "per_1M_output_tokens",
+     "usd": 2.5
+    }
+   ],
+   "note": "Output incl. thinking tokens. Batch/Flex $0.15/$1.25. Cache read $0.03. Flat price, no 2027 step listed.",
+   "quality_notes": "Cheap multimodal tagger w/ native video; thinking tokens can inflate output cost - cap thinking. Vendor claims multilingual; Vietnamese not individually confirmed. No public Vietnamese ranking retrieved (VinUni V-Bench Jul 2026 exists, per-model scores not found). Test on own VI/TH/JA set.",
+   "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.001965
+  },
+  {
+   "id": "vision_tagging:claude-haiku-5-5",
+   "activity": "vision_tagging",
+   "provider": "Anthropic",
+   "model": "claude-haiku-5-5",
+   "tier": "rẻ",
+   "recommended": true,
+   "tested_in_benchmark": true,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_1M_input_tokens",
+     "usd": 0.1
+    },
+    {
+     "unit": "per_1M_output_tokens",
+     "usd": 0.5
+    }
+   ],
+   "note": "Prompts <=100k tokens. >100k prompt: $0.50 in / $2.50 out. Batch $0.05/$0.25 (<=100k). Cache read $0.01. 4.7+ tokenizer ~30% more tokens for same text (hurts Vietnamese/Thai/Japanese counts).",
+   "quality_notes": "Anthropic positions Haiku 5.5 for classification/extraction/routing = tagging fit. Image-token-heavy (2,691 tok/1080p image) but input price so low it still ~$0.0003/image. Vendor claims multilingual; Vietnamese not individually confirmed. No public Vietnamese ranking retrieved (VinUni V-Bench Jul 2026 exists, per-model scores not found). Test on own VI/TH/JA set.",
+   "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.000505
+  },
+  {
+   "id": "vision_tagging:gpt-6-luna",
+   "activity": "vision_tagging",
+   "provider": "OpenAI",
+   "model": "gpt-6-luna",
+   "tier": "rẻ",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_1M_input_tokens",
+     "usd": 0.1
+    },
+    {
+     "unit": "per_1M_output_tokens",
+     "usd": 0.5
+    }
+   ],
+   "note": "Cached input $0.01. Standard tier short context. Luna = 'most efficient' tier (replaces mini/nano naming).",
+   "quality_notes": "Cheapest verified OpenAI vision model; accepts images (no video input on this page). Vendor claims multilingual; Vietnamese not individually confirmed. No public Vietnamese ranking retrieved (VinUni V-Bench Jul 2026 exists, per-model scores not found). Test on own VI/TH/JA set.",
+   "source_url": "https://developers.openai.com/api/docs/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.000505
+  },
+  {
+   "id": "vision_tagging:gemini-3.8-flash",
+   "activity": "vision_tagging",
+   "provider": "Google",
+   "model": "gemini-3.8-flash",
+   "tier": "cân bằng",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_1M_input_tokens",
+     "usd": 0.75
+    },
+    {
+     "unit": "per_1M_output_tokens",
+     "usd": 3.75
+    }
+   ],
+   "note": "PRICE DOUBLES 2027-01-01: input $1.50 / output $7.50. Output incl. thinking tokens. Batch/Flex 50% ($0.375/$1.875). Cache read $0.075.",
+   "quality_notes": "Native video + image + audio input; good value tier. Quality vs Flash-Lite not benchmarked here. Vendor claims multilingual; Vietnamese not individually confirmed. No public Vietnamese ranking retrieved (VinUni V-Bench Jul 2026 exists, per-model scores not found). Test on own VI/TH/JA set.",
+   "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.003788
+  },
+  {
+   "id": "vision_tagging:gpt-5.4-mini",
+   "activity": "vision_tagging",
+   "provider": "OpenAI",
+   "model": "gpt-5.4-mini",
+   "tier": "cân bằng",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_1M_input_tokens",
+     "usd": 0.75
+    },
+    {
+     "unit": "per_1M_output_tokens",
+     "usd": 4.5
+    }
+   ],
+   "note": "Cached input $0.075.",
+   "quality_notes": "More expensive than Luna/Haiku with no verified advantage. Vendor claims multilingual; Vietnamese not individually confirmed. No public Vietnamese ranking retrieved (VinUni V-Bench Jul 2026 exists, per-model scores not found). Test on own VI/TH/JA set.",
+   "source_url": "https://developers.openai.com/api/docs/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.004125
+  },
+  {
+   "id": "vision_tagging:claude-sonnet-5-5",
+   "activity": "vision_tagging",
+   "provider": "Anthropic",
+   "model": "claude-sonnet-5-5",
+   "tier": "cân bằng",
+   "recommended": false,
+   "tested_in_benchmark": true,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_1M_input_tokens",
+     "usd": 2.0
+    },
+    {
+     "unit": "per_1M_output_tokens",
+     "usd": 10.0
+    }
+   ],
+   "note": "Batch $1/$5. Cache read $0.10 (0.05x). Standard price confirmed (intro pricing made permanent for Sonnet 5; 5.5 listed at $2/$10).",
+   "quality_notes": "Overkill/expensive for bulk tagging. Vendor claims multilingual; Vietnamese not individually confirmed. No public Vietnamese ranking retrieved (VinUni V-Bench Jul 2026 exists, per-model scores not found). Test on own VI/TH/JA set.",
+   "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.0101
+  },
+  {
+   "id": "vision_tagging:gemini-3.1-pro-preview",
+   "activity": "vision_tagging",
+   "provider": "Google",
+   "model": "gemini-3.1-pro-preview",
+   "tier": "cao cấp",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_1M_input_tokens",
+     "usd": 2.0
+    },
+    {
+     "unit": "per_1M_output_tokens",
+     "usd": 12.0
+    }
+   ],
+   "note": "Prompts >200k tokens: $4.00 in / $18.00 out. Batch/Flex $1.00/$6.00. Cache read $0.20 (+$4.50/1M tok/hr storage). Preview status.",
+   "quality_notes": "Highest Gemini tier listed; use for hard/ambiguous clips or QA sampling. Vendor claims multilingual; Vietnamese not individually confirmed. No public Vietnamese ranking retrieved (VinUni V-Bench Jul 2026 exists, per-model scores not found). Test on own VI/TH/JA set.",
+   "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.011
+  },
+  {
+   "id": "vision_tagging:claude-opus-5-5",
+   "activity": "vision_tagging",
+   "provider": "Anthropic",
+   "model": "claude-opus-5-5",
+   "tier": "cao cấp",
+   "recommended": false,
+   "tested_in_benchmark": true,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_1M_input_tokens",
+     "usd": 4.0
+    },
+    {
+     "unit": "per_1M_output_tokens",
+     "usd": 20.0
+    }
+   ],
+   "note": "Batch $2/$10. Cache read $0.20. Anthropic's default recommendation 'for most workloads'.",
+   "quality_notes": "Too expensive for bulk tagging. Vendor claims multilingual; Vietnamese not individually confirmed. No public Vietnamese ranking retrieved (VinUni V-Bench Jul 2026 exists, per-model scores not found). Test on own VI/TH/JA set.",
+   "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.0202
+  },
+  {
+   "id": "vision_tagging:gpt-6.1-sol",
+   "activity": "vision_tagging",
+   "provider": "OpenAI",
+   "model": "gpt-6.1-sol",
+   "tier": "cao cấp",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_1M_input_tokens",
+     "usd": 2.0
+    },
+    {
+     "unit": "per_1M_output_tokens",
+     "usd": 10.0
+    }
+   ],
+   "note": "Cached input $0.10. 'Near-Astra performance at lower cost'.",
+   "quality_notes": "Overkill for bulk tagging. Vendor claims multilingual; Vietnamese not individually confirmed. No public Vietnamese ranking retrieved (VinUni V-Bench Jul 2026 exists, per-model scores not found). Test on own VI/TH/JA set.",
+   "source_url": "https://developers.openai.com/api/docs/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.0101
+  },
+  {
+   "id": "script_llm:claude-haiku-5-5",
+   "activity": "script_llm",
+   "provider": "Anthropic",
+   "model": "claude-haiku-5-5",
+   "tier": "rẻ",
+   "recommended": false,
+   "tested_in_benchmark": true,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_1M_input_tokens",
+     "usd": 0.1
+    },
+    {
+     "unit": "per_1M_output_tokens",
+     "usd": 0.5
+    }
+   ],
+   "note": "Prompts <=100k tokens. >100k prompt: $0.50 in / $2.50 out. Batch $0.05/$0.25 (<=100k). Cache read $0.01. 4.7+ tokenizer ~30% more tokens for same text (hurts Vietnamese/Thai/Japanese counts).",
+   "quality_notes": "Cheap drafts / rewrites; creative quality below Sonnet/Opus. Vendor claims multilingual; Vietnamese not individually confirmed. No public Vietnamese ranking retrieved (VinUni V-Bench Jul 2026 exists, per-model scores not found). Test on own VI/TH/JA set.",
+   "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.0016
+  },
+  {
+   "id": "script_llm:gpt-6-luna",
+   "activity": "script_llm",
+   "provider": "OpenAI",
+   "model": "gpt-6-luna",
+   "tier": "rẻ",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_1M_input_tokens",
+     "usd": 0.1
+    },
+    {
+     "unit": "per_1M_output_tokens",
+     "usd": 0.5
+    }
+   ],
+   "note": "Cached input $0.01. Standard tier short context. Luna = 'most efficient' tier (replaces mini/nano naming).",
+   "quality_notes": "Cheap drafts; efficiency tier. Vendor claims multilingual; Vietnamese not individually confirmed. No public Vietnamese ranking retrieved (VinUni V-Bench Jul 2026 exists, per-model scores not found). Test on own VI/TH/JA set.",
+   "source_url": "https://developers.openai.com/api/docs/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.0016
+  },
+  {
+   "id": "script_llm:gemini-3.8-flash",
+   "activity": "script_llm",
+   "provider": "Google",
+   "model": "gemini-3.8-flash",
+   "tier": "cân bằng",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_1M_input_tokens",
+     "usd": 0.75
+    },
+    {
+     "unit": "per_1M_output_tokens",
+     "usd": 3.75
+    }
+   ],
+   "note": "PRICE DOUBLES 2027-01-01: input $1.50 / output $7.50. Output incl. thinking tokens. Batch/Flex 50% ($0.375/$1.875). Cache read $0.075.",
+   "quality_notes": "Fast general-purpose; likely adequate for script drafts; not benchmarked for Vietnamese. Vendor claims multilingual; Vietnamese not individually confirmed. No public Vietnamese ranking retrieved (VinUni V-Bench Jul 2026 exists, per-model scores not found). Test on own VI/TH/JA set.",
+   "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.012
+  },
+  {
+   "id": "script_llm:claude-sonnet-5-5",
+   "activity": "script_llm",
+   "provider": "Anthropic",
+   "model": "claude-sonnet-5-5",
+   "tier": "cân bằng",
+   "recommended": false,
+   "tested_in_benchmark": true,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_1M_input_tokens",
+     "usd": 2.0
+    },
+    {
+     "unit": "per_1M_output_tokens",
+     "usd": 10.0
+    }
+   ],
+   "note": "Batch $1/$5. Cache read $0.10 (0.05x). Standard price confirmed (intro pricing made permanent for Sonnet 5; 5.5 listed at $2/$10).",
+   "quality_notes": "Anthropic: 'best combination of speed and intelligence'. Value pick for scripts. Vendor claims multilingual; Vietnamese not individually confirmed. No public Vietnamese ranking retrieved (VinUni V-Bench Jul 2026 exists, per-model scores not found). Test on own VI/TH/JA set.",
+   "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.032
+  },
+  {
+   "id": "script_llm:gpt-6.1-sol",
+   "activity": "script_llm",
+   "provider": "OpenAI",
+   "model": "gpt-6.1-sol",
+   "tier": "cân bằng",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_1M_input_tokens",
+     "usd": 2.0
+    },
+    {
+     "unit": "per_1M_output_tokens",
+     "usd": 10.0
+    }
+   ],
+   "note": "Cached input $0.10. 'Near-Astra performance at lower cost'.",
+   "quality_notes": "OpenAI value-flagship; compare with Sonnet 5.5. Vendor claims multilingual; Vietnamese not individually confirmed. No public Vietnamese ranking retrieved (VinUni V-Bench Jul 2026 exists, per-model scores not found). Test on own VI/TH/JA set.",
+   "source_url": "https://developers.openai.com/api/docs/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.032
+  },
+  {
+   "id": "script_llm:gemini-3.1-pro-preview",
+   "activity": "script_llm",
+   "provider": "Google",
+   "model": "gemini-3.1-pro-preview",
+   "tier": "cao cấp",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_1M_input_tokens",
+     "usd": 2.0
+    },
+    {
+     "unit": "per_1M_output_tokens",
+     "usd": 12.0
+    }
+   ],
+   "note": "Prompts >200k tokens: $4.00 in / $18.00 out. Batch/Flex $1.00/$6.00. Cache read $0.20 (+$4.50/1M tok/hr storage). Preview status.",
+   "quality_notes": "Top Gemini tier; best candidate for script/planning among Gemini. Vendor claims multilingual; Vietnamese not individually confirmed. No public Vietnamese ranking retrieved (VinUni V-Bench Jul 2026 exists, per-model scores not found). Test on own VI/TH/JA set.",
+   "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.036
+  },
+  {
+   "id": "script_llm:claude-opus-5-5",
+   "activity": "script_llm",
+   "provider": "Anthropic",
+   "model": "claude-opus-5-5",
+   "tier": "cao cấp",
+   "recommended": true,
+   "tested_in_benchmark": true,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_1M_input_tokens",
+     "usd": 4.0
+    },
+    {
+     "unit": "per_1M_output_tokens",
+     "usd": 20.0
+    }
+   ],
+   "note": "Batch $2/$10. Cache read $0.20. Anthropic's default recommendation 'for most workloads'.",
+   "quality_notes": "High-quality writing/planning tier. Vendor claims multilingual; Vietnamese not individually confirmed. No public Vietnamese ranking retrieved (VinUni V-Bench Jul 2026 exists, per-model scores not found). Test on own VI/TH/JA set.",
+   "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.064
+  },
+  {
+   "id": "script_llm:claude-fable-5-1",
+   "activity": "script_llm",
+   "provider": "Anthropic",
+   "model": "claude-fable-5-1",
+   "tier": "cao cấp",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_1M_input_tokens",
+     "usd": 10.0
+    },
+    {
+     "unit": "per_1M_output_tokens",
+     "usd": 50.0
+    }
+   ],
+   "note": "Batch $5/$25. Cache read $0.25. Top public tier (Mythos 5.1 same price but limited availability).",
+   "quality_notes": "Anthropic's top public model for demanding reasoning; probably overkill for 60s scripts. Vendor claims multilingual; Vietnamese not individually confirmed. No public Vietnamese ranking retrieved (VinUni V-Bench Jul 2026 exists, per-model scores not found). Test on own VI/TH/JA set.",
+   "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.16
+  },
+  {
+   "id": "script_llm:gpt-6-astra",
+   "activity": "script_llm",
+   "provider": "OpenAI",
+   "model": "gpt-6-astra",
+   "tier": "cao cấp",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_1M_input_tokens",
+     "usd": 10.0
+    },
+    {
+     "unit": "per_1M_output_tokens",
+     "usd": 50.0
+    }
+   ],
+   "note": "Cached input $1.00. Most capable GPT-6.",
+   "quality_notes": "OpenAI top tier. Vendor claims multilingual; Vietnamese not individually confirmed. No public Vietnamese ranking retrieved (VinUni V-Bench Jul 2026 exists, per-model scores not found). Test on own VI/TH/JA set.",
+   "source_url": "https://developers.openai.com/api/docs/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.16
+  },
+  {
+   "id": "tts:gemini-3.8-flash-tts (per-1K-chars",
+   "activity": "tts",
+   "provider": "Google (Gemini API)",
+   "model": "gemini-3.8-flash-tts (per-1K-chars estimate)",
+   "tier": "rẻ",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": false,
+   "vietnamese": "yes",
+   "prices": [
+    {
+     "unit": "per_1K_chars",
+     "usd": 0.0137
+    }
+   ],
+   "note": "DERIVED: ~$0.0135/min audio + text in; assumes ~1,000 chars of speech per minute (Vietnamese; assumption). Doubles from 2027-01-01.",
+   "quality_notes": "Cheapest TTS found.",
+   "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.008905
+  },
+  {
+   "id": "tts:Chirp 3: HD voices",
+   "activity": "tts",
+   "provider": "Google Cloud",
+   "model": "Chirp 3: HD voices",
+   "tier": "rẻ",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "yes",
+   "prices": [
+    {
+     "unit": "per_1K_chars",
+     "usd": 0.03
+    }
+   ],
+   "note": "$30 per 1M chars after 1M free chars/month (from Google pricing page via search snippet; direct page fetch was truncated). Instant custom voice $60 per 1M chars.",
+   "quality_notes": "30 voices; Vietnamese (vi-VN), Thai (th-TH), Japanese (ja-JP), English supported. Instant Custom Voice language coverage not stated.",
+   "source_url": "https://cloud.google.com/text-to-speech/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.0195
+  },
+  {
+   "id": "tts:tts-1-hd",
+   "activity": "tts",
+   "provider": "OpenAI",
+   "model": "tts-1-hd",
+   "tier": "rẻ",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "yes",
+   "prices": [
+    {
+     "unit": "per_1K_chars",
+     "usd": 0.03
+    }
+   ],
+   "note": "$30 per 1M chars.",
+   "quality_notes": "Legacy HD.",
+   "source_url": "https://developers.openai.com/api/docs/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.0195
+  },
+  {
+   "id": "tts:Eleven Flash v2.5",
+   "activity": "tts",
+   "provider": "ElevenLabs",
+   "model": "Eleven Flash v2.5 (row labelled 'Flash / Turbo')",
+   "tier": "cân bằng",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "yes",
+   "prices": [
+    {
+     "unit": "per_1K_chars",
+     "usd": 0.04
+    }
+   ],
+   "note": "Pricing page row is 'Flash / Turbo $0.04'; mapping to Flash v2.5 is inferred.",
+   "quality_notes": "32 languages incl. Vietnamese; fastest/cheapest ElevenLabs (~75ms).",
+   "source_url": "https://elevenlabs.io/pricing/api",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.026
+  },
+  {
+   "id": "tts:Eleven v4 Turbo",
+   "activity": "tts",
+   "provider": "ElevenLabs",
+   "model": "Eleven v4 Turbo",
+   "tier": "cân bằng",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "yes",
+   "prices": [
+    {
+     "unit": "per_1K_chars",
+     "usd": 0.04
+    }
+   ],
+   "note": "List $0.04; promo $0.011 until 2026-10-12.",
+   "quality_notes": "Real-time variant, ~100ms median latency, similar expressiveness.",
+   "source_url": "https://elevenlabs.io/pricing/api",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.026
+  },
+  {
+   "id": "tts:speech-2.8-turbo",
+   "activity": "tts",
+   "provider": "MiniMax",
+   "model": "speech-2.8-turbo",
+   "tier": "cân bằng",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "yes",
+   "prices": [
+    {
+     "unit": "per_1K_chars",
+     "usd": 0.06
+    }
+   ],
+   "note": "$60 per 1M chars.",
+   "quality_notes": "Cheaper/faster tier; same language list.",
+   "source_url": "https://platform.minimax.io/docs/guides/pricing-paygo",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.039
+  },
+  {
+   "id": "tts:Eleven v4 (model_id",
+   "activity": "tts",
+   "provider": "ElevenLabs",
+   "model": "Eleven v4 (model_id not verified)",
+   "tier": "cao cấp",
+   "recommended": true,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "yes",
+   "prices": [
+    {
+     "unit": "per_1K_chars",
+     "usd": 0.08
+    }
+   ],
+   "note": "List $0.08/1K chars. PROMO $0.022/1K (72% off) ends 2026-10-12 (2 days after check date). Plan char allowances shown on page (Starter 273k, Creator 1M, Pro 4.5M, Scale 13.6M, Business 45M) equal $0.022/1K => appear promo-based (plan mapping inferred).",
+   "quality_notes": "Highest-quality ElevenLabs model; 90+ languages; voice cloning supported.",
+   "source_url": "https://elevenlabs.io/pricing/api",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.052
+  },
+  {
+   "id": "tts:speech-2.8-hd",
+   "activity": "tts",
+   "provider": "MiniMax",
+   "model": "speech-2.8-hd",
+   "tier": "cao cấp",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "yes",
+   "prices": [
+    {
+     "unit": "per_1K_chars",
+     "usd": 0.1
+    }
+   ],
+   "note": "$100 per 1M chars, sync and async. Legacy 2.6-hd / 02-hd same.",
+   "quality_notes": "language_boost list includes Vietnamese, Thai, Japanese (~40 languages). Word timestamps via subtitle_enable + subtitle_type=word.",
+   "source_url": "https://platform.minimax.io/docs/guides/pricing-paygo",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.065
+  },
+  {
+   "id": "asr:whisper-large-v3",
+   "activity": "asr",
+   "provider": "Self-hosted (RunPod)",
+   "model": "whisper-large-v3 (faster-whisper)",
+   "tier": "rẻ",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": false,
+   "vietnamese": "yes",
+   "prices": [
+    {
+     "unit": "per_minute_audio",
+     "usd": 0.0005
+    }
+   ],
+   "note": "DERIVED, not a vendor price: RTX 4090 pod $0.89/h (runpod.io, 2026-09-27) / assumed 30x real-time (community range 20-50x) => ~$0.03 per audio-hour = ~$0.0005/min at 100% GPU utilisation. L4 pod $0.59/h @12-16x => ~$0.04-0.05/audio-h. Serverless 4090 $1.10/h. Real cost rises with idle time/cold starts.",
+   "quality_notes": "Whisper large-v3 Vietnamese/Thai WER noticeably worse than English; needs WhisperX/forced alignment for tight word timestamps; benchmark on own audio.",
+   "source_url": "https://www.runpod.io/gpu-cloud/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.000375
+  },
+  {
+   "id": "asr:scribe_v2 (Scribe v2)",
+   "activity": "asr",
+   "provider": "ElevenLabs",
+   "model": "scribe_v2 (Scribe v2)",
+   "tier": "cân bằng",
+   "recommended": true,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "yes",
+   "prices": [
+    {
+     "unit": "per_minute_audio",
+     "usd": 0.00367
+    }
+   ],
+   "note": "$0.22/hour list price. Realtime $0.39/hr. Keyterm prompting +$0.05/hr, transcript editing +$0.07/hr.",
+   "quality_notes": "Docs rank Vietnamese & Japanese 'Excellent' WER tier (<=5%), Thai 'Good' (10-20%). Word-level timestamps, diarization up to 32 speakers, audio-event tags.",
+   "source_url": "https://elevenlabs.io/pricing/api",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.002753
+  },
+  {
+   "id": "asr:gpt-transcribe",
+   "activity": "asr",
+   "provider": "OpenAI",
+   "model": "gpt-transcribe",
+   "tier": "cân bằng",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_minute_audio",
+     "usd": 0.0045
+    }
+   ],
+   "note": "Newest OpenAI file-transcription model. Page: timestamp_granularities only supported for whisper-1.",
+   "quality_notes": "NO word timestamps -> not usable for caption sync. VI/TH/JA not named on page (languages passed as ISO hints).",
+   "source_url": "https://developers.openai.com/api/docs/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.003375
+  },
+  {
+   "id": "asr:gemini-3.5-transcribe",
+   "activity": "asr",
+   "provider": "Google",
+   "model": "gemini-3.5-transcribe",
+   "tier": "cân bằng",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_minute_audio",
+     "usd": 0.005
+    }
+   ],
+   "note": "Audio in $2.00/1M tok (~$0.003/min) + text out $12.00/1M tok (~$0.002/min) = ~$0.005/min. Live variant gemini-3.5-transcribe-live same rates.",
+   "quality_notes": "Dedicated Gemini STT model. Word-level timestamps NOT documented (audio doc only shows MM:SS section references).",
+   "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.00375
+  },
+  {
+   "id": "asr:whisper-1",
+   "activity": "asr",
+   "provider": "OpenAI",
+   "model": "whisper-1",
+   "tier": "cân bằng",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "yes",
+   "prices": [
+    {
+     "unit": "per_minute_audio",
+     "usd": 0.006
+    }
+   ],
+   "note": "Only OpenAI transcription model that supports word-level timestamps (timestamp_granularities, verbose_json).",
+   "quality_notes": "Whisper list covers ~98 languages (Vietnamese/Thai/Japanese not enumerated on fetched page; Whisper support is long-established). Accuracy varies by language.",
+   "source_url": "https://developers.openai.com/api/docs/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.0045
+  },
+  {
+   "id": "avatar_video:D-ID",
+   "activity": "avatar_video",
+   "provider": "D-ID",
+   "model": "API video (credits)",
+   "tier": "rẻ",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": false,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_minute_video",
+     "usd": 0.78
+    }
+   ],
+   "note": "UNVERIFIED third-party (Creatify): 1 credit per 15s block; Launch $35/mo = 180 credits => ~$0.78/min; Scale $138.60 = 800 credits => ~$0.69/min. Argil says API billed separately per minute - conflict. Official pages not retrievable.",
+   "quality_notes": "Lower-fidelity than HeyGen in general market view (not benchmarked here).",
+   "source_url": "https://creatify.ai/blog/d-id-pricing-(2026)-plans-credits-and-what-you-ll-actually-pay",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.05226
+  },
+  {
+   "id": "avatar_video:Video Translation - Speed",
+   "activity": "avatar_video",
+   "provider": "HeyGen",
+   "model": "Video Translation - Speed (audio only or lip-sync)",
+   "tier": "rẻ",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_minute_video",
+     "usd": 1.5
+    }
+   ],
+   "note": "Enterprise rate 0.05 credit/sec; Precision (lip-sync) $3.00/min; Proofread $0.25/min. Billed on SOURCE duration.",
+   "quality_notes": "Translation + optional lip-sync; VI/TH/JA language availability not verified.",
+   "source_url": "https://developers.heygen.com/docs/enterprise-pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.1005
+  },
+  {
+   "id": "avatar_video:Synthesia",
+   "activity": "avatar_video",
+   "provider": "Synthesia",
+   "model": "Standard video (plans; API access plan unclear)",
+   "tier": "cân bằng",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": false,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_minute_video",
+     "usd": 1.48
+    }
+   ],
+   "note": "DERIVED from synthesia.io/pricing: 100 credits/min; Pro $89/mo = 6,000 credits (~60 min) => ~$1.48/min monthly, ~$1.07/min on yearly ($64/mo, 720 min/yr); Starter $29/mo = 1,250 credits => ~$2.32/min. Page unclear on which plan includes API (Enterprise mentioned); page internally inconsistent.",
+   "quality_notes": "140+ languages/voices (page claim). Avatars are template/personal avatars, not talking-head from own footage.",
+   "source_url": "https://www.synthesia.io/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.09916
+  },
+  {
+   "id": "avatar_video:Hedra",
+   "activity": "avatar_video",
+   "provider": "Hedra",
+   "model": "Character-3",
+   "tier": "cân bằng",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": false,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_minute_video",
+     "usd": 2.0
+    }
+   ],
+   "note": "UNVERIFIED third-party: 6 credits/sec; Creator $30 = 5,400 credits (15 min) => $2.00/min; Pro $75 = 14,400 (40 min) => $1.88/min. Web-studio plans; no per-minute API price found; API plan reportedly rose to $100 on 2026-09-27 (CostBench).",
+   "quality_notes": "",
+   "source_url": "https://dailyaifixs.com/blog/hedra-pricing-2026-credits-burn-by-the-second",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.134
+  },
+  {
+   "id": "avatar_video:Dubbing v2",
+   "activity": "avatar_video",
+   "provider": "ElevenLabs",
+   "model": "Dubbing v2 (audio translation, not lip-sync)",
+   "tier": "cân bằng",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "yes",
+   "prices": [
+    {
+     "unit": "per_minute_video",
+     "usd": 2.2
+    }
+   ],
+   "note": "Dubbing v1 $0.33/min (watermarked) / $0.50 without; v2 $2.20/min; billed per source audio minute.",
+   "quality_notes": "Audio-only dubbing; no lip-sync avatar.",
+   "source_url": "https://elevenlabs.io/pricing/api",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.1474
+  },
+  {
+   "id": "avatar_video:Avatar IV (Enterprise",
+   "activity": "avatar_video",
+   "provider": "HeyGen",
+   "model": "Avatar IV (Enterprise API: Photo/Digital Twin/Studio)",
+   "tier": "cao cấp",
+   "recommended": true,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_minute_video",
+     "usd": 3.0
+    }
+   ],
+   "note": "0.1 credit/sec, 1 credit = $0.50. Avatar V (digital twin only) same $3.00/min. Avatar III $0.50/min (digital twin/studio), $1.30/min photo. Default 1080p, up to 4K on Enterprise. Enterprise = sales contract.",
+   "quality_notes": "Most capable HeyGen engines; language count not verified.",
+   "source_url": "https://developers.heygen.com/docs/enterprise-pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.201
+  },
+  {
+   "id": "video_gen:grok_imagine_1_5_lite",
+   "activity": "video_gen",
+   "provider": "Grok via Runway API",
+   "model": "grok_imagine_1_5_lite",
+   "tier": "rẻ",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_second_video",
+     "usd": 0.03
+    }
+   ],
+   "note": "480p $0.02/s, 720p $0.03/s, 1080p $0.14/s. grok_imagine_1_5: $0.10/$0.16/$0.29.",
+   "quality_notes": "Cheapest B-roll found; quality unknown.",
+   "source_url": "https://docs.dev.runwayml.com/guides/pricing/",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.09
+  },
+  {
+   "id": "video_gen:gen4_turbo",
+   "activity": "video_gen",
+   "provider": "Runway",
+   "model": "gen4_turbo",
+   "tier": "rẻ",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_second_video",
+     "usd": 0.05
+    }
+   ],
+   "note": "5 credits/s. Image-to-video focus.",
+   "quality_notes": "Fast/cheap Runway.",
+   "source_url": "https://docs.dev.runwayml.com/guides/pricing/",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.15
+  },
+  {
+   "id": "video_gen:veo-3.1-lite",
+   "activity": "video_gen",
+   "provider": "Google (Gemini API)",
+   "model": "veo-3.1-lite-generate-preview",
+   "tier": "rẻ",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_second_video",
+     "usd": 0.08
+    }
+   ],
+   "note": "720p $0.05/s, 1080p $0.08/s. No 4K. Price shown = 1080p.",
+   "quality_notes": "Cheapest first-party Veo; no reference images, no 4K. Preview.",
+   "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.24
+  },
+  {
+   "id": "video_gen:kling-video/v3/standard",
+   "activity": "video_gen",
+   "provider": "Kling via fal.ai",
+   "model": "fal-ai/kling-video/v3/standard/text-to-video",
+   "tier": "rẻ",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_second_video",
+     "usd": 0.084
+    }
+   ],
+   "note": "Audio off $0.084/s; audio on $0.126/s; audio+voice control $0.154/s.",
+   "quality_notes": "Native audio is Chinese/English only (other languages translated to English).",
+   "source_url": "https://fal.ai/models/fal-ai/kling-video/v3/standard/text-to-video",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.252
+  },
+  {
+   "id": "video_gen:MiniMax-H3",
+   "activity": "video_gen",
+   "provider": "MiniMax Hailuo",
+   "model": "MiniMax-H3",
+   "tier": "cân bằng",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_second_video",
+     "usd": 0.08
+    }
+   ],
+   "note": "768P $0.08/s, 2K $0.13/s. H3-Max 480P $0.05/s, 768P $0.08/s. Legacy Hailuo-2.3 768P 6s $0.28.",
+   "quality_notes": "",
+   "source_url": "https://platform.minimax.io/docs/guides/pricing-paygo",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.24
+  },
+  {
+   "id": "video_gen:veo-3.1-fast",
+   "activity": "video_gen",
+   "provider": "Google (Gemini API)",
+   "model": "veo-3.1-fast-generate-preview",
+   "tier": "cân bằng",
+   "recommended": true,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_second_video",
+     "usd": 0.12
+    }
+   ],
+   "note": "720p $0.10/s, 1080p $0.12/s, 4K $0.30/s. Price shown = 1080p.",
+   "quality_notes": "Fast tier, audio included.",
+   "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.36
+  },
+  {
+   "id": "video_gen:gen4.5",
+   "activity": "video_gen",
+   "provider": "Runway",
+   "model": "gen4.5",
+   "tier": "cân bằng",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_second_video",
+     "usd": 0.12
+    }
+   ],
+   "note": "12 credits/s, 1 credit=$0.01.",
+   "quality_notes": "Runway's top T2V/I2V model.",
+   "source_url": "https://docs.dev.runwayml.com/guides/pricing/",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.36
+  },
+  {
+   "id": "video_gen:seedance-2.0/text-to-vid",
+   "activity": "video_gen",
+   "provider": "ByteDance Seedance 2.0 via fal.ai",
+   "model": "bytedance/seedance-2.0/text-to-video",
+   "tier": "cao cấp",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_second_video",
+     "usd": 0.3034
+    }
+   ],
+   "note": "720p $0.3034/s (with audio); 1080p $0.682/s; 480p billed $0.014 per 1,000 tokens (tokens=h*w*dur*24/1024). Fast endpoint bytedance/seedance-2.0/fast/text-to-video 720p $0.2419/s.",
+   "quality_notes": "Top-tier motion quality (reputation, not benchmarked here).",
+   "source_url": "https://fal.ai/models/bytedance/seedance-2.0/text-to-video",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.9102
+  },
+  {
+   "id": "video_gen:veo-3.1-generate-preview",
+   "activity": "video_gen",
+   "provider": "Google (Gemini API)",
+   "model": "veo-3.1-generate-preview",
+   "tier": "cao cấp",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_second_video",
+     "usd": 0.4
+    }
+   ],
+   "note": "720p/1080p $0.40/s, 4K $0.60/s. Audio included. Charged only on success.",
+   "quality_notes": "Native audio (dialogue/SFX/ambient). Top-quality tier. 24fps.",
+   "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 1.2
+  },
+  {
+   "id": "sfx_music:lyria-3.5",
+   "activity": "sfx_music",
+   "provider": "Google (Gemini API)",
+   "model": "lyria-3.5",
+   "tier": "rẻ",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_generation",
+     "usd": 0.08
+    }
+   ],
+   "note": "$0.08 per full song. lyria-3-clip-preview $0.04 per 30s clip (legacy); lyria-3-pro-preview $0.08/song (legacy).",
+   "quality_notes": "Cheapest verified music generator; licensing terms not checked.",
+   "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.0016
+  },
+  {
+   "id": "sfx_music:Sound Effects",
+   "activity": "sfx_music",
+   "provider": "ElevenLabs",
+   "model": "Sound Effects (text-to-SFX)",
+   "tier": "cân bằng",
+   "recommended": true,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_minute_audio",
+     "usd": 0.12
+    }
+   ],
+   "note": "$0.12/min; 'billed per generation'. Docs separately say 40 credits/sec when duration specified - cannot reconcile with $0.12/min; verify with a test call.",
+   "quality_notes": "Non-linguistic. Loopable effects, MP3 / WAV 48kHz.",
+   "source_url": "https://elevenlabs.io/pricing/api",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.006
+  },
+  {
+   "id": "sfx_music:Eleven Music",
+   "activity": "sfx_music",
+   "provider": "ElevenLabs",
+   "model": "Eleven Music (music_v1 / v2 / v2_5)",
+   "tier": "cân bằng",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_minute_audio",
+     "usd": 0.15
+    }
+   ],
+   "note": "$0.15/min; commercial-use licensing on Starter+ plans; fine-tune $1.50.",
+   "quality_notes": "Vocals language support not stated; English recommended for style prompts.",
+   "source_url": "https://elevenlabs.io/pricing/api",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.0075
+  },
+  {
+   "id": "embedding:text-embedding-3-small",
+   "activity": "embedding",
+   "provider": "OpenAI",
+   "model": "text-embedding-3-small",
+   "tier": "rẻ",
+   "recommended": true,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_1M_tokens",
+     "usd": 0.02
+    }
+   ],
+   "note": "Batch discount not checked.",
+   "quality_notes": "Cheapest verified. Multilingual quality not re-verified (OpenAI 2024 announcement reported MIRACL scores; not re-fetched).",
+   "source_url": "https://developers.openai.com/api/docs/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 4e-05
+  },
+  {
+   "id": "embedding:voyage-multilingual-2",
+   "activity": "embedding",
+   "provider": "Voyage AI",
+   "model": "voyage-multilingual-2",
+   "tier": "cân bằng",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_1M_tokens",
+     "usd": 0.12
+    }
+   ],
+   "note": "Free-token note inconsistent on page (50M free vs 'older models none').",
+   "quality_notes": "Only model on page explicitly named multilingual.",
+   "source_url": "https://docs.voyageai.com/docs/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.00024
+  },
+  {
+   "id": "embedding:gemini-embedding-2",
+   "activity": "embedding",
+   "provider": "Google",
+   "model": "gemini-embedding-2",
+   "tier": "cân bằng",
+   "recommended": false,
+   "tested_in_benchmark": false,
+   "verified_price": true,
+   "vietnamese": "unknown",
+   "prices": [
+    {
+     "unit": "per_1M_tokens",
+     "usd": 0.2
+    }
+   ],
+   "note": "Text $0.20 standard / $0.10 batch. Image $0.45/1M ($0.00012/img); audio $6.50/1M ($0.00016/s); video $12/1M ($0.00079/frame). Models page names it 'gemini-embedding-2-preview' + 'gemini-embedding-001' (price for 001 not on page).",
+   "quality_notes": "Multimodal (text/image/audio/video) = can embed clips directly.",
+   "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+   "checked_date": "2026-10-10",
+   "cost_per_unit_usd": 0.0004
+  }
+ ]
+}

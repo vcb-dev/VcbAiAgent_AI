@@ -1,0 +1,5 @@
+{"id": "c_981fc683", "roles": [{"role": "craft", "conf": 0.8}, {"role": "huyk_silent", "conf": 0.6}, {"role": "huyk_talk", "conf": 0.2}], "craft_step": "thiet_ke", "craft_step_conf": 0.9,
+ "shot_size": "medium", "camera": "static", "subject": ["huyk_face", "person", "hands", "tool", "paper", "workshop"], "huyk_present": true, "person_speaking_to_camera": false,
+ "product_visible": false, "product_type": "none", "metal": "unknown", "stone_color": [], "lighting": "good",
+ "text_or_watermark": "none", "motion_level": 1, "aesthetic": 4, "best_moment_s": 11.5, "usable_from_s": 0.0, "usable_to_s": 23.0,
+ "description_vi": "HuyK cúi vẽ phác thảo thiết kế trang sức lên giấy bằng bút, đèn nấm ấm phía sau.", "keywords_vi": ["HuyK", "thiết kế", "vẽ phác thảo", "bút vẽ", "bản vẽ", "xưởng kim hoàn", "tạp dề"]}

@@ -1,0 +1,48 @@
+{
+ "id": "c_723d2f67",
+ "roles": [
+  {
+   "role": "product_hero",
+   "conf": 0.85
+  },
+  {
+   "role": "stock_action",
+   "conf": 0.3
+  }
+ ],
+ "craft_step": "hoan_thien",
+ "craft_step_conf": 0.5,
+ "shot_size": "close",
+ "camera": "handheld",
+ "subject": [
+  "hands",
+  "product",
+  "stone"
+ ],
+ "huyk_present": false,
+ "person_speaking_to_camera": false,
+ "product_visible": true,
+ "product_type": "nhan",
+ "metal": "vang",
+ "stone_color": [
+  "trắng"
+ ],
+ "lighting": "good",
+ "text_or_watermark": "none",
+ "motion_level": 1,
+ "aesthetic": 4,
+ "best_moment_s": 4.4,
+ "usable_from_s": 0.0,
+ "usable_to_s": 10.2,
+ "description_vi": "Nhẫn vàng hồng đá tròn viền halo, thân nhẫn đính đá nhỏ, đeo trên ngón tay móng dài, tay xoay nhẹ khoe nhẫn.",
+ "keywords_vi": [
+  "nhẫn",
+  "halo",
+  "đá tròn",
+  "vàng hồng",
+  "đeo thử",
+  "lòng bàn tay",
+  "móng tay",
+  "lấp lánh"
+ ]
+}

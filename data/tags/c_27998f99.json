@@ -1,0 +1,50 @@
+{
+ "id": "c_27998f99",
+ "roles": [
+  {
+   "role": "craft",
+   "conf": 0.85
+  },
+  {
+   "role": "craft_macro",
+   "conf": 0.35
+  },
+  {
+   "role": "stock_action",
+   "conf": 0.3
+  }
+ ],
+ "craft_step": "dap_can",
+ "craft_step_conf": 0.65,
+ "shot_size": "close",
+ "camera": "static",
+ "subject": [
+  "tool",
+  "metal",
+  "workshop"
+ ],
+ "huyk_present": false,
+ "person_speaking_to_camera": false,
+ "product_visible": false,
+ "product_type": "none",
+ "metal": "unknown",
+ "stone_color": [],
+ "lighting": "mixed",
+ "text_or_watermark": "none",
+ "motion_level": 2,
+ "aesthetic": 3,
+ "best_moment_s": 9.2,
+ "usable_from_s": 0.0,
+ "usable_to_s": 21.5,
+ "description_vi": "Cận cảnh máy cán kim loại, hai trục lăn có rãnh quay liên tục dưới ánh sáng ấm, nhãn giấy nhỏ bên cạnh.",
+ "keywords_vi": [
+  "máy cán",
+  "trục lăn",
+  "cán bạc",
+  "xưởng kim hoàn",
+  "chế tác",
+  "cận cảnh",
+  "kim loại",
+  "công cụ"
+ ]
+}

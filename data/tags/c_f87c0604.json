@@ -1,0 +1,47 @@
+{
+ "id": "c_f87c0604",
+ "roles": [
+  {
+   "role": "craft",
+   "conf": 0.9
+  },
+  {
+   "role": "craft_macro",
+   "conf": 0.5
+  }
+ ],
+ "craft_step": "han",
+ "craft_step_conf": 0.85,
+ "shot_size": "close",
+ "camera": "static",
+ "subject": [
+  "fire",
+  "metal",
+  "tool",
+  "product"
+ ],
+ "huyk_present": false,
+ "person_speaking_to_camera": false,
+ "product_visible": true,
+ "product_type": "nhan",
+ "metal": "vang",
+ "stone_color": [],
+ "lighting": "good",
+ "text_or_watermark": "none",
+ "motion_level": 2,
+ "aesthetic": 4,
+ "best_moment_s": 2.85,
+ "usable_from_s": 0.0,
+ "usable_to_s": 16.5,
+ "description_vi": "Khò lửa hàn nối vòng nhẫn vàng đặt trên giá kẹp, ngọn lửa cam bùng lên chạm điểm hàn, kìm nhọn giữ chi tiết.",
+ "keywords_vi": [
+  "hàn nối",
+  "khò lửa",
+  "ngọn lửa",
+  "nhẫn vàng",
+  "kìm",
+  "điểm hàn",
+  "chế tác",
+  "cận cảnh"
+ ]
+}

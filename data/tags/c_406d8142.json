@@ -1,0 +1,48 @@
+{
+ "id": "c_406d8142",
+ "roles": [
+  {
+   "role": "product_hero",
+   "conf": 0.9
+  },
+  {
+   "role": "product_final",
+   "conf": 0.4
+  }
+ ],
+ "craft_step": "hoan_thien",
+ "craft_step_conf": 0.7,
+ "shot_size": "close",
+ "camera": "static",
+ "subject": [
+  "hands",
+  "product",
+  "stone"
+ ],
+ "huyk_present": false,
+ "person_speaking_to_camera": false,
+ "product_visible": true,
+ "product_type": "nhan",
+ "metal": "vang_trang",
+ "stone_color": [
+  "trắng"
+ ],
+ "lighting": "good",
+ "text_or_watermark": "none",
+ "motion_level": 1,
+ "aesthetic": 4,
+ "best_moment_s": 7.4,
+ "usable_from_s": 0.0,
+ "usable_to_s": 17.3,
+ "description_vi": "Nhẫn kim hoa đá trắng đeo trên tay nữ, nền hũ vàng thỏi ánh sáng ấm tối, đá lấp lánh khi tay nghiêng.",
+ "keywords_vi": [
+  "nhẫn kim hoa",
+  "đeo thử",
+  "đá trắng",
+  "hũ vàng",
+  "tài lộc",
+  "tay nữ",
+  "lấp lánh",
+  "hoàn thiện"
+ ]
+}

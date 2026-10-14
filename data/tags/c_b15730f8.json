@@ -1,0 +1,50 @@
+{
+ "id": "c_b15730f8",
+ "roles": [
+  {
+   "role": "outro",
+   "conf": 0.8
+  },
+  {
+   "role": "stock_action",
+   "conf": 0.3
+  },
+  {
+   "role": "huyk_talk",
+   "conf": 0.35
+  }
+ ],
+ "craft_step": null,
+ "craft_step_conf": 0.0,
+ "shot_size": "medium",
+ "camera": "static",
+ "subject": [
+  "person",
+  "huyk_face",
+  "workshop"
+ ],
+ "huyk_present": true,
+ "person_speaking_to_camera": true,
+ "product_visible": false,
+ "product_type": "none",
+ "metal": "unknown",
+ "stone_color": [],
+ "lighting": "good",
+ "text_or_watermark": "own_logo",
+ "motion_level": 3,
+ "aesthetic": 3,
+ "best_moment_s": 6.3,
+ "usable_from_s": 3.8,
+ "usable_to_s": 7.6,
+ "description_vi": "Cảnh đạp xe địa hình ngã nhào làm chuyển cảnh hài, sau đó HuyK nhảy vào giơ ngón cái, hiện logo HuyK và Viễn Chí Bảo.",
+ "keywords_vi": [
+  "outro",
+  "HuyK",
+  "ngã xe",
+  "chuyển cảnh hài",
+  "ngón cái",
+  "logo",
+  "Viễn Chí Bảo",
+  "kết video"
+ ]
+}

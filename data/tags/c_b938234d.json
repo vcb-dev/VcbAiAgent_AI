@@ -1,0 +1,45 @@
+{
+ "id": "c_b938234d",
+ "roles": [
+  {
+   "role": "craft",
+   "conf": 0.85
+  },
+  {
+   "role": "stock_action",
+   "conf": 0.3
+  }
+ ],
+ "craft_step": "dap_can",
+ "craft_step_conf": 0.85,
+ "shot_size": "close",
+ "camera": "static",
+ "subject": [
+  "tool",
+  "metal",
+  "hands"
+ ],
+ "huyk_present": false,
+ "person_speaking_to_camera": false,
+ "product_visible": false,
+ "product_type": "none",
+ "metal": "bac",
+ "stone_color": [],
+ "lighting": "good",
+ "text_or_watermark": "none",
+ "motion_level": 2,
+ "aesthetic": 4,
+ "best_moment_s": 6.85,
+ "usable_from_s": 4.5,
+ "usable_to_s": 8.2,
+ "description_vi": "Búa đen giáng xuống thanh bạc đặt trên đe gỗ tròn, bên cạnh có phôi bạc nhỏ, nền xưởng mờ ấm.",
+ "keywords_vi": [
+  "búa",
+  "đập bạc",
+  "thanh bạc",
+  "đe gỗ",
+  "phôi bạc",
+  "chế tác",
+  "xưởng kim hoàn"
+ ]
+}

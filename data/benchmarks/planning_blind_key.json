@@ -1,0 +1,17 @@
+{
+ "A4_2": {
+  "X": "opus",
+  "Y": "haiku",
+  "Z": "sonnet"
+ },
+ "A4_3": {
+  "X": "sonnet",
+  "Y": "haiku",
+  "Z": "opus"
+ },
+ "A2": {
+  "X": "haiku",
+  "Y": "sonnet",
+  "Z": "opus"
+ }
+}

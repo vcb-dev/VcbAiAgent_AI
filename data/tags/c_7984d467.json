@@ -1,0 +1,50 @@
+{
+ "id": "c_7984d467",
+ "roles": [
+  {
+   "role": "craft",
+   "conf": 0.4
+  },
+  {
+   "role": "hook_visual",
+   "conf": 0.45
+  },
+  {
+   "role": "stock_action",
+   "conf": 0.4
+  }
+ ],
+ "craft_step": "nung_nau",
+ "craft_step_conf": 0.4,
+ "shot_size": "close",
+ "camera": "static",
+ "subject": [
+  "fire",
+  "tool",
+  "metal"
+ ],
+ "huyk_present": false,
+ "person_speaking_to_camera": false,
+ "product_visible": false,
+ "product_type": "none",
+ "metal": "unknown",
+ "stone_color": [],
+ "lighting": "good",
+ "text_or_watermark": "none",
+ "motion_level": 2,
+ "aesthetic": 4,
+ "best_moment_s": 1.3,
+ "usable_from_s": 0.0,
+ "usable_to_s": 5.3,
+ "description_vi": "Đầu khò vàng đồng bật lửa xanh lướt qua phía sau khối kim loại bóng loáng có chi tiết đồng vàng, nền mờ đẹp.",
+ "keywords_vi": [
+  "đánh lửa",
+  "đèn khò",
+  "ngọn lửa xanh",
+  "khối kim loại",
+  "bóng loáng",
+  "nền mờ",
+  "xưởng",
+  "nung"
+ ]
+}

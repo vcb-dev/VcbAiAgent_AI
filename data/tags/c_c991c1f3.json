@@ -1,0 +1,5 @@
+{"id": "c_c991c1f3", "roles": [{"role": "craft", "conf": 0.8}, {"role": "craft_macro", "conf": 0.7}, {"role": "product_hero", "conf": 0.8}, {"role": "hook_visual", "conf": 0.5}], "craft_step": "gan_da_chu", "craft_step_conf": 0.9,
+ "shot_size": "extreme_close", "camera": "static", "subject": ["tool", "stone", "product"], "huyk_present": false, "person_speaking_to_camera": false,
+ "product_visible": true, "product_type": "nhan", "metal": "bac", "stone_color": ["xanh lá"], "lighting": "good",
+ "text_or_watermark": "none", "motion_level": 1, "aesthetic": 5, "best_moment_s": 4.3, "usable_from_s": 0.0, "usable_to_s": 6.5,
+ "description_vi": "Nhíp đặt viên đá xanh lá vào nhẫn bạc, đá khớp ổ và lóe sáng tia cầu vồng rất đẹp.", "keywords_vi": ["gắn đá chủ", "đá xanh lá", "lóe sáng", "nhẫn bạc", "cận cực gần", "khoảnh khắc đẹp", "chế tác"]}

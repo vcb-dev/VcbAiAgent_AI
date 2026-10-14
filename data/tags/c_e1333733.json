@@ -1,0 +1,6 @@
+{"id": "c_e1333733", "roles": [{"role": "craft", "conf": 0.9}, {"role": "craft_macro", "conf": 0.7}, {"role": "product_hero", "conf": 0.4}], "craft_step": "gan_da_chu", "craft_step_conf": 0.75,
+ "shot_size": "extreme_close", "camera": "static", "subject": ["hands", "stone", "tool", "product"], "huyk_present": false, "person_speaking_to_camera": false,
+ "product_visible": true, "product_type": "nhan", "metal": "bac", "stone_color": ["xanh lá"], "lighting": "good",
+ "text_or_watermark": "none", "motion_level": 1, "aesthetic": 5, "best_moment_s": 6.8, "usable_from_s": 0.0, "usable_to_s": 12.8,
+ "description_vi": "Nhíp đưa viên đá xanh lá hình thoi vào ổ trên nhẫn bạc, đá khớp vị trí rồi lóe sáng dưới đèn, nền nâu ấm.",
+ "keywords_vi": ["gắn đá", "đá xanh lá", "nhíp", "ổ đá", "nhẫn bạc", "cận cực gần", "lấp lánh", "đính đá"]}

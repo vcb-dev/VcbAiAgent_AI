@@ -1,0 +1,70 @@
+{
+ "tagging": {
+  "sonnet": {
+   "agent_tokens": 91668,
+   "tool_uses": 14,
+   "duration_ms": 73654
+  },
+  "opus": {
+   "agent_tokens": 91028,
+   "tool_uses": 14,
+   "duration_ms": 91614
+  },
+  "haiku": {
+   "agent_tokens": 124848,
+   "tool_uses": 14,
+   "duration_ms": 179611
+  }
+ },
+ "catalog_batches_sonnet": [
+  {
+   "batch": 1,
+   "agent_tokens": 87031,
+   "duration_ms": 55828
+  },
+  {
+   "batch": 2,
+   "agent_tokens": 87184,
+   "duration_ms": 53098
+  },
+  {
+   "batch": 3,
+   "agent_tokens": 87248,
+   "duration_ms": 52394
+  },
+  {
+   "batch": 4,
+   "agent_tokens": 87511,
+   "duration_ms": 55989
+  },
+  {
+   "batch": 5,
+   "agent_tokens": 87237,
+   "duration_ms": 53327
+  },
+  {
+   "batch": 6,
+   "agent_tokens": 87997,
+   "duration_ms": 49541
+  }
+ ],
+ "planning": {
+  "sonnet": {
+   "agent_tokens": 86470,
+   "tool_uses": 3,
+   "duration_ms": 160577,
+   "note": "tự phát hiện A4_3 nói nhẫn bánh răng nhưng footage là nhẫn Horus"
+  },
+  "opus": {
+   "agent_tokens": 88260,
+   "tool_uses": 2,
+   "duration_ms": 232365,
+   "note": "tự kiểm tra nguyên văn + thứ tự công đoạn; phát hiện A4_3 lệch sản phẩm"
+  },
+  "haiku": {
+   "agent_tokens": 134389,
+   "tool_uses": 2,
+   "duration_ms": 279167
+  }
+ }
+}

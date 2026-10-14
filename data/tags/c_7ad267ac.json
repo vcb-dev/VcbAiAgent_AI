@@ -1,0 +1,5 @@
+{"id": "c_7ad267ac", "roles": [{"role": "craft", "conf": 0.9}, {"role": "craft_macro", "conf": 0.8}, {"role": "product_hero", "conf": 0.4}], "craft_step": "gan_da_chu", "craft_step_conf": 0.9,
+ "shot_size": "extreme_close", "camera": "static", "subject": ["hands", "tool", "stone", "product"], "huyk_present": false, "person_speaking_to_camera": false,
+ "product_visible": true, "product_type": "nhan", "metal": "bac", "stone_color": ["xanh lá"], "lighting": "good",
+ "text_or_watermark": "none", "motion_level": 1, "aesthetic": 5, "best_moment_s": 22.4, "usable_from_s": 0.0, "usable_to_s": 26.0,
+ "description_vi": "Dùng nhíp đặt viên đá xanh lá vào ổ chủ trên nhẫn bạc, cận cực gần, nền nâu mờ đẹp.", "keywords_vi": ["gắn đá chủ", "đá xanh lá", "nhíp", "nhẫn bạc", "cận cực gần", "chế tác", "xưởng kim hoàn"]}

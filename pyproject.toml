@@ -1,0 +1,17 @@
+[project]
+name = "vcb-ai"
+version = "0.1.0"
+description = "VCB Video Agent AI service: script planning, footage matching, timeline build and render"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn>=0.30",
+    "pydantic>=2.7",
+    "anthropic>=0.60",
+    "httpx>=0.27",
+    "numpy>=2.4.6",
+    "python-dotenv>=1.0.1",
+]
+
+[tool.uv]
+package = false

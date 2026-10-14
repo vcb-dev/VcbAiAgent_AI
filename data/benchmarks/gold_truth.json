@@ -1,0 +1,64 @@
+{
+ "c_7ad267ac": {
+  "role": "craft",
+  "craft_step": "gan_da_chu",
+  "huyk_present": false
+ },
+ "c_fd886a1a": {
+  "role": "craft",
+  "craft_step": "dap_can",
+  "huyk_present": false
+ },
+ "c_41a68bc5": {
+  "role": "craft",
+  "craft_step": "nung_nau",
+  "huyk_present": false
+ },
+ "c_f74a8bd7": {
+  "role": "craft",
+  "craft_step": "do_khuon",
+  "huyk_present": false
+ },
+ "c_9746542f": {
+  "role": "craft",
+  "craft_step": "cua_cat",
+  "huyk_present": false
+ },
+ "c_945a3887": {
+  "role": "craft",
+  "craft_step": "han",
+  "huyk_present": false
+ },
+ "c_a2dbfeee": {
+  "role": "craft",
+  "craft_step": "khoan",
+  "huyk_present": false
+ },
+ "c_37e95497": {
+  "role": "craft",
+  "craft_step": "danh_bong",
+  "huyk_present": false
+ },
+ "c_8a5fc438": {
+  "role": "product_final",
+  "craft_step": "hoan_thien",
+  "huyk_present": false
+ },
+ "c_0a8d1c7d": {
+  "role": "huyk_talk",
+  "craft_step": null,
+  "huyk_present": true
+ },
+ "c_840577db": {
+  "role": "outro",
+  "craft_step": null,
+  "huyk_present": true,
+  "text_or_watermark": "own_logo"
+ },
+ "c_71b6151f": {
+  "role": "product_hero",
+  "craft_step": null,
+  "huyk_present": false,
+  "text_or_watermark": "third_party"
+ }
+}

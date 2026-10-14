@@ -1,0 +1,48 @@
+{
+ "id": "c_d1e02779",
+ "roles": [
+  {
+   "role": "craft",
+   "conf": 0.85
+  },
+  {
+   "role": "huyk_silent",
+   "conf": 0.7
+  }
+ ],
+ "craft_step": "dua_mai",
+ "craft_step_conf": 0.8,
+ "shot_size": "medium",
+ "camera": "static",
+ "subject": [
+  "person",
+  "huyk_face",
+  "hands",
+  "tool",
+  "workshop"
+ ],
+ "huyk_present": true,
+ "person_speaking_to_camera": false,
+ "product_visible": false,
+ "product_type": "none",
+ "metal": "unknown",
+ "stone_color": [],
+ "lighting": "good",
+ "text_or_watermark": "none",
+ "motion_level": 1,
+ "aesthetic": 4,
+ "best_moment_s": 6.3,
+ "usable_from_s": 0.0,
+ "usable_to_s": 16.0,
+ "description_vi": "HuyK cúi đầu tập trung giũa chi tiết trên khối gỗ ở bàn thợ, giá sách ánh đèn vàng phía sau, cuối clip ngẩng lên.",
+ "keywords_vi": [
+  "HuyK",
+  "giũa",
+  "mài định hình",
+  "bàn thợ",
+  "tập trung",
+  "chế tác thủ công",
+  "xưởng",
+  "trung cảnh"
+ ]
+}

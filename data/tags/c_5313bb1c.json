@@ -1,0 +1,45 @@
+{
+ "id": "c_5313bb1c",
+ "roles": [
+  {
+   "role": "craft",
+   "conf": 0.9
+  },
+  {
+   "role": "craft_macro",
+   "conf": 0.4
+  }
+ ],
+ "craft_step": "dap_can",
+ "craft_step_conf": 0.85,
+ "shot_size": "close",
+ "camera": "static",
+ "subject": [
+  "tool",
+  "metal"
+ ],
+ "huyk_present": false,
+ "person_speaking_to_camera": false,
+ "product_visible": false,
+ "product_type": "none",
+ "metal": "bac",
+ "stone_color": [],
+ "lighting": "good",
+ "text_or_watermark": "none",
+ "motion_level": 2,
+ "aesthetic": 4,
+ "best_moment_s": 9.9,
+ "usable_from_s": 0.0,
+ "usable_to_s": 14.5,
+ "description_vi": "Thanh bạc được búa gõ uốn tròn quanh trục thép, búa khắc tên HuyK, nền cam mờ nghệ thuật.",
+ "keywords_vi": [
+  "búa HuyK",
+  "uốn tròn",
+  "trục thép",
+  "đập bạc",
+  "tạo hình nhẫn",
+  "phôi bạc",
+  "chế tác",
+  "cận cảnh"
+ ]
+}

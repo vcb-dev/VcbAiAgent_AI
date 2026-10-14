@@ -1,0 +1,51 @@
+{
+ "id": "c_945a3887",
+ "roles": [
+  {
+   "role": "craft",
+   "conf": 0.9
+  },
+  {
+   "role": "craft_macro",
+   "conf": 0.7
+  },
+  {
+   "role": "hook_visual",
+   "conf": 0.3
+  }
+ ],
+ "craft_step": "han",
+ "craft_step_conf": 0.9,
+ "shot_size": "close",
+ "camera": "static",
+ "subject": [
+  "tool",
+  "fire",
+  "metal",
+  "product"
+ ],
+ "huyk_present": false,
+ "person_speaking_to_camera": false,
+ "product_visible": true,
+ "product_type": "nhan",
+ "metal": "bac",
+ "stone_color": [],
+ "lighting": "mixed",
+ "text_or_watermark": "none",
+ "motion_level": 2,
+ "aesthetic": 4,
+ "best_moment_s": 1.5,
+ "usable_from_s": 0.0,
+ "usable_to_s": 17.5,
+ "description_vi": "Cận cảnh kẹp nhẫn bạc bằng nhíp, khò lửa hàn nối điểm nhỏ, ngọn lửa cam rực và kim loại nóng đỏ.",
+ "keywords_vi": [
+  "hàn nối",
+  "khò lửa",
+  "nhíp",
+  "nhẫn bạc",
+  "ngọn lửa",
+  "kim loại nóng đỏ",
+  "chế tác",
+  "cận cảnh"
+ ]
+}

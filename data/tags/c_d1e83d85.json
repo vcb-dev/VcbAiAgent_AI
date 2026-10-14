@@ -1,0 +1,48 @@
+{
+ "id": "c_d1e83d85",
+ "roles": [
+  {
+   "role": "craft",
+   "conf": 0.8
+  },
+  {
+   "role": "stock_action",
+   "conf": 0.4
+  },
+  {
+   "role": "craft_macro",
+   "conf": 0.3
+  }
+ ],
+ "craft_step": "chuan_bi_nguyen_lieu",
+ "craft_step_conf": 0.85,
+ "shot_size": "close",
+ "camera": "static",
+ "subject": [
+  "metal",
+  "workshop"
+ ],
+ "huyk_present": false,
+ "person_speaking_to_camera": false,
+ "product_visible": false,
+ "product_type": "none",
+ "metal": "bac",
+ "stone_color": [],
+ "lighting": "good",
+ "text_or_watermark": "none",
+ "motion_level": 2,
+ "aesthetic": 4,
+ "best_moment_s": 3.1,
+ "usable_from_s": 1.0,
+ "usable_to_s": 5.3,
+ "description_vi": "Đổ các mẩu bạc nhỏ sáng bóng vào chén sứ trên bàn gỗ, nhãn giấy bên dưới, chuẩn bị nguyên liệu nấu chảy.",
+ "keywords_vi": [
+  "nguyên liệu",
+  "mẩu bạc",
+  "chén sứ",
+  "đổ bạc",
+  "chuẩn bị",
+  "bạc vụn",
+  "xưởng kim hoàn"
+ ]
+}
