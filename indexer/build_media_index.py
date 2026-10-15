@@ -38,6 +38,8 @@ VIDEO_EXT = {".mp4", ".mov"}
 # một đoạn đường dẫn là biết clip là chế tác, HuyK hay cảnh sản phẩm.
 # Khớp theo thứ tự, cái nào trúng trước thì lấy. (đoạn đường dẫn, mã, role_hint, bản quyền)
 PATH_RULES = [
+    ("SOURCE OUTRO", "OUTRO", "outro", "owned"),
+    ("INTRO-OUTRO", "OUTRO", "outro", "owned"),
     # Chế tác tại xưởng, chia theo thợ rồi tới từng công đoạn đánh số (1. Do nguyen lieu ... 42. Hoan thanh).
     ("CHẾ TÁC XƯỞNG SẢN XUẤT", "CTX", "craft", "owned"),
     ("HUYK0/VIDEO-CHE-TAC", "CHETAC", "craft", "owned"),
@@ -56,6 +58,21 @@ PATH_RULES = [
     ("/V6.", "V6", "product_final", "owned"), ("/V7.", "V7", "outro", "owned"),
     ("/V8.", "V8", "craft", "owned"),
 ]
+
+
+# Một số máy quay dựng nghiêng 90° nhưng không ghi cờ xoay vào file, nên ffmpeg không tự
+# nắn được: phải khai báo theo thư mục. Giá trị là tham số transpose của ffmpeg (1 = xoay phải).
+PATH_ROTATE = [
+    ("SOURCE 4K/Stock anh HuyK", 1),
+]
+
+
+def rotate_filter(path: Path) -> str:
+    rel = unicodedata.normalize("NFC", path.as_posix())
+    for needle, transpose in PATH_ROTATE:
+        if unicodedata.normalize("NFC", needle) in rel:
+            return f"transpose={transpose},"
+    return ""
 
 
 FORCED_ROLE = None      # đặt bởi --role khi footage nằm ngoài cây thư mục chuẩn của NAS
@@ -174,7 +191,8 @@ def build_proxy(src: Path, dst: Path, hdr: bool):
         return
     tonemap = ("zscale=t=linear:npl=100,format=gbrpf32le,zscale=p=bt709,tonemap=hable:desat=0,"
                "zscale=t=bt709:m=bt709:r=tv,format=yuv420p,") if hdr else ""
-    vf = f"{tonemap}scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280,fps=30,format=yuv420p"
+    vf = (f"{tonemap}{rotate_filter(src)}"
+          "scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280,fps=30,format=yuv420p")
     encode_atomic(["ffmpeg", "-y", "-v", "error", "-i", str(src), "-vf", vf, "-c:v", "libx264", "-preset", "veryfast",
                    "-crf", "23", "-c:a", "aac", "-b:a", "128k", "-ar", "48000", "-movflags", "+faststart"],
                   dst, f"proxy failed {src.name}")

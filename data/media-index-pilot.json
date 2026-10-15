@@ -1,43 +1,5 @@
 [
  {
-  "id": "c_3e9796f8",
-  "file": "/Volumes/MEDIA VCB folder/HUYK0/SOURCE 4K/Stock anh HuyK_file thô/C0001.MP4",
-  "name": "C0001.MP4",
-  "folder": "HUYK",
-  "role_hint": "huyk",
-  "rights": "owned",
-  "product_set": null,
-  "parsed": {
-   "raw": "C0001",
-   "date": null,
-   "type": null,
-   "koc": null,
-   "sku": null,
-   "product": null,
-   "action": "C0001",
-   "staff": null,
-   "stt": null,
-   "camera_name": true,
-   "craft_step": null,
-   "craft_order": null,
-   "parse_confidence": 0.25,
-   "topic": "Stock anh HuyK_file thô"
-  },
-  "tech": {
-   "duration": 13.52,
-   "width": 3840,
-   "height": 2160,
-   "rotation": 0,
-   "fps": 29.97,
-   "hdr": false,
-   "has_audio": true,
-   "codec": "h264"
-  },
-  "proxy": "media/proxy/c_3e9796f8.mp4",
-  "thumb": "media/thumbs/c_3e9796f8.jpg",
-  "sheet": "media/sheets/c_3e9796f8.jpg"
- },
- {
   "id": "c_50bdc998",
   "file": "/Volumes/MEDIA VCB folder/HUYK0/SOURCE 4K/Stock anh HuyK_file thô/C0002.MP4",
   "name": "C0002.MP4",
@@ -74,6 +36,44 @@
   "proxy": "media/proxy/c_50bdc998.mp4",
   "thumb": "media/thumbs/c_50bdc998.jpg",
   "sheet": "media/sheets/c_50bdc998.jpg"
+ },
+ {
+  "id": "c_3e9796f8",
+  "file": "/Volumes/MEDIA VCB folder/HUYK0/SOURCE 4K/Stock anh HuyK_file thô/C0001.MP4",
+  "name": "C0001.MP4",
+  "folder": "HUYK",
+  "role_hint": "huyk",
+  "rights": "owned",
+  "product_set": null,
+  "parsed": {
+   "raw": "C0001",
+   "date": null,
+   "type": null,
+   "koc": null,
+   "sku": null,
+   "product": null,
+   "action": "C0001",
+   "staff": null,
+   "stt": null,
+   "camera_name": true,
+   "craft_step": null,
+   "craft_order": null,
+   "parse_confidence": 0.25,
+   "topic": "Stock anh HuyK_file thô"
+  },
+  "tech": {
+   "duration": 13.52,
+   "width": 3840,
+   "height": 2160,
+   "rotation": 0,
+   "fps": 29.97,
+   "hdr": false,
+   "has_audio": true,
+   "codec": "h264"
+  },
+  "proxy": "media/proxy/c_3e9796f8.mp4",
+  "thumb": "media/thumbs/c_3e9796f8.jpg",
+  "sheet": "media/sheets/c_3e9796f8.jpg"
  },
  {
   "id": "c_4dd66beb",
