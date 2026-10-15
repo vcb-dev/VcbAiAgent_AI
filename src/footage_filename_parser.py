@@ -87,9 +87,11 @@ def craft_step_from_action(action: str, strict: bool = False):
         return step, CRAFT_STEPS[step][0]
     if strict:
         return None, None
-    padded = f"-{slug}-"                       # để từ khoá dạng 'cat-' hay 'xi-' khớp đúng ranh giới
+    # Từ khoá phải khớp từ đầu một từ, không khớp giữa từ: nếu không, 'mai-phan-ngoai'
+    # bị nhận là hàn vì 'phan' có chứa 'han'.
+    padded = f"-{slug}-"
     for step, keywords in STEP_KEYWORDS:
-        if any(k in padded for k in keywords):
+        if any(f"-{k}" in padded for k in keywords):
             return step, CRAFT_STEPS[step][0]
     return None, None
 

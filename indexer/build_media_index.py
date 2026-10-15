@@ -59,6 +59,7 @@ PATH_RULES = [
 
 
 FORCED_ROLE = None      # đặt bởi --role khi footage nằm ngoài cây thư mục chuẩn của NAS
+CATALOG_ONLY = False    # đặt bởi --catalog-only: lập danh mục mà không đụng tới nội dung video
 
 
 def folder_info(path: Path):
@@ -214,8 +215,16 @@ def index_clip(args) -> list[dict]:
     rel = path.relative_to(ROOT).as_posix() if path.is_relative_to(ROOT) else path.as_posix()
     cid = "c_" + hashlib.sha1(rel.encode()).hexdigest()[:8]
     code, role_hint, rights = folder_info(path)
-    tech = probe(path)
     parsed = parse_with_path(path, scan_root)
+
+    # Mọi thông tin phân loại đều nằm ở đường dẫn, nên lập được danh mục mà không cần đọc
+    # nội dung video — thiết yếu khi footage nằm trên ổ mạng chậm (800 GB qua 1,2 MB/s).
+    if CATALOG_ONLY:
+        return [{"id": cid, "file": rel, "name": path.name, "folder": code, "role_hint": role_hint,
+                 "rights": rights, "product_set": parsed["sku"], "parsed": parsed,
+                 "size_mb": round(path.stat().st_size / 1048576, 1), "catalog_only": True}]
+
+    tech = probe(path)
     base = {"id": cid, "file": rel, "name": path.name, "folder": code, "role_hint": role_hint,
             "rights": rights, "product_set": parsed["sku"], "parsed": parsed, "tech": tech}
     split, why = should_segment(tech["duration"], parsed)
@@ -230,6 +239,22 @@ def index_clip(args) -> list[dict]:
     return [entry]
 
 
+def discover(roots):
+    """Duyệt cây thư mục, vừa đi vừa báo tiến độ. Trên ổ mạng chậm riêng bước liệt kê thư mục
+    đã mất hàng chục phút, nên không thể im lặng cho tới khi duyệt xong."""
+    for root in roots:
+        found = 0
+        for dirpath, dirnames, filenames in os.walk(root):
+            dirnames.sort()
+            for name in sorted(filenames):
+                if Path(name).suffix.lower() in VIDEO_EXT:
+                    found += 1
+                    if found % 100 == 0:
+                        print(f"  ...đã thấy {found} video (đang ở {Path(dirpath).name[:40]})", flush=True)
+                    yield Path(dirpath) / name, root
+        print(f"  {root.name}: {found} video", flush=True)
+
+
 def main():
     ap = argparse.ArgumentParser(description="Đánh chỉ mục footage: ffprobe + proxy + thumbnail + contact sheet.")
     ap.add_argument("roots", nargs="*", help="thư mục footage (mặc định: bộ sample trong repo)")
@@ -241,7 +266,13 @@ def main():
     # Clip 4K dài ngốn nhiều RAM lẫn băng thông; chạy 4 luồng song song dễ bị hệ điều hành giết.
     ap.add_argument("--workers", type=int, default=2, help="số clip xử lý song song (mặc định 2)")
     ap.add_argument("--restart", action="store_true", help="bỏ kết quả cũ, đánh chỉ mục lại từ đầu")
+    ap.add_argument("--catalog-only", action="store_true",
+                    help="chỉ lập danh mục từ đường dẫn, không đọc video, không dựng proxy")
     opts = ap.parse_args()
+
+    if opts.catalog_only:
+        global CATALOG_ONLY
+        CATALOG_ONLY = True
 
     if opts.role:
         global FORCED_ROLE
@@ -259,8 +290,7 @@ def main():
         (MEDIA / sub).mkdir(parents=True, exist_ok=True)
 
     # Giữ kèm scan_root của từng file để parse_with_path biết dừng ở đâu khi dò SKU ngược lên.
-    jobs = sorted(((p, root) for root in roots for p in root.rglob("*") if p.suffix.lower() in VIDEO_EXT),
-                  key=lambda j: j[0].as_posix())
+    jobs = sorted(discover(roots), key=lambda j: j[0].as_posix())
     if limit:
         jobs = jobs[:limit]
 
