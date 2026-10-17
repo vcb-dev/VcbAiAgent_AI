@@ -3,6 +3,8 @@
 Scopes: 'product' = the job's own footage set (mandatory for product/craft roles — no cross-SKU),
 'shared' = VCB footage without SKU (HuyK, intro, outro), 'collected' = third-party footage (hook only).
 """
+import random
+
 from catalog_store import STEP_LABELS_VI, load_catalog
 from footage_filename_parser import CRAFT_STEPS
 from vietnamese_text import keyword_tokens
@@ -40,7 +42,8 @@ def _step_score(clip_step, want):
     return 0.0
 
 
-def rank_candidates(part: dict, sku: str, used: set, limit: int = 8) -> list:
+def rank_candidates(part: dict, sku: str, used: set, limit: int = 8, exclude=frozenset()) -> list:
+    """`exclude` là các clip video khác trong lô đã dùng; hết clip mới thì mới cho phép trùng."""
     tokens = keyword_tokens(part.get("vo_text", "") + " " + part.get("visual_intent", ""))
     pools = [(r, s, 0.0) for r, s in ROLE_POOLS.get(part["role"], [])]
     for alt in part.get("alt_roles", []):
@@ -53,10 +56,15 @@ def rank_candidates(part: dict, sku: str, used: set, limit: int = 8) -> list:
                 continue
             if part["role"] != "outro" and clip["roles"].get("outro", 0) >= 0.8:
                 continue                      # branded outro clips only belong at the end
+            want_step = part.get("craft_step")
+            # Editor khoá đúng một công đoạn thì chỉ lấy source của nhóm đó, không lệch sang cận kề.
+            if part["role"] == "craft" and part.get("craft_step_lock") and want_step:
+                if clip.get("craft_step") != want_step:
+                    continue
             huyk_bonus = 0.15 if part["role"] in ("outro", "huyk_talk") and clip["tags"].get("huyk_present") else 0.0
             text = min(1.0, len(tokens & clip["_tokens"]) / 3.0)
             quality = (clip["tags"].get("aesthetic") or 3) / 5.0
-            step = _step_score(clip.get("craft_step"), part.get("craft_step"))
+            step = _step_score(clip.get("craft_step"), want_step)
             if part["role"] == "craft":
                 score = 0.40 * step + 0.20 * conf + 0.15 * text + 0.20 * quality + 0.05 * ((clip["tags"].get("motion_level") or 1) / 3)
             else:
@@ -66,8 +74,24 @@ def rank_candidates(part: dict, sku: str, used: set, limit: int = 8) -> list:
             if score > best.get(clip["id"], {}).get("score", -1):
                 best[clip["id"]] = {"kind": "clip", "clip_id": clip["id"], "score": round(score, 3),
                                     "role_used": cat_role, "scope": scope, "text_match": round(text, 2), "via_alt": alt_pen > 0, "reason": _reason(clip, scope, cat_role, conf, part)}
-    ranked = sorted(best.values(), key=lambda c: -c["score"])
-    return [c for c in ranked if c["score"] >= MIN_SCORE][:limit]
+    ranked = [c for c in sorted(best.values(), key=lambda c: -c["score"]) if c["score"] >= MIN_SCORE]
+    fresh = [c for c in ranked if c["clip_id"] not in exclude]
+    return (fresh or ranked)[:limit]
+
+
+def variant_order(candidates: list, seed: str, variant: int, head: int = 5) -> list:
+    """Xáo lại nhóm ứng viên dẫn đầu theo số thứ tự biến thể.
+
+    Dựng hàng loạt cùng một mã thì mọi bản đều bốc đúng clip điểm cao nhất, ra N video giống
+    hệt nhau. Mỗi biến thể xáo riêng phần đầu danh sách nên vẫn chỉ dùng cảnh khá nhất, chỉ
+    khác là mỗi video khác cảnh. Biến thể 0 giữ nguyên thứ tự điểm để dựng lẻ không đổi.
+    """
+    if variant <= 0 or len(candidates) < 2:
+        return candidates
+    top = candidates[:head]
+    lead = top.pop((variant - 1) % len(top))     # mỗi biến thể một cảnh mở đầu khác nhau
+    random.Random(f"{seed}#{variant}").shuffle(top)
+    return [lead] + top + candidates[head:]
 
 
 def _reason(clip, scope, role, conf, part):

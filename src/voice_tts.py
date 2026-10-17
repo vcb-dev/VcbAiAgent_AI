@@ -1,7 +1,8 @@
 """Voice-over synthesis with measured durations.
 
-Provider order: ElevenLabs (when ELEVENLABS_API_KEY + ELEVENLABS_VOICE_ID are set — production HuyK voice)
--> macOS `say` Vietnamese voice "Linh" (offline demo voice). Results are cached by text hash.
+Provider order: giọng nhân bản MiniMax từ bản thu editor tải lên (khi dự án đã học giọng)
+-> ElevenLabs (khi có ELEVENLABS_API_KEY + ELEVENLABS_VOICE_ID — giọng HuyK chính thức)
+-> giọng tiếng Việt "Linh" của macOS `say` (bản demo chạy offline). Kết quả cache theo nội dung.
 """
 import base64
 import hashlib
@@ -12,9 +13,11 @@ import uuid
 import urllib.error
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
 
-from app_paths import (ELEVENLABS_API_KEY, ELEVENLABS_MODEL, ELEVENLABS_SETTINGS, ELEVENLABS_VOICE_ID, MACOS_RATE,
-                       MACOS_VOICE, MVP, TTS_DIR)
+import voice_minimax
+from app_paths import (ELEVENLABS_API_KEY, ELEVENLABS_MODEL, ELEVENLABS_SETTINGS, ELEVENLABS_VOICE_ID,
+                       MACOS_RATE, MACOS_VOICE, MINIMAX_HUYK_VOICE_ID, MVP, TTS_DIR)
 from vo_director import direct_parts, pronounce
 
 
@@ -30,7 +33,7 @@ def audio_duration(path) -> float:
     return round(float(out.strip() or 0), 3)
 
 
-def _to_wav(src, dst):
+def to_wav(src, dst):
     tmp = dst.with_name(f"{dst.stem}.{uuid.uuid4().hex[:6]}.tmp.wav")      # atomic: never cache a partial file
     try:
         _run(["ffmpeg", "-y", "-v", "error", "-i", str(src), "-ar", "48000", "-ac", "1", str(tmp)])
@@ -68,7 +71,7 @@ def _render(provider: str, engine, text: str, ext: str):
         raw = wav.with_name(f"{wav.stem}.{uuid.uuid4().hex[:6]}.{ext}")
         try:
             engine(text, raw)
-            _to_wav(raw, wav)
+            to_wav(raw, wav)
         finally:
             raw.unlink(missing_ok=True)
     return wav
@@ -94,6 +97,112 @@ def synthesize(text: str) -> dict:
 
 def eleven_enabled() -> bool:
     return bool(ELEVENLABS_API_KEY and ELEVENLABS_VOICE_ID)
+
+
+# Định dạng ffmpeg đọc được và editor hay có sẵn; nhận cả file quay có tiếng để tách lời.
+UPLOAD_EXT = {".mp3", ".wav", ".m4a", ".aac", ".aiff", ".aif", ".flac", ".ogg", ".opus", ".mp4", ".mov", ".webm"}
+
+
+def import_recording(raw: bytes, filename: str) -> dict:
+    """Nhận file ghi âm tải từ máy lên, dùng thay lời đọc máy của một phần.
+
+    Chuyển về đúng wav 48k mono như giọng tổng hợp, để khâu trộn tiếng và đo thời lượng
+    không phải phân biệt nguồn. Đặt tên theo nội dung file nên tải lại cùng một file
+    không sinh thêm bản sao.
+    """
+    name = Path(filename or "").name or "ghi-am"
+    ext = Path(name).suffix.lower()
+    if ext not in UPLOAD_EXT:
+        raise ValueError(f"không nhận định dạng {ext or 'này'}; dùng mp3, wav, m4a hoặc aac")
+    if not raw:
+        raise ValueError("file rỗng")
+
+    wav = TTS_DIR / f"upload_{hashlib.sha1(raw).hexdigest()[:16]}.wav"
+    if not wav.exists():
+        src = wav.with_name(f"{wav.stem}.{uuid.uuid4().hex[:6]}{ext}")
+        try:
+            src.write_bytes(raw)
+            to_wav(src, wav)
+        except RuntimeError as exc:
+            raise ValueError("không đọc được âm thanh trong file này") from exc
+        finally:
+            src.unlink(missing_ok=True)
+
+    duration = audio_duration(wav)
+    if duration <= 0:
+        raise ValueError("file không có tiếng")
+    return {"audio": wav.relative_to(MVP).as_posix(), "duration": duration,
+            "provider": "upload", "upload_name": name[:80]}
+
+
+def _silence_mids(wav) -> list:
+    """Điểm giữa của các quãng lặng trong bản thu — chỗ người đọc ngắt giữa hai đoạn."""
+    res = subprocess.run(["ffmpeg", "-v", "info", "-i", str(wav), "-af", "silencedetect=noise=-32dB:d=0.22",
+                          "-f", "null", "-"], capture_output=True, text=True, check=False)
+    mids, start = [], None
+    for line in res.stderr.splitlines():
+        try:
+            if "silence_start:" in line:
+                start = float(line.rsplit("silence_start:", 1)[1].strip())
+            elif "silence_end:" in line and start is not None:
+                mids.append((start + float(line.rsplit("silence_end:", 1)[1].split("|")[0].strip())) / 2)
+                start = None
+        except ValueError:
+            start = None
+    return mids
+
+
+def stored_recording(audio_rel: str, upload_name: str = "") -> dict:
+    """Bản thu đã tải lên trước đó, tra lại theo đường dẫn.
+
+    Đường dẫn do trình duyệt gửi lên nên chỉ nhận đúng file do `import_recording` tạo ra
+    và chỉ tìm trong thư mục tts, không cho trỏ ra chỗ khác trên máy.
+    """
+    name = Path(audio_rel or "").name
+    if not (name.startswith("upload_") and name.endswith(".wav")):
+        raise ValueError("file giọng đọc không hợp lệ")
+    wav = TTS_DIR / name
+    if not wav.exists():
+        raise ValueError("file giọng đọc không còn trên máy chủ, tải lại giúp tôi")
+    return {"audio": wav.relative_to(MVP).as_posix(), "duration": audio_duration(wav),
+            "provider": "upload", "upload_name": (upload_name or name)[:80]}
+
+
+def split_recording(base: dict, parts: list) -> list:
+    """Chia một bản thu cả kịch bản thành lời đọc từng phần: [(chỉ số phần, vo)].
+
+    Ranh giới đặt theo tỉ lệ số chữ của từng phần, rồi nắn về quãng lặng gần nhất: người
+    đọc tự ngắt hơi giữa các đoạn nên đó là chỗ cắt sát thực tế nhất mà không cần nhận
+    dạng tiếng nói. Quãng lặng nào lệch quá 1,5 giây so với mốc tính theo chữ thì bỏ, vì
+    nhiều khả năng đó là chỗ ngắt giữa câu chứ không phải hết đoạn.
+    """
+    wav, total = MVP / base["audio"], base["duration"]
+    voiced = [i for i, p in enumerate(parts) if (p.get("vo_text") or "").strip()]
+    if not voiced:
+        raise ValueError("kịch bản chưa có phần nào có lời đọc")
+    if len(voiced) == 1:
+        return [(voiced[0], base)]
+
+    weights = [len((parts[i].get("vo_text") or "").strip()) or 1 for i in voiced]
+    gaps, cuts, prev, acc = _silence_mids(wav), [], 0.0, 0
+    for weight in weights[:-1]:
+        acc += weight
+        target = total * acc / sum(weights)
+        usable = [g for g in gaps if prev + 0.4 < g < total - 0.4]
+        near = min(usable, key=lambda g: abs(g - target)) if usable else None
+        pick = near if near is not None and abs(near - target) <= 1.5 else target
+        prev = min(max(pick, prev + 0.4), total - 0.4)
+        cuts.append(round(prev, 3))
+
+    bounds = [0.0] + cuts + [total]
+    out = []
+    for n, index in enumerate(voiced):
+        seg = TTS_DIR / f"{wav.stem}_p{index}.wav"
+        if not seg.exists():
+            _cut(wav, bounds[n], bounds[n + 1], seg)
+        out.append((index, {"audio": seg.relative_to(MVP).as_posix(), "duration": audio_duration(seg),
+                            "provider": "upload", "upload_name": base["upload_name"]}))
+    return out
 
 
 def _cut(src, start: float, end: float, dst):
@@ -136,12 +245,86 @@ def _performance(parts: list) -> list:
     return vos
 
 
-def synthesize_parts(parts: list, voice: str = "huyk") -> list:
-    """VO for every part: one emotional ElevenLabs take (voice='huyk', when configured), else per-part demo voice."""
-    if voice == "huyk" and eleven_enabled():
-        try:
-            return _performance(parts)
-        except (urllib.error.URLError, RuntimeError, OSError, KeyError, ValueError) as exc:
-            print(f"[tts] ElevenLabs performance failed ({exc}); falling back to per-part voices")
+def learn_voice(base: dict) -> dict:
+    """Học giọng trong bản thu tải lên, để giọng đó đọc kịch bản thay vì dùng thẳng bản thu.
+
+    Trả về phần mô tả giọng cất vào dự án. Bản thu gốc giữ lại để nghe đối chiếu trên giao diện.
+    """
+    name = base.get("upload_name", "")
+    voice_id = voice_minimax.clone_voice(MVP / base["audio"], name)
+    return {"voice_id": voice_id, "audio": base["audio"], "duration": base["duration"],
+            "label": name, "upload_name": name, "provider": "minimax"}
+
+
+def available_voices() -> list:
+    """Giọng nhân bản có sẵn trên tài khoản, để chọn người đọc cho video."""
+    if not voice_minimax.enabled():
+        return []
+    return [{"voice_id": v["voice_id"], "created_time": v.get("created_time", ""),
+             "default": v["voice_id"] == MINIMAX_HUYK_VOICE_ID} for v in voice_minimax.list_voices()]
+
+
+def pick_voice(voice_id: str) -> dict:
+    """Chọn một giọng có sẵn trên tài khoản làm người đọc của dự án."""
+    if not voice_minimax.enabled():
+        raise ValueError("chưa cấu hình MiniMax nên không chọn được giọng")
+    if voice_id not in {v["voice_id"] for v in voice_minimax.list_voices()}:
+        raise ValueError(f"không có giọng '{voice_id}' trên tài khoản")
+    return {"voice_id": voice_id, "label": voice_id, "provider": "minimax"}
+
+
+def _cloned_vo(part: dict, voice_id: str):
+    """Lời đọc một phần bằng giọng đã nhân bản."""
+    text = (part.get("vo_text") or "").strip()
+    if not text:
+        return None
+    take = voice_minimax.synthesize_take(pronounce(text), voice_id)
+    return {"audio": take["audio"], "duration": take["duration"], "provider": take["provider"]}
+
+
+def _cloned_performance(parts: list, voice_id: str) -> list:
+    """Đọc riêng từng phần thay vì một lượt dài rồi cắt.
+
+    MiniMax chỉ trả mốc thời gian tới mức câu, mà ranh giới câu không trùng ranh giới phần,
+    nên cắt theo mốc đó sẽ lệch. Đọc riêng thì thời lượng mỗi phần là đo thật, và sửa chữ
+    ở một phần cũng chỉ phải đọc lại đúng phần đó.
+    """
+    with ThreadPoolExecutor(max_workers=6) as pool:
+        return list(pool.map(lambda p: _cloned_vo(p, voice_id), parts))
+
+
+def huyk_voice_enabled() -> bool:
+    """Giọng HuyK dùng chung đã học sẵn chưa (xem indexer/huyk_voice_setup.py)."""
+    return bool(MINIMAX_HUYK_VOICE_ID and voice_minimax.enabled())
+
+
+def _try_clone(parts: list, voice_id: str, label: str):
+    try:
+        return _cloned_performance(parts, voice_id)
+    except voice_minimax.MinimaxError as exc:
+        print(f"[tts] {label} lỗi ({exc}); lùi về giọng kế tiếp")
+        return None
+
+
+def synthesize_parts(parts: list, voice: str = "huyk", clone_voice_id: str = "") -> list:
+    """VO for every part, theo thứ tự ưu tiên: giọng editor tải lên -> giọng HuyK -> giọng máy.
+
+    Giọng HuyK chính thức là bản ElevenLabs khi có key; không thì dùng bản học từ footage
+    HuyK nói trên ổ NAS.
+    """
+    if clone_voice_id and voice_minimax.enabled():
+        vos = _try_clone(parts, clone_voice_id, "giọng nhân bản của dự án")
+        if vos:
+            return vos
+    if voice == "huyk":
+        if eleven_enabled():
+            try:
+                return _performance(parts)
+            except (urllib.error.URLError, RuntimeError, OSError, KeyError, ValueError) as exc:
+                print(f"[tts] ElevenLabs performance failed ({exc}); falling back to per-part voices")
+        if huyk_voice_enabled():
+            vos = _try_clone(parts, MINIMAX_HUYK_VOICE_ID, "giọng HuyK")
+            if vos:
+                return vos
     with ThreadPoolExecutor(max_workers=6) as pool:
         return list(pool.map(lambda p: synthesize(p.get("vo_text", "")), parts))

@@ -40,9 +40,11 @@ def explicit_step(sentence: str):
     return next((step for phrase, step in STEP_PHRASES.items() if _has(slug, phrase)), None)
 
 
-def _part(role, text, template_id):
+def _part(role, text, template_id, source_audio=False):
     return {"role": role, "alt_roles": part_alt_roles(template_id, role), "vo_text": text,
-            "craft_step": None, "est_seconds": estimate_speech_seconds(text) if text else 0.0}
+            "craft_step": None, "est_seconds": estimate_speech_seconds(text) if text else 0.0,
+            # Khối phát tiếng sẵn trong clip thay vì để máy đọc kịch bản (dùng cho outro).
+            "source_audio": source_audio}
 
 
 def _a4_roles(middle):
@@ -91,7 +93,10 @@ def plan_with_rules(script: str, template_id: str, family: str, available_steps)
     sents = split_sentences(script)
     if not sents:
         return []
-    closing = sents[-1] if any(_has(slugify_vi(sents[-1]), m) for m in CLOSING_MARKERS) and len(sents) > 1 else None
+    # Outro phát tiếng sẵn trong clip nên không lấy câu nào của kịch bản; chỉ tuyến kiến thức
+    # mới tách câu chào kết thành lời đọc riêng.
+    closing = sents[-1] if family != "A4" and len(sents) > 1 and any(
+        _has(slugify_vi(sents[-1]), m) for m in CLOSING_MARKERS) else None
     middle = sents[1:-1] if closing else sents[1:]
     first_role = "hook"
     roles = _a4_roles(middle) if family == "A4" else _a1_roles(middle)
@@ -102,9 +107,15 @@ def plan_with_rules(script: str, template_id: str, family: str, available_steps)
             parts[-1]["est_seconds"] = estimate_speech_seconds(parts[-1]["vo_text"])
             continue
         parts.append(_part(role, text, template_id))
-    if family == "A4" and not any(p["role"] == "product_final" for p in parts):
-        parts.append(_part("product_final", "", template_id))   # visual-only reveal
-    parts.append(_part("outro", closing or "", template_id))
+    # Cảnh khoe thành phẩm là đổi vai của câu áp chót chứ không phải thêm một khối câm:
+    # mọi khối đều phải có lời đọc thì tổng thời lượng video mới bằng tổng lời đọc.
+    if family == "A4" and not any(p["role"] == "product_final" for p in parts) and len(parts) > 1:
+        parts[-1]["role"] = "product_final"
+        parts[-1]["alt_roles"] = part_alt_roles(template_id, "product_final")
+    if family == "A4":
+        parts.append(_part("outro", "", template_id, source_audio=True))
+    elif closing:
+        parts.append(_part("outro", closing, template_id))
     assign_craft_steps(parts, available_steps)
     for n, p in enumerate(parts, 1):
         p["part_id"] = f"p{n}"

@@ -9,7 +9,7 @@ import subprocess
 import textwrap
 import uuid
 
-from app_paths import CANVAS_H, CANVAS_W, FONT_FILE, FPS, MVP, SHOT_CACHE
+from app_paths import CANVAS_H, CANVAS_W, FONT_FILE, FPS, MVP, SHOT_CACHE, has_ffmpeg_filter
 
 ENCODE = ["-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "21", "-pix_fmt", "yuv420p",
           "-r", str(FPS), "-video_track_timescale", "15360", "-movflags", "+faststart"]
@@ -22,6 +22,9 @@ def _run(cmd):
     res = subprocess.run(cmd, capture_output=True, text=True, check=False)
     if res.returncode != 0:
         raise RuntimeError(f"ffmpeg failed: {res.stderr[-500:]}")
+
+
+HAS_DRAWTEXT = has_ffmpeg_filter("drawtext")
 
 
 def _encode_atomic(cmd_without_output, out):
@@ -76,9 +79,12 @@ def render_card_shot(gen: dict, duration: float, fade_in: bool = False, fade_out
         txt = SHOT_CACHE / f"card_{key}.txt"
         txt.write_text(body, encoding="utf-8")
         accent = "0xd1ad62" if kind != "missing" else "0xd9776b"
-        vf = (f"drawbox=x=40:y=40:w={CANVAS_W - 80}:h={CANVAS_H - 80}:color={accent}@0.9:t=4,"
-              f"drawtext=fontfile='{FONT_FILE}':textfile='{txt}':expansion=none:fontcolor=white:fontsize=30:line_spacing=12:"
-              f"x=(w-text_w)/2:y=max(290\\,(h-text_h)/2){_fades(duration, fade_in, fade_out)}")  # stay below the hook caption band
+        # Không có drawtext thì vẫn dựng thẻ, chỉ mất phần chữ: thiếu một cảnh phụ còn hơn
+        # hỏng cả bản render. Nội dung thẻ vẫn nằm trong timeline.json để bàn giao.
+        label = (f",drawtext=fontfile='{FONT_FILE}':textfile='{txt}':expansion=none:fontcolor=white:fontsize=30:"
+                 f"line_spacing=12:x=(w-text_w)/2:y=max(290\\,(h-text_h)/2)") if HAS_DRAWTEXT else ""
+        vf = (f"drawbox=x=40:y=40:w={CANVAS_W - 80}:h={CANVAS_H - 80}:color={accent}@0.9:t=4"
+              f"{label}{_fades(duration, fade_in, fade_out)}")  # chữ nằm dưới dải caption của hook
         _encode_atomic(["ffmpeg", "-y", "-v", "error", "-f", "lavfi", "-i",
                         f"color=c=0x16130d:s={CANVAS_W}x{CANVAS_H}:r={FPS}:d={duration + 0.2:.3f}",
                         "-vf", vf, "-frames:v", str(_frames(duration)), *ENCODE], out)

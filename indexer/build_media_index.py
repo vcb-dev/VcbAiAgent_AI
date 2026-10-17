@@ -148,13 +148,22 @@ def run(cmd):
     return subprocess.run(cmd, capture_output=True, text=True, check=False)
 
 
-def _has_drawtext() -> bool:
-    """ffmpeg build thiếu libfreetype sẽ không có drawtext; lúc đó contact sheet vẫn dựng
-    được nhưng không có mốc thời gian trên từng khung."""
-    return " drawtext " in run(["ffmpeg", "-hide_banner", "-filters"]).stdout
+def _has_filter(name: str) -> bool:
+    """ffmpeg cài thiếu thư viện sẽ vắng hẳn bộ lọc tương ứng: không có libfreetype thì
+    mất drawtext (contact sheet vẫn dựng được, chỉ thiếu mốc thời gian), không có libzimg
+    thì mất zscale (phải chuyển màu HDR bằng đường khác)."""
+    return f" {name} " in run(["ffmpeg", "-hide_banner", "-filters"]).stdout
 
 
-HAS_DRAWTEXT = _has_drawtext()
+HAS_DRAWTEXT = _has_filter("drawtext")
+HAS_ZSCALE = _has_filter("zscale")
+# Máy Mac nào cũng có bộ mã hoá H.264 trong chip. Proxy chỉ để dựng nháp nên chất lượng
+# kém libx264 một chút không sao, đổi lại CPU rảnh ra để kéo được nhiều clip song song hơn —
+# nút cổ chai khi nạp cả kho từ ổ mạng là chờ tải chứ không phải nén.
+HAS_VIDEOTOOLBOX = " h264_videotoolbox " in run(["ffmpeg", "-hide_banner", "-encoders"]).stdout
+# Kéo hàng loạt: chỉ lấy đoạn đầu (tuyến A4 dùng 3–8 giây/cảnh) và bỏ contact sheet.
+PROXY_MAX_S = 0
+SKIP_SHEETS = False
 
 
 def probe(path: Path) -> dict:
@@ -189,12 +198,23 @@ def encode_atomic(cmd_without_output, dst: Path, label: str):
 def build_proxy(src: Path, dst: Path, hdr: bool):
     if dst.exists():
         return
-    tonemap = ("zscale=t=linear:npl=100,format=gbrpf32le,zscale=p=bt709,tonemap=hable:desat=0,"
-               "zscale=t=bt709:m=bt709:r=tv,format=yuv420p,") if hdr else ""
+    # Chuyển màu HDR chuẩn cần zscale (libzimg), nhưng nhiều bản ffmpeg cài sẵn không có.
+    # Thiếu thì dùng đường vòng qua colorspace: màu nhạt hơn một chút, còn hơn là hỏng cả
+    # clip — proxy vốn chỉ để dựng nháp.
+    if hdr and HAS_ZSCALE:
+        tonemap = ("zscale=t=linear:npl=100,format=gbrpf32le,zscale=p=bt709,tonemap=hable:desat=0,"
+                   "zscale=t=bt709:m=bt709:r=tv,format=yuv420p,")
+    elif hdr:
+        tonemap = "colorspace=all=bt709:iall=bt2020:fast=1,format=yuv420p,"
+    else:
+        tonemap = ""
     vf = (f"{tonemap}{rotate_filter(src)}"
           "scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280,fps=30,format=yuv420p")
-    encode_atomic(["ffmpeg", "-y", "-v", "error", "-i", str(src), "-vf", vf, "-c:v", "libx264", "-preset", "veryfast",
-                   "-crf", "23", "-c:a", "aac", "-b:a", "128k", "-ar", "48000", "-movflags", "+faststart"],
+    # VideoToolbox không nhận -crf; 2,5 Mb/s ở 720×1280 là thừa cho bản nháp.
+    video = (["-c:v", "h264_videotoolbox", "-b:v", "2500k"] if HAS_VIDEOTOOLBOX
+             else ["-c:v", "libx264", "-preset", "veryfast", "-crf", "23"])
+    encode_atomic(["ffmpeg", "-y", "-v", "error", "-i", str(src), "-vf", vf, *video,
+                   "-c:a", "aac", "-b:a", "128k", "-ar", "48000", "-movflags", "+faststart"],
                   dst, f"proxy failed {src.name}")
 
 

@@ -8,7 +8,7 @@ DEFAULTS = {
     "subtitles": True,
     "subtitle_style": "box",    # box | outline
     "hook_text": True,
-    "logo": True,
+    "logo": False,
     "transition": "cut",        # cut | dip (dip to black between parts)
     "color": "none",            # none | warm | cool
 }

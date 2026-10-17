@@ -1,10 +1,11 @@
-"""Assemble the preview MP4: concat shots -> logo overlay + burned subtitles -> VO/music/SFX mix.
+"""Assemble the preview MP4: concat shots -> burned subtitles -> VO/music/SFX mix.
 
 Music is ducked under the VO with sidechaincompress; loudness normalised to -14 LUFS (social).
 """
 import subprocess
+from functools import lru_cache
 
-from app_paths import ASSETS, FONT_DIR, LOGO_FILE, MVP, RENDERS
+from app_paths import ASSETS, FONT_DIR, MVP, RENDERS, has_ffmpeg_filter
 from catalog_store import get_clip
 from job_settings import DEFAULTS
 from music_library import resolve as music_file
@@ -72,6 +73,14 @@ def _segments(job, cfg):
     return files
 
 
+@lru_cache(maxsize=None)
+def _has_audio_stream(path: str) -> bool:
+    """Proxy nào cũng khai has_audio nhưng không phải bản nào cũng còn luồng tiếng."""
+    res = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "a:0", "-show_entries", "stream=codec_name",
+                          "-of", "csv=p=0", path], capture_output=True, text=True, check=False)
+    return bool(res.stdout.strip())
+
+
 def _audio_graph(job, first_input, cfg):
     """Build audio inputs + filter graph. Returns (input_args, filter_parts, out_label)."""
     T = job["timeline"]["duration"]
@@ -82,6 +91,19 @@ def _audio_graph(job, first_input, cfg):
         ms = int(v["start"] * 1000)
         filt.append(f"[{idx}:a]adelay={ms}:all=1[vo{n}]")
         vo_labels.append(f"[vo{n}]")
+        idx += 1
+    # Tiếng sẵn trong clip (outro): cắt đúng đoạn đang dùng rồi đặt vào vị trí của nó trên
+    # timeline. Xếp chung nhóm với lời đọc nên nhạc nền cũng tự hạ xuống dưới.
+    for n, s in enumerate(job["timeline"].get("source_audio", [])):
+        proxy = str(MVP / get_clip(s["clip_id"])["proxy"])
+        if not _has_audio_stream(proxy):
+            continue
+        args += ["-ss", f"{s['src_in']:.3f}", "-i", proxy]
+        tempo = f",atempo={s['speed']:.3f}" if abs(s["speed"] - 1.0) > 0.01 else ""
+        filt.append(f"[{idx}:a]atrim=0:{s['duration'] * s['speed']:.3f},asetpts=N/SR/TB{tempo},"
+                    f"afade=t=out:st={max(s['duration'] - 0.3, 0):.3f}:d=0.3,"
+                    f"adelay={int(s['start'] * 1000)}:all=1[src{n}]")
+        vo_labels.append(f"[src{n}]")
         idx += 1
     args += ["-stream_loop", "-1", "-i", music_file(cfg["music_track"])]
     filt.append(f"[{idx}:a]atrim=0:{T},asetpts=N/SR/TB,volume={cfg['music_volume']},afade=t=out:st={max(T - 1.2, 0)}:d=1.2[mus]")
@@ -108,12 +130,16 @@ def render_job(job: dict, revision: int) -> str:
     (work / "concat.txt").write_text("".join(f"file '{f}'\n" for f in _segments(job, cfg)), encoding="utf-8")
     _run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", "concat.txt", "-c", "copy", "video.mp4"], cwd=work)
     _write_ass(job, work / "subs.ass", cfg)
-    spans = ("+".join(f"between(t,{s['start']},{s['end']})" for s in job["timeline"]["logo"]) if cfg["logo"] else "") or "0"
-    vfilt = (f"[1:v]scale=230:-1[lg];[0:v][lg]overlay=W-w-28:40:enable='{spans}',"
-             f"ass=subs.ass:fontsdir={FONT_DIR}{COLOR_FILTERS[cfg['color']]}[v]")
-    a_args, a_filt, a_out = _audio_graph(job, 2, cfg)
+    # Phụ đề cháy vào hình cần ffmpeg có libass. Bản không có thì vẫn xuất video, phụ đề
+    # đi kèm dưới dạng file .ass/.srt trong gói bàn giao thay vì làm hỏng cả bản render.
+    chain = []
+    if has_ffmpeg_filter("ass"):
+        chain.append(f"ass=subs.ass:fontsdir={FONT_DIR}")
+    chain += [f for f in COLOR_FILTERS[cfg["color"]].split(",") if f]
+    vfilt = f"[0:v]{','.join(chain)}[v]" if chain else "[0:v]null[v]"
+    a_args, a_filt, a_out = _audio_graph(job, 1, cfg)
     out_name = f"{job['id']}_r{revision}.mp4"
-    _run(["ffmpeg", "-y", "-v", "error", "-i", "video.mp4", "-loop", "1", "-i", str(LOGO_FILE), *a_args,
+    _run(["ffmpeg", "-y", "-v", "error", "-i", "video.mp4", *a_args,
           "-filter_complex", ";".join([vfilt, *a_filt]), "-map", "[v]", "-map", a_out,
           "-c:v", "libx264", "-preset", "veryfast", "-crf", "22", "-c:a", "aac", "-b:a", "160k",
           "-t", str(job["timeline"]["duration"]), "-movflags", "+faststart", str(RENDERS / out_name)], cwd=work)

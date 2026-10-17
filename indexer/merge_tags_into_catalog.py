@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 
 MVP = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(MVP / "server"))
+sys.path.insert(0, str(MVP / "src"))
 from footage_filename_parser import CRAFT_STEPS  # noqa: E402
 FOLDER_ROLE = {"V1": "hook_visual", "V2": "craft", "V4": "craft_pov", "V6": "product_final", "V7": "outro",
                "V8": "craft", "CAPCUT": "craft", "V5-TUQUAY": "craft", "V5-SUUTAM": "stock_action"}
@@ -16,7 +16,9 @@ FOLDER_ROLE = {"V1": "hook_visual", "V2": "craft", "V4": "craft_pov", "V6": "pro
 
 def merge_roles(entry, tags):
     roles = {r["role"]: float(r.get("conf", 0.5)) for r in tags.get("roles", []) if r.get("role")}
-    hint = FOLDER_ROLE.get(entry["folder"])
+    # role_hint do indexer suy ra từ đường dẫn; bảng FOLDER_ROLE chỉ còn để đọc các mã cũ (V1..V8).
+    hint = entry.get("role_hint") if entry.get("role_hint") not in (None, "unknown") else None
+    hint = hint or FOLDER_ROLE.get(entry["folder"])
     if entry["folder"] == "V3":
         hint = "huyk_talk" if entry["parsed"].get("type") == "KB" else "huyk_silent"
     if entry.get("rights") == "collected" and hint == "craft":
