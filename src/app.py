@@ -330,8 +330,12 @@ class PrepareRequest(BaseModel):
 
 @api.post("/nas/prepare")
 def nas_prepare(req: PrepareRequest):
-    """Kéo footage của tuyến A4 về máy và dựng proxy. Chậm: mỗi clip vài chục giây."""
-    _require_nas()
+    """Kéo footage của tuyến A4 về máy và dựng proxy. Chậm: mỗi clip vài chục giây.
+
+    Production không gắn ổ NAS — dùng catalog + proxy đã có, không báo 503.
+    """
+    if not nas_browser.available():
+        return {"sku": req.sku.strip(), "added": 0, "skipped": 0, "failed": [], "clips": [], "offline": True}
     sources = [s.model_dump() for s in req.sources]
     if not any(s["slot"] == "outro" for s in sources):
         sources.append({"slot": "outro", "folder": str(nas_browser.OUTRO_ROOT), "name": "outro"})
