@@ -8,8 +8,9 @@ import random
 from catalog_store import STEP_LABELS_VI, available_steps, get_clip, public_clip
 from footage_filename_parser import CRAFT_STEPS, craft_step_from_action
 from footage_matcher import rank_candidates, variant_order
+from final_mix_renderer import export_mp4
 from job_service import CLIP_FIELDS, _clips_payload, _load, _lock, _save, _start_render, get_job
-from job_settings import DEFAULTS, VOICE_KEYS, validate
+from job_settings import DEFAULTS, LIVE_KEYS, VOICE_KEYS, validate
 from music_library import track_ids
 from timeline_builder import build_timeline
 from video_templates import PRODUCT_SET_ROLES
@@ -77,7 +78,7 @@ def _rematch_craft(job, part):
         if s.get("selected", {}).get("kind") == "clip"
     }
     part["candidates"] = variant_order(
-        rank_candidates(part, job.get("sku"), used=used),
+        rank_candidates(part, job.get("sku"), used=used, exclude=job.get("exclude_clips") or []),
         part["part_id"],
         job.get("variant", 0),
     )
@@ -340,7 +341,27 @@ def update_settings(job_id: str, partial: dict) -> dict:
         _push_history(job)
         revoice = any(k in VOICE_KEYS and clean[k] != job["settings"].get(k) for k in clean)
         job["settings"].update(clean)
-        return _commit(job, revoice=revoice)
+        live = set(clean) <= LIVE_KEYS and not revoice
+        snapshot = copy.deepcopy(job) if live else None
+        if live:
+            _save(job)
+        else:
+            return _commit(job, revoice=revoice)
+    # Mix lại tiếng (copy hình) ngoài lock — 0% thì hết nhạc, không dựng lại cảnh.
+    if snapshot and (snapshot.get("render") or {}).get("status") == "done" and snapshot["render"].get("url"):
+        try:
+            url = export_mp4(snapshot)
+        except Exception as exc:
+            print(f"[remix] {exc}")
+            return get_job(job_id)
+        with _lock:
+            job, _ = _job_and_part(job_id)
+            same = (job["settings"].get("music_volume") == snapshot["settings"].get("music_volume")
+                    and job["settings"].get("music_track") == snapshot["settings"].get("music_track"))
+            if same:
+                job["render"]["url"] = url
+                _save(job)
+    return get_job(job_id)
 
 
 def undo(job_id: str) -> dict:

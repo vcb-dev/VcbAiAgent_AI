@@ -52,7 +52,7 @@ def _a4_roles(middle):
     for i, s in enumerate(middle):
         cls = classify(s)
         if i == 0:
-            role = "huyk_talk"                       # template slot s2: HuyK right after the hook
+            role = "huyk_talk"                       # template slot s2: HuyK right after product_hero
         elif i == len(middle) - 1 and cls != "huyk":
             role = "product_final"                   # reveal before outro
         elif cls == "huyk" and roles and roles[-1] != "huyk_talk":
@@ -71,22 +71,14 @@ def _a1_roles(middle):
 
 
 def assign_craft_steps(parts, available_steps):
-    """Spread craft parts across the product's available steps in process order (never backwards)."""
+    """Gán 4 ô chế tác trải đều quy trình 1→N, không nhảy lùi vì chữ trong kịch bản."""
     craft = [p for p in parts if p["role"] == "craft"]
     steps = sorted(available_steps, key=lambda s: CRAFT_STEPS[s][0])
     if not craft or not steps:
         return
     for i, p in enumerate(craft):
         idx = round(i * (len(steps) - 1) / max(len(craft) - 1, 1)) if len(craft) > 1 else 0
-        wanted = explicit_step(p["vo_text"])
-        p["craft_step"] = wanted if wanted in steps else steps[idx]
-    last = -1
-    for p in craft:  # enforce non-decreasing process order
-        order = CRAFT_STEPS[p["craft_step"]][0]
-        if order < last:
-            later = [s for s in steps if CRAFT_STEPS[s][0] >= last]
-            p["craft_step"] = later[0] if later else p["craft_step"]
-        last = CRAFT_STEPS[p["craft_step"]][0]
+        p["craft_step"] = steps[idx]
 
 
 def plan_with_rules(script: str, template_id: str, family: str, available_steps) -> list:
@@ -98,7 +90,7 @@ def plan_with_rules(script: str, template_id: str, family: str, available_steps)
     closing = sents[-1] if family != "A4" and len(sents) > 1 and any(
         _has(slugify_vi(sents[-1]), m) for m in CLOSING_MARKERS) else None
     middle = sents[1:-1] if closing else sents[1:]
-    first_role = "hook"
+    first_role = "product_hero" if family == "A4" else "hook"
     roles = _a4_roles(middle) if family == "A4" else _a1_roles(middle)
     parts = [_part(first_role, sents[0], template_id)]
     for role, text in zip(roles, middle):

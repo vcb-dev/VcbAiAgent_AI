@@ -14,17 +14,18 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
-from app_paths import DATA, MEDIA
+from app_paths import DATA, MEDIA, MVP
 from catalog_store import craft_step_choices, load_catalog, product_sets, public_clip, set_clip_craft_step
 from internal_auth import require_internal_secret
 from job_edit_service import (clear_job_voice_clone, clear_job_voice_upload, clear_voice_upload, select_option,
                               set_craft_plan, set_craft_step, set_emotion, set_job_voice_clone, set_job_voice_upload,
                               set_voice_upload, undo, update_settings)
+from final_mix_renderer import export_mp4
 from job_package_export import build_package
 from job_service import CLIP_FIELDS, create_job, get_job
 from job_settings import DEFAULTS
 import nas_browser
-from music_library import public_tracks
+from music_library import import_track, public_tracks
 from nas_prepare import prepare
 from pricing_store import load_benchmark, load_pricing
 from script_planner_claude import claude_available
@@ -59,6 +60,9 @@ class JobRequest(BaseModel):
     variant: int = Field(default=0, ge=0, le=99)
     # Clip các video trước trong lô đã dùng: video này tránh ra cho khỏi trùng cảnh.
     exclude_clips: list[str] = Field(default_factory=list, max_length=400)
+    # Nhạc nền chọn lúc dựng (studio / hàng loạt) — gắn vào bản render đầu, không phải sửa sau.
+    music_track: str = Field(default="", max_length=240)
+    music_volume: Optional[float] = Field(default=None, ge=0, le=1)
 
 
 class Option(BaseModel):
@@ -115,6 +119,20 @@ def bootstrap():
             "voice_clone_available": voice_minimax.enabled(), "huyk_voice_available": huyk_voice_enabled()}
 
 
+@api.get("/music")
+def music():
+    """Danh sách bài trên volume — editor thêm bài thì gọi lại endpoint này."""
+    return {"music": public_tracks()}
+
+
+@api.post("/music-uploads")
+def music_store(file: UploadFile = File(...)):
+    """Tải mp3/wav/m4a vào media/music. Không ghi database — FFmpeg mix từ file."""
+    raw = _read_upload(file)
+    with api_errors():
+        return import_track(raw, file.filename or "")
+
+
 @api.get("/voices")
 def voices():
     """Giọng nhân bản có trên tài khoản MiniMax, để chọn người đọc cho video."""
@@ -128,8 +146,13 @@ def new_job(req: JobRequest):
             clone = learn_voice(stored_recording(req.voice.audio, req.voice.upload_name))
         else:
             clone = pick_voice(req.voice_id) if req.voice_id else None
+        settings = {}
+        if req.music_track:
+            settings["music_track"] = req.music_track
+        if req.music_volume is not None:
+            settings["music_volume"] = req.music_volume
         return create_job(req.script.strip(), req.sku.strip(), req.template_id, req.planner, req.plan, clone,
-                          req.variant, req.exclude_clips)
+                          req.variant, req.exclude_clips, settings or None)
 
 
 @api.get("/jobs/{job_id}")
@@ -258,6 +281,17 @@ def settings(job_id: str, partial: dict):
 def undo_last(job_id: str):
     with api_errors():
         return undo(job_id)
+
+
+@api.get("/jobs/{job_id}/export")
+def export_video(job_id: str):
+    """MP4 đã mix nhạc/âm lượng hiện tại (copy hình, mix tiếng). Studio nghe nhạc live trước khi xuất."""
+    job = get_job(job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail="job not found")
+    with api_errors():
+        rel = export_mp4(job)
+    return FileResponse(MVP / rel, filename=f"VCB_{job_id}.mp4", media_type="video/mp4")
 
 
 @api.get("/jobs/{job_id}/package")

@@ -36,3 +36,21 @@ def unit_price(option: dict, unit: str) -> float:
 def short_name(option: dict) -> str:
     model = option.get("model", "").split(" (")[0]
     return f"{option.get('provider', '')} · {model}".strip(" ·")
+
+
+def tts_option_for(provider: str) -> dict:
+    """Chọn dòng giá TTS khớp giọng thật sự đã đọc, không lấy recommended mặc định (ElevenLabs)."""
+    raw = (provider or "").lower()
+    opts = [o for o in load_pricing()["options"] if o["activity"] == "tts"]
+    if raw.startswith("minimax"):
+        model = raw.split(":", 1)[-1] if ":" in raw else ""
+        minimax = [o for o in opts if o.get("provider") == "MiniMax"]
+        if "turbo" in model:
+            return next((o for o in minimax if "turbo" in (o.get("model") or "").lower()),
+                        minimax[0] if minimax else {})
+        return next((o for o in minimax if "hd" in (o.get("model") or "").lower()),
+                    minimax[0] if minimax else {})
+    if raw.startswith("eleven"):
+        eleven = [o for o in opts if o.get("provider") == "ElevenLabs"]
+        return next((o for o in eleven if o.get("recommended")), eleven[0] if eleven else {})
+    return {}

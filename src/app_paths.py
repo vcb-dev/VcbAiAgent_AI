@@ -44,7 +44,8 @@ FONT_DIR = os.environ.get("VCB_FONT_DIR") or str(Path(FONT_FILE).parent if FONT_
 LOGO_FILE = ASSETS / "logo_huyk_vienchibao.png"
 SFX_SPARKLE = ASSETS / "sfx_sparkle.wav"
 DEFAULT_MUSIC = ASSETS / "bgm_luxury.wav"
-MUSIC_DIR = DATA / "music"          # drop VCB licensed tracks here (mp3/wav) to override the default
+MUSIC_DIR = MEDIA / "music"         # nhạc nền (mp3/wav) — cùng volume với proxy trên prod
+LEGACY_MUSIC_DIR = DATA / "music"   # thư mục cũ, vẫn đọc nếu còn file
 
 # Rendering canvas for the demo preview (proxies are 720x1280 @30fps)
 CANVAS_W, CANVAS_H, FPS = 720, 1280, 30
@@ -66,7 +67,7 @@ PLANNER_MODEL = os.environ.get("VCB_PLANNER_MODEL", "claude-opus-5-5")
 MACOS_VOICE = os.environ.get("VCB_MACOS_VOICE", "Linh")
 MACOS_RATE = int(os.environ.get("VCB_MACOS_RATE", "200"))
 
-for _d in (JOBS_DIR, TTS_DIR, SHOT_CACHE, RENDERS, MUSIC_DIR):
+for _d in (JOBS_DIR, TTS_DIR, SHOT_CACHE, RENDERS, MUSIC_DIR, LEGACY_MUSIC_DIR):
     _d.mkdir(parents=True, exist_ok=True)
 
 

@@ -31,10 +31,12 @@ def claude_available() -> bool:
 
 
 def _prompt(script, family, steps):
-    rhythm = ("hook sản phẩm → HuyK nói → chế tác → chế tác → HuyK → ... → product_final → outro (mỗi phần 3–6s)"
+    rhythm = ("product_hero (cảnh sản phẩm) → HuyK nói → chế tác → chế tác → HuyK → ... → product_final → outro (mỗi phần 3–6s). Không dùng role hook."
               if family == "A4" else "hook → nội dung minh họa / HuyK nói xen kẽ (6–12s) → HuyK kết → outro")
+    first = ("Phần 1 là product_hero, on_screen_text ≤ 8 từ; các phần khác để rỗng."
+             if family == "A4" else "Phần 1 có on_screen_text ≤ 8 từ (hook); các phần khác để rỗng.")
     return (f"Template: {family}: {rhythm}.\nCông đoạn có footage cho sản phẩm này: {', '.join(steps) or 'không có'}.\n"
-            f"Phần 1 có on_screen_text ≤ 8 từ (hook); các phần khác để rỗng. craft_step = 'none' nếu không phải chế tác. "
+            f"{first} craft_step = 'none' nếu không phải chế tác. "
             f"Câu 'Mình là HuyK đến từ Viễn Chí Bảo' (nếu có) thuộc phần outro.\n\nKịch bản:\n{script}")
 
 

@@ -3,7 +3,7 @@
 DEFAULTS = {
     "voice": "huyk",            # huyk = ElevenLabs clone (if configured) | demo = offline system voice
     "music_track": "default",   # id from music_library.list_tracks()
-    "music_volume": 0.32,       # 0.0 - 1.0 (0.32 ≈ the real CapCut project)
+    "music_volume": 0.38,       # 0.0 - 1.0; duck dưới giọng nhưng vẫn nghe được
     "sfx": True,
     "subtitles": True,
     "subtitle_style": "box",    # box | outline
@@ -16,6 +16,8 @@ CHOICES = {"voice": {"huyk", "demo"}, "subtitle_style": {"box", "outline"}, "tra
            "color": {"none", "warm", "cool"}}
 BOOLS = {"sfx", "subtitles", "hook_text", "logo"}
 VOICE_KEYS = {"voice"}          # changing these requires a new VO take
+# Nhạc nền chỉnh trên trình phát ngay (CapCut); không encode lại video.
+LIVE_KEYS = {"music_track", "music_volume"}
 
 
 def validate(partial: dict, music_ids: set) -> dict:

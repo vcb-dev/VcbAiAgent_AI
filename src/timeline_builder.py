@@ -25,15 +25,25 @@ def source_audio_clip(part: dict):
     return next((c for c in clips if (c.get("tech") or {}).get("has_audio")), clips[0] if clips else None)
 
 
+def _clip_span(clip):
+    """Đoạn dùng được, không vượt thời lượng file thật — tránh encode quá đuôi thành khung đen."""
+    lo, hi = (clip.get("usable") or [0.0, 0.0])[:2]
+    file_dur = float((clip.get("tech") or {}).get("duration") or 0)
+    if file_dur > 0:
+        hi = min(float(hi), file_dur)
+    lo = min(max(float(lo), 0.0), hi)
+    return lo, hi
+
+
 def part_duration(part: dict) -> float:
     """Phần có lời đọc dài đúng bằng lời đọc, nên tổng video luôn khớp tổng lời đọc.
 
-    Khối phát tiếng gốc (outro) thì dài theo đúng đoạn dùng được của clip, để câu kết trong
-    clip không bị cắt giữa chừng. Phần không có tiếng nào mới dùng tới mức tối thiểu theo vai.
+    Khối phát tiếng gốc (outro) thì dài đúng đoạn còn lại từ đầu usable tới hết clip,
+    không lấy cửa sổ giữa clip rồi kéo dài quá đuôi (ra đoạn đen).
     """
     if part.get("source_audio"):
         clip = source_audio_clip(part)
-        lo, hi = clip["usable"] if clip else (0.0, 0.0)
+        lo, hi = _clip_span(clip) if clip else (0.0, 0.0)
         return round(min(max(hi - lo, 2.0), SOURCE_AUDIO_MAX), 2)
     vo = (part.get("vo") or {}).get("duration", 0.0)
     if vo:
@@ -41,21 +51,28 @@ def part_duration(part: dict) -> float:
     return round(ROLE_TIMING.get(part["role"], {"min": 3.0})["min"], 2)
 
 
-def _window(clip: dict, shot_dur: float, prefer_speed: float, reuse: int = 0):
+def _window(clip: dict, shot_dur: float, prefer_speed: float, reuse: int = 0, from_start: bool = False):
     """Source in-point + speed around the clip's best moment (a different region when reused). None if too short."""
-    lo, hi = clip["usable"]
+    lo, hi = _clip_span(clip)
     avail = hi - lo
+    if from_start:
+        # Outro: phát từ đầu đoạn usable, không center vào best_moment (dễ vượt hết file → đen).
+        speed = 1.0
+        need = min(shot_dur, avail)
+        if need < 0.75:
+            return None
+        return {"src_in": round(lo, 3), "speed": speed}
     speed = prefer_speed if avail >= shot_dur * prefer_speed else avail / shot_dur
     if speed < 0.75:
         return None
     speed = round(min(speed, 2.0), 3)
     need = shot_dur * speed
     center = clip["best_moment_s"] if not reuse else lo + avail * ((0.5 + 0.37 * reuse) % 1.0)
-    src_in = min(max(center - need / 2, lo), hi - need)
+    src_in = min(max(center - need / 2, lo), max(hi - need, lo))
     return {"src_in": round(max(src_in, 0.0), 3), "speed": speed}
 
 
-def _pick_clip(shot_dur, part, used, in_part, forced_id=None, forced_speed=None):
+def _pick_clip(shot_dur, part, used, in_part, forced_id=None, forced_speed=None, from_start=False):
     """Best candidate not yet used in the video; then reuse across parts; never twice inside one part."""
     prefer = forced_speed or (1.25 if part["role"] == "craft" else 1.0)
     ids = [forced_id] if forced_id else [c["clip_id"] for c in part.get("candidates", [])]
@@ -64,7 +81,7 @@ def _pick_clip(shot_dur, part, used, in_part, forced_id=None, forced_speed=None)
             if not forced_id and (cid in in_part or (cid in used and not allow_reuse)):
                 continue
             clip = get_clip(cid)
-            win = clip and _window(clip, shot_dur, prefer, reuse=used.get(cid, 0))
+            win = clip and _window(clip, shot_dur, prefer, reuse=used.get(cid, 0), from_start=from_start)
             if win:
                 return {"kind": "clip", "clip_id": cid, **win}
     return None
@@ -100,7 +117,7 @@ def _select_shots(part, dur, used, job):
             choice = clip_choices.get(i, {})
             forced = choice.get("clip_id")
             sel = _pick_clip(dur / n, part, used, in_part | (set() if forced else reserved), forced_id=forced,
-                             forced_speed=choice.get("speed"))
+                             forced_speed=choice.get("speed"), from_start=bool(part.get("source_audio")))
             if sel is None:
                 ok = False
                 break
@@ -162,8 +179,10 @@ def build_timeline(job: dict) -> dict:
             logo.append({"start": round(t, 2), "end": round(t + dur, 2)})
         t += dur
     real = sum(1 for s in shots if s["selected"]["kind"] == "clip")
+    outro_at = next((p["start"] for p in job["parts"] if p.get("role") == "outro" or p.get("source_audio")), None)
+    music_end = round(outro_at if outro_at is not None else t, 2)
     job["timeline"] = {"duration": round(t, 2), "shots": shots, "subtitles": subs, "vo": vo, "sfx": sfx,
-                       "logo": logo, "source_audio": source_audio}
+                       "logo": logo, "source_audio": source_audio, "music_end": music_end}
     job["totals"] = {"duration": round(t, 2), "shots": len(shots), "real_shots": real, "gen_shots": len(shots) - real,
                      "gen_cost_usd": round(sum(gen_cost.values()), 3)}
     return job

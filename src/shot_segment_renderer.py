@@ -52,12 +52,13 @@ def _fades(duration: float, fade_in: bool, fade_out: bool) -> str:
 def render_clip_shot(clip: dict, src_in: float, duration: float, speed: float, zoom: float = 1.0,
                      fade_in: bool = False, fade_out: bool = False) -> str:
     zoom = min(max(float(zoom or 1.0), 1.0), 1.4)
-    key = hashlib.sha1(f"{clip['id']}|{src_in}|{duration}|{speed}|{zoom}|{fade_in}|{fade_out}".encode()).hexdigest()[:16]
+    key = hashlib.sha1(f"tpad|{clip['id']}|{src_in}|{duration}|{speed}|{zoom}|{fade_in}|{fade_out}".encode()).hexdigest()[:16]
     out = SHOT_CACHE / f"clip_{key}.mp4"
     if not out.exists():
         crop = f"crop=iw/{zoom}:ih/{zoom}," if zoom > 1.0 else ""          # centre punch-in
+        tpad = ",tpad=stop_mode=clone:stop=-1" if has_ffmpeg_filter("tpad") else ""
         vf = (f"setpts=PTS/{speed},fps={FPS},{crop}scale={CANVAS_W}:{CANVAS_H},format=yuv420p"
-              f"{_fades(duration, fade_in, fade_out)}")
+              f"{tpad}{_fades(duration, fade_in, fade_out)}")
         _encode_atomic(["ffmpeg", "-y", "-v", "error", "-ss", f"{src_in:.3f}", "-i", str(MVP / clip["proxy"]),
                         "-t", f"{duration * speed + 0.2:.3f}", "-vf", vf, "-frames:v", str(_frames(duration)), *ENCODE], out)
     return str(out)

@@ -42,12 +42,24 @@ def _step_score(clip_step, want):
     return 0.0
 
 
-def rank_candidates(part: dict, sku: str, used: set, limit: int = 8, exclude=frozenset()) -> list:
-    """`exclude` là các clip video khác trong lô đã dùng; hết clip mới thì mới cho phép trùng."""
+def rank_candidates(part: dict, sku: str, used: set, limit: int = 8, exclude=()) -> list:
+    """Xếp clip cho một khối. `exclude` là clip các video trước trong lô đã lấy (giữ thứ tự dùng).
+
+    Còn source chưa dùng của đúng nhóm này thì không trùng. Hết pool (ví dụ 9 clip hoàn thiện
+    cho video thứ 10) thì quay lại từ clip dùng sớm nhất — không mượn clip của công đoạn khác.
+    """
+    taken = list(dict.fromkeys(exclude or ()))
+    taken_set = set(taken)
     tokens = keyword_tokens(part.get("vo_text", "") + " " + part.get("visual_intent", ""))
-    pools = [(r, s, 0.0) for r, s in ROLE_POOLS.get(part["role"], [])]
-    for alt in part.get("alt_roles", []):
-        pools += [(r, s, 0.1) for r, s in ROLE_POOLS.get(alt, [])]   # 'X' alternatives, slight penalty
+    primary = ROLE_POOLS.get(part["role"], [])
+    # Trong lô: chỉ lấy đúng nhóm vai này, không mượn clip của mục khác khi kho mục này còn
+    # (và khi hết thì quay vòng đúng nhóm đó, ví dụ 9 clip hoàn thiện).
+    if taken and primary:
+        pools = [(primary[0][0], primary[0][1], 0.0)]
+    else:
+        pools = [(r, s, 0.0) for r, s in primary]
+        for alt in part.get("alt_roles", []):
+            pools += [(r, s, 0.1) for r, s in ROLE_POOLS.get(alt, [])]   # 'X' alternatives, slight penalty
     best = {}
     for clip in load_catalog().values():
         for cat_role, scope, alt_pen in pools:
@@ -75,8 +87,12 @@ def rank_candidates(part: dict, sku: str, used: set, limit: int = 8, exclude=fro
                 best[clip["id"]] = {"kind": "clip", "clip_id": clip["id"], "score": round(score, 3),
                                     "role_used": cat_role, "scope": scope, "text_match": round(text, 2), "via_alt": alt_pen > 0, "reason": _reason(clip, scope, cat_role, conf, part)}
     ranked = [c for c in sorted(best.values(), key=lambda c: -c["score"]) if c["score"] >= MIN_SCORE]
-    fresh = [c for c in ranked if c["clip_id"] not in exclude]
-    return (fresh or ranked)[:limit]
+    fresh = [c for c in ranked if c["clip_id"] not in taken_set]
+    if fresh:
+        return fresh[:limit]
+    order = {cid: i for i, cid in enumerate(taken)}
+    wrapped = sorted(ranked, key=lambda c: order.get(c["clip_id"], len(order)))
+    return wrapped[:limit]
 
 
 def variant_order(candidates: list, seed: str, variant: int, head: int = 5) -> list:

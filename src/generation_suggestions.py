@@ -7,7 +7,7 @@ Guardrail: never generate the craft process of a specific SKU — request a resh
 import math
 
 from catalog_store import STEP_LABELS_VI
-from pricing_store import recommended, short_name, unit_price
+from pricing_store import recommended, short_name, tts_option_for, unit_price
 
 PRODUCT_ROLES = {"hook", "product_hero", "product_final"}
 
@@ -50,8 +50,16 @@ def generation_options(part: dict, product_name: str, sku: str, duration: float)
     return options
 
 
-def vo_estimate(total_chars: int) -> dict:
-    """Production VO cost (recommended TTS) for the whole script, one language."""
-    opt = recommended("tts")
+def vo_estimate(total_chars: int, provider: str = "") -> dict:
+    """Chi phí lồng tiếng theo nhà cung cấp đã đọc, không mặc định ElevenLabs."""
+    raw = provider or ""
+    key = raw.split(":", 1)[0].lower()
+    if key in ("upload",):
+        return {"provider": "bản thu", "chars": total_chars, "est_cost_usd": 0.0}
+    if key.startswith("macos") or key in ("say", "demo"):
+        return {"provider": "giọng máy", "chars": total_chars, "est_cost_usd": 0.0}
+    opt = tts_option_for(raw)
+    if not opt:
+        return {"provider": raw or "giọng máy", "chars": total_chars, "est_cost_usd": 0.0}
     return {"provider": short_name(opt), "chars": total_chars,
             "est_cost_usd": round(total_chars / 1000 * unit_price(opt, "per_1K_chars"), 4)}

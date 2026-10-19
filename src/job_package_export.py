@@ -7,6 +7,7 @@ import zipfile
 
 from app_paths import MVP, RENDERS
 from catalog_store import get_clip
+from final_mix_renderer import export_mp4
 
 
 def _srt_time(t: float) -> str:
@@ -58,7 +59,7 @@ def build_package(job: dict) -> str:
     out.parent.mkdir(parents=True, exist_ok=True)
     if not out.exists():
         with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
-            z.write(MVP / job["render"]["url"], "final.mp4")
+            z.write(MVP / export_mp4(job), "final.mp4")
             z.writestr("subtitles.srt", _srt(job))
             z.writestr("timeline.json", _timeline_json(job))
             z.writestr("README.txt", README)
